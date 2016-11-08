@@ -1,0 +1,7 @@
+<view class="list-plan" data-id="{{item.id}}">
+    <image class="iv-plan" src="{{item.pictureUrl}}"></image>
+    <view class="v-list-footer">
+        <text class="text-deco">{{item.descInfo}}</text>
+        <text class="text-right">{{item.commissionInfo}}</text>
+    </view>
+</view>

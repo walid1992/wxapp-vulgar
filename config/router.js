@@ -1,0 +1,39 @@
+var router = {
+    planList: {
+        name: '互助列表页',
+        url: '/pages/index/index'
+    },
+
+    insuranceexplain: {
+        name: '险种说明页',
+        url: '/pages/insuranceexplain/index'
+    },
+
+    login: {
+        name: '登录',
+        url: '/pages/login/index'
+    },
+
+    mine: {
+        name: '我的',
+        url: '/pages/mine/index'
+    },
+
+    mineaccount: {
+        name: '个人资料',
+        url: '/pages/mineaccount/index'
+    },
+
+    protocol: {
+        name: '个人资料',
+        url: '/pages/protocol/index'
+    },
+
+    mineincome: {
+        name: '个人资料',
+        url: '/pages/mineincome/index'
+    },
+
+}
+
+module.exports = router

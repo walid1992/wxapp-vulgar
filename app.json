@@ -1,0 +1,42 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/mine/index",
+        "pages/login/index",
+        "pages/mineaccount/index",
+        "pages/protocol/index",
+        "pages/mineincome/index",
+        "pages/insuranceexplain/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "backgroundColor": "#ffffff",
+        "navigationBarBackgroundColor": "#0092ff",
+        "navigationBarTitleText": "滴答宝",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#666",
+        "selectedColor": "#268dcd",
+        "borderStyle": "white",
+        "backgroundColor": "#fafafa",
+        "list": [{
+            "pagePath": "pages/home/home",
+            "iconPath": "images/ic_home.png",
+            "selectedIconPath": "images/ic_home_select.png",
+            "text": "首页"
+        }, {
+            "pagePath": "pages/mine/index",
+            "iconPath": "images/ic_mine.png",
+            "selectedIconPath": "images/ic_mine_select.png",
+            "text": "我的"
+        }]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "debug": false
+}

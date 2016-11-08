@@ -1,0 +1,96 @@
+.v-root {
+    height: 1334rpx;
+    width: 100%;
+}
+
+.sv-box {
+    display: block;
+    height: 100%;
+    font-family: Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans CN", "PingFang SC", Roboto, "微软雅黑", "Heiti SC", "Microsoft Yahei", sans-serif
+}
+
+.v-top {
+    height: 120rpx;
+    width: 100%;
+    margin-top: 20rpx;
+    display: flex;
+    background-color: white;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.v-toptip {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+}
+
+.tv-toptip-title {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.tv-toptip-value {
+    font-size: 36rpx;
+    color: red;
+}
+
+.v-divider {
+    background-color: #b2b2b2;
+    width: 1px;
+    height: 100%;
+}
+
+.list-plan {
+    display: flex;
+    margin-top: 20rpx;
+    flex-direction: column;
+    background: white;
+    border-bottom: 1px #dadada solid;
+}
+
+.iv-plan {
+    width: 100%;
+    height: 300rpx;
+}
+
+.v-list-footer {
+    height: 60rpx;
+    width: 100%;
+    font-family: PingFang SC;
+}
+
+.text-deco {
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 10rpx;
+    position: absolute;
+    left: 30rpx;
+}
+
+.text-right {
+    font-size: 24rpx;
+    color: red;
+    font-style: italic;
+    margin-top: 10rpx;
+    position: absolute;
+    right: 30rpx;
+}
+
+.hot-box-more {
+    text-align: center;
+    font-size: 22rpx;
+    color: #999;
+    margin-bottom: 30rpx;
+    margin-top: 30rpx;
+}
+
+.hot-box-more image {
+    width: 80rpx;
+    height: 16rpx;
+    display: block;
+    margin: 0 auto;
+}

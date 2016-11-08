@@ -1,0 +1,88 @@
+page {
+    line-height: 1.6;
+    background: #efeff4;
+    padding-top: 30rpx;
+    box-sizing: border-box;
+}
+
+.phone-verify {
+    padding-left: 25rpx;
+    background: #fff;
+    border-top: 1px #e5e5e5 solid;
+    border-bottom: 1px #e5e5e5 solid;
+}
+
+.phone-verify text {
+    display: block;
+    width: 150rpx;
+}
+
+.phone-input {
+    display: -webkit-box;
+    display: box;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-bottom: 1px #e5e5e5 solid;
+    color: #222;
+    font-size: 32rpx;
+}
+
+.no-border {
+    border: 0;
+}
+
+.phone-input-num, .phone-input-code {
+    font-size: 32rpx;
+    color: #999;
+    border: none;
+    height: 100%;
+    -webkit-box-flex: 1;
+}
+
+.phone-input-num {
+    width: 60%;
+}
+
+.phone-input-code {
+    width: 40%;
+}
+
+.tv-get-code {
+    border-left: 1px #e5e5e5 solid;
+    text-align: center;
+    font-size: 34rpx;
+    padding: 0 35rpx;
+    color: #0092ff;
+}
+
+.phone-tip {
+    margin: 40rpx 0 40rpx 25rpx;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.verify-button {
+    display: block;
+    margin: 0 25rpx;
+    height: 88rpx;
+    background: #0092ff;
+    color: #fff;
+    font-size: 36rpx;
+    line-height: 88rpx;
+    text-align: center;
+    border: 1px #0092ff solid;
+    border-radius: 6rpx;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .phone-verify {
+        border-top-width: 0.5px;
+        border-bottom-width: 0.5px;
+    }
+    .phone-input {
+        border-bottom-width: 0.5px;
+    }
+    .get-code {
+        border-left-width: 0.5px;
+    }
+}

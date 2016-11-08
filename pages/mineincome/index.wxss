@@ -1,0 +1,142 @@
+.v-top {
+    width: 100%;
+    height: 120rpx;
+    display: flex;
+    background-color: white;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.v-toptip {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+}
+
+.tv-toptip-title {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.tv-toptip-value {
+    font-size: 36rpx;
+    margin-top: 10rpx;
+    color: red;
+}
+
+.v-divider {
+    background-color: #b2b2b2;
+    width: 1px;
+    height: 100%;
+}
+
+.swiper-tab {
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: 20rpx;
+    background: white;
+    display: flex;
+    z-index: 3;
+    border-bottom: 2rpx solid #bbbbbb;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper-tab-list {
+    margin: 0 20rpx;
+    padding: 0 4rpx;
+    font-size: 28rpx;
+    font-family: Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans CN", "PingFang SC", Roboto, "微软雅黑", "Heiti SC", "Microsoft Yahei", sans-serif
+}
+
+.swiper-select {
+    border-bottom: 2rpx solid #0092ff;
+    color: #0092ff;
+}
+
+.swiper-box {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hot-box {
+    display: block;
+    height: 100%;
+    font-family: Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans CN", "PingFang SC", Roboto, "微软雅黑", "Heiti SC", "Microsoft Yahei", sans-serif
+}
+
+.hot-box-main {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    margin-bottom: 20px;
+    background: #FFF;
+}
+
+.hot-box-top {
+    padding: 20px;
+    border-bottom: 1px solid #F6F6F6;
+    text-align: center;
+}
+
+.hot-box-title {
+    font-size: 32rpx;
+    height: 30px;
+    line-height: 32px;
+    font-weight: 400;
+    color: #444;
+    padding: 5px 10px;
+    border: 1px solid #444;
+}
+
+.list-box {
+    padding: 20px 20px 20px 40px;
+    display: block;
+    font-size: 30rpx;
+    border-bottom: 1px solid #F6F6F6;
+    position: relative;
+}
+
+.list-box::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #ff6511;
+    border-radius: 50%;
+    top: 25px;
+    left: 20px;
+}
+
+.list-box-title {
+    font-weight: 400;
+    line-height: 42rpx;
+}
+
+.list-box-sub {
+    font-size: 24rpx;
+    color: #666;
+    padding-top: 6px;
+}
+
+.hot-box-more {
+    text-align: center;
+    font-size: 22rpx;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.hot-box-more image {
+    width: 80px;
+    height: 16px;
+    display: block;
+    margin: 0 auto;
+}

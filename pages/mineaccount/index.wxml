@@ -1,0 +1,18 @@
+<modal title="温馨提示" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" bindconfirm="modalChange" bindcancel="modalChange">
+    您将要退出登录，是否确定？
+</modal>
+
+<view class="container">
+    <view class="weui-cell-acatar">
+        <text class="tv_cell_left"> 头像 </text>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
+    <block wx:for="{{userListInfo}}">
+        <view class="weui_cell" style="margin-top:{{item.margin}};">
+            <text class="tv_cell_left"> {{item.leftItem}} </text>
+            <text wx:if="{{item.rightItem}} == null" class="tv_cell_right">{{item.rightItem}}</text>
+            <view class="with_arrow"></view>
+        </view>
+    </block>
+    <text class="btn_logout" bindtap="logoutTap">退出登录</text>
+</view>
