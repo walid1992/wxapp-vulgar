@@ -22,8 +22,8 @@
 
 .swiper-select {
     width: 25%;
-    border-bottom: 6rpx solid #0092ff;
-    color: #0092ff;
+    border-bottom: 6rpx solid #7aa42d;
+    color: #7aa42d;
 }
 
 .swiper-box {
