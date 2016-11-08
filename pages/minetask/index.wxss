@@ -4,7 +4,7 @@
     margin-top: 20rpx;
     background: white;
     display: flex;
-    z-index: 3;
+    z-index: 4;
     border-bottom: 2rpx solid #bbbbbb;
     position: relative;
     flex-direction: row;
@@ -13,14 +13,16 @@
 }
 
 .swiper-tab-list {
+    width: 25%;
     margin: 0 20rpx;
     padding: 0 4rpx;
     font-size: 28rpx;
-    font-family: Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans CN", "PingFang SC", Roboto, "微软雅黑", "Heiti SC", "Microsoft Yahei", sans-serif
+    text-align: center;
 }
 
 .swiper-select {
-    border-bottom: 2rpx solid #0092ff;
+    width: 25%;
+    border-bottom: 6rpx solid #0092ff;
     color: #0092ff;
 }
 
@@ -34,7 +36,6 @@
 .hot-box {
     display: block;
     height: 100%;
-    font-family: Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans CN", "PingFang SC", Roboto, "微软雅黑", "Heiti SC", "Microsoft Yahei", sans-serif
 }
 
 .hot-box-main {
