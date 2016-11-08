@@ -13,6 +13,7 @@
     height: 120rpx;
     width: 100%;
     margin-top: 20rpx;
+    margin-bottom: 20rpx;
     display: flex;
     background-color: white;
     border-top: 1px solid #e5e5e5;
@@ -46,38 +47,46 @@
 
 .list-plan {
     display: flex;
-    margin-top: 20rpx;
-    flex-direction: column;
     background: white;
+    width: 100%;
+    padding: 20rpx;
     border-bottom: 1px #dadada solid;
 }
 
-.iv-plan {
-    width: 100%;
-    height: 300rpx;
+.list-plan image {
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 20rpx;
 }
 
-.v-list-footer {
-    height: 60rpx;
-    width: 100%;
-    font-family: PingFang SC;
+.list-plan div {
+    display: flex;
+    flex-direction: column;
 }
 
-.text-deco {
-    font-size: 24rpx;
-    color: #999;
-    margin-top: 10rpx;
-    position: absolute;
-    left: 30rpx;
+.list-plan .tv-name {
+    font-size: 32rpx;
+    color: #333;
 }
 
-.text-right {
-    font-size: 24rpx;
-    color: red;
-    font-style: italic;
-    margin-top: 10rpx;
-    position: absolute;
-    right: 30rpx;
+.list-plan .tv-ratio {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.list-plan .tv-desc {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.list-plan .tv-effect-confirm {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.list-plan .tv-settlement-confirm {
+    font-size: 28rpx;
+    color: #666;
 }
 
 .hot-box-more {

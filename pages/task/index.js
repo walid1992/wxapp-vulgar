@@ -1,4 +1,4 @@
-var insApi = require('../../api/ins/ins.js')
+var taskApi = require('../../api/task/index.js')
 var router = require('../../config/router.js')
 
 var app = getApp()
@@ -7,8 +7,6 @@ Page({
     data: {
         // 显示加载更多 loading
         hothidden: true,
-        // loading
-        hidden: true,
         list: [],
     },
 
@@ -20,25 +18,23 @@ Page({
     // 下拉刷新
     onPullDownRefresh() {
         var that = this
-        that.setData({
-            hidden: false
+        wx.showToast({
+            title: '加载中...',
+            icon: 'loading',
+            duration: 10000
         })
-        setTimeout(function() {
-            that.setData({
-                hidden: true
-            })
-        }, 200)
         that.getPlanList()
     },
 
     getPlanList() {
         var self = this;
-        insApi.list(self.data.list.length, 10, function(res) {
+        taskApi.list(self.data.list.length, 10, function (res) {
             wx.stopPullDownRefresh()
-                // 如果数据为空，则显示没有更多数据
+            wx.hideToast()
+            // 如果数据为空，则显示没有更多数据
             var hothidden = true
             if (res.data.length <= 0) {
-                setTimeout(function() {
+                setTimeout(function () {
                     self.setData({
                         hothidden: false
                     })
@@ -46,20 +42,29 @@ Page({
             }
 
             self.setData({
-                hidden: true,
                 hothidden: hothidden,
                 list: self.data.list.concat(res.data),
             })
         })
     },
 
-    scrolltolower: function(e) {
+    onReachBottom: function () {
         var self = this
-            // 加载更多 loading
+        if (!self.data.hothidden) {
+            return
+        }
+        // 加载更多 loading
         self.setData({
             hothidden: false,
         })
         self.getPlanList()
+    },
+
+    toMineTask(e) {
+        var id = e.currentTarget.dataset.id
+        wx.navigateTo({
+            url: router.mineTask.url
+        })
     },
 
     toItem(e) {

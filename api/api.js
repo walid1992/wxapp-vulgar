@@ -4,9 +4,7 @@
  */
 
 var apiURL = {
-    // baseUrl: 'https://www.shuidihuzhu.com:8830',
-    baseUrl: 'http://103.37.145.195:8830',
-    // baseUrl: 'http://192.168.1.228/',
+    baseUrl: 'http://123.57.2.62:8089/',
 }
 
 function request( url, method, body, callback ) {
@@ -19,7 +17,7 @@ function request( url, method, body, callback ) {
         },
         success: function( res ) {
             // 成功数据回调
-            if( res.data.code == 0 ) {
+            if( res.data.code == 200 ) {
                 callback( res.data )
             } else {
             }

@@ -25,13 +25,13 @@ var router = {
     },
 
     protocol: {
-        name: '个人资料',
+        name: '用户协议',
         url: '/pages/protocol/index'
     },
 
-    mineincome: {
-        name: '个人资料',
-        url: '/pages/mineincome/index'
+    mineTask: {
+        name: '我的任务',
+        url: '/pages/minetask/index'
     },
 
 }

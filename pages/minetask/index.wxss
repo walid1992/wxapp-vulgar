@@ -1,38 +1,3 @@
-.v-top {
-    width: 100%;
-    height: 120rpx;
-    display: flex;
-    background-color: white;
-    border-top: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.v-toptip {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    flex-direction: column;
-}
-
-.tv-toptip-title {
-    font-size: 24rpx;
-    color: #999;
-}
-
-.tv-toptip-value {
-    font-size: 36rpx;
-    margin-top: 10rpx;
-    color: red;
-}
-
-.v-divider {
-    background-color: #b2b2b2;
-    width: 1px;
-    height: 100%;
-}
-
 .swiper-tab {
     height: 80rpx;
     line-height: 80rpx;

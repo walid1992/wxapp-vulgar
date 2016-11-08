@@ -1,30 +1,36 @@
 {
     "pages": [
-        "pages/home/home",
+        "pages/task/index",
+        "pages/baby/index",
         "pages/mine/index",
         "pages/login/index",
         "pages/mineaccount/index",
         "pages/protocol/index",
-        "pages/mineincome/index",
+        "pages/minetask/index",
         "pages/insuranceexplain/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "backgroundColor": "#ffffff",
-        "navigationBarBackgroundColor": "#0092ff",
-        "navigationBarTitleText": "滴答宝",
+        "navigationBarBackgroundColor": "#7aa42d",
+        "navigationBarTitleText": "好推",
         "navigationBarTextStyle": "white"
     },
     "tabBar": {
         "color": "#666",
-        "selectedColor": "#268dcd",
+        "selectedColor": "#7aa42d",
         "borderStyle": "white",
         "backgroundColor": "#fafafa",
         "list": [{
-            "pagePath": "pages/home/home",
-            "iconPath": "images/ic_home.png",
-            "selectedIconPath": "images/ic_home_select.png",
-            "text": "首页"
+            "pagePath": "pages/task/index",
+            "iconPath": "images/ic_task.png",
+            "selectedIconPath": "images/ic_task_select.png",
+            "text": "好任务"
+        },{
+            "pagePath": "pages/baby/index",
+            "iconPath": "images/ic_baby.png",
+            "selectedIconPath": "images/ic_baby_select.png",
+            "text": "好宝贝"
         }, {
             "pagePath": "pages/mine/index",
             "iconPath": "images/ic_mine.png",

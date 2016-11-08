@@ -12,7 +12,7 @@ var api = require('../api.js')
 
 var apiURL = {
     // 互助列表接口
-    list: '/v1/insurance/list'
+    list: '/v1/task/list'
 }
 
 module.exports = {
