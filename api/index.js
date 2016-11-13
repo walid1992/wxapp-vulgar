@@ -23,15 +23,20 @@ function request(url, method, body, call) {
         success: function (res) {
             // 成功数据回调
             if (res.data.code == 200) {
-                call.success(res.data.data)
+                if (call && call.success) {
+                    call.success(res.data.data)
+                }
             } else {
-                call.fail(res.data.code, res.data.message)
+                if (call && call.fail) {
+                    call.fail(res.data.code, res.data.message)
+                }
             }
             console.log(res.data)
         },
         fail: function (res) {
-            call.fail(res.data.code, res.data.message)
-            console.log("请求失败~")
+            if (call && call.fail) {
+                call.fail(res.data.code, res.data.message)
+            }
         }
     })
 }
