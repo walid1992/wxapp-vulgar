@@ -1,3 +1,5 @@
+var commonApi = require('../../api/common/index.js')
+
 Page({
     data: {
         getCodeLock: false,
@@ -37,58 +39,44 @@ Page({
         this.setData({
             errorMsg: msg,
             errorMsgHidden: false
-        });
+        })
     },
 
     //获取验证码
     getCodeTap(e) {
         var that = this;
-
         if (!this.data.phone) {
-            this.showErrormsg('请填写手机号');
-            return;
+            this.showErrormsg('请填写手机号')
+            return
         }
-
         if (!/^1\d{10}$/.test(this.data.phone)) {
-            this.showErrormsg('请输入正确的手机号码');
-            return;
+            this.showErrormsg('请输入正确的手机号码')
+            return
         }
-
         if (this.data.getCodeLock) {
-            return;
+            return
         }
-
         this.setData({
             getCodeLock: true
-        });
-
+        })
         var requestData = {
             mobile: this.data.phone
-        };
+        }
 
-        wx.request({
-            url: api.sendVerifyCode.url,
-            data: {
-                mobile: this.data.phone
-            },
-            header: {
-                'content-type': 'application/x-www-form-urlencoded'
-            },
-            method: 'POST',
-            success: function(res) {
-                if (res.data.code == 0) {
-                    that.showErrormsg('验证码已发送');
+        that.countdown()
 
-                    that.timer();
-                } else {
-                    that.showErrormsg(res.data.msg);
-
+        commonApi
+            .getauthcode(this.data.phone, {
+                success: function (data) {
+                    that.showErrormsg('验证码已发送')
+                },
+                fail: function (code, msg) {
+                    that.showErrormsg(msg)
                     that.setData({
                         getCodeLock: false
-                    });
+                    })
                 }
-            }
-        });
+            })
     },
 
     errorMsgSuccess() {
@@ -98,82 +86,69 @@ Page({
     },
 
     //倒计时
-    timer() {
-        var that = this;
-        var count = 60;
-
+    countdown() {
+        var that = this
+        var count = 60
         function setInvalTime() {
             if (count == 0) {
                 that.setData({
                     codeButtonText: '获取验证码',
                     getCodeLock: false
                 });
-
                 clearInterval(phoneTimer);
             } else {
                 that.setData({
                     codeButtonText: count + '秒后重试'
                 });
             }
-
-            count--;
+            count--
         }
-
-        setInvalTime();
-
-        var phoneTimer = setInterval(function() {
-            setInvalTime();
-        }, 1000);
+        setInvalTime()
+        var phoneTimer = setInterval(function () {
+            setInvalTime()
+        }, 1000)
     },
 
     //提交验证
     validate() {
-        var that = this;
-
+        var that = this
         if (!this.data.phone) {
             this.showErrormsg('请输入您的手机号码');
             this.setData({
                 loginLocked: false
-            });
-            return;
+            })
+            return
         }
-
         if (!this.data.verifyCode) {
             this.showErrormsg('请输入您收到的验证码');
             this.setData({
                 loginLocked: false
-            });
-            return;
+            })
+            return
         }
-
         if (this.data.loginLocked) {
-            return;
+            return
         }
-
         this.setData({
             loginLocked: true
-        });
-
-        this.signIn(function(data) {
-            wx.setStorageSync('userId', data.userId);
-            wx.setStorageSync('mobile', data.userAccount.mobile);
-            wx.setStorageSync('token', data.token);
-
+        })
+        this.signIn(function (data) {
+            wx.setStorageSync('userId', data.userId)
+            wx.setStorageSync('mobile', data.userAccount.mobile)
+            wx.setStorageSync('token', data.token)
             if (that.data.redirectUrl) {
                 wx.redirectTo({
                     url: that.data.redirectUrl
-                });
+                })
                 return;
             }
-
-            wx.navigateBack();
-        });
+            wx.navigateBack()
+        })
     },
 
     //登录请求
     signIn(callback) {
-        var that = this;
-
+        var that = this
         wx.request({
             url: api.signIn.url,
             data: {
@@ -188,17 +163,16 @@ Page({
                 'content-type': 'application/x-www-form-urlencoded'
             },
             method: 'POST',
-            success: function(res) {
+            success: function (res) {
                 if (res.data.code == 0) {
-                    callback && callback(res.data.data);
+                    callback && callback(res.data.data)
                 } else {
-                    that.showErrormsg(res.data.msg);
-
+                    that.showErrormsg(res.data.msg)
                     that.setData({
                         loginLocked: false
-                    });
+                    })
                 }
             }
-        });
+        })
     }
-});
+})

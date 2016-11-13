@@ -1,37 +1,43 @@
 page {
     line-height: 1.6;
-    background: #efeff4;
-    padding-top: 30rpx;
+    background: white;
     box-sizing: border-box;
 }
 
-.phone-verify {
+.verify {
+    margin-top: 30rpx;
     padding-left: 25rpx;
     background: #fff;
     border-top: 1px #e5e5e5 solid;
     border-bottom: 1px #e5e5e5 solid;
 }
 
-.phone-verify text {
+.verify text {
     display: block;
     width: 150rpx;
 }
 
-.phone-input {
+.v-phone {
     display: -webkit-box;
     display: box;
-    height: 88rpx;
-    line-height: 88rpx;
+    height: 100rpx;
+    line-height: 100rpx;
     border-bottom: 1px #e5e5e5 solid;
-    color: #222;
+    color: #333;
     font-size: 32rpx;
 }
 
-.no-border {
+.v-code {
+    display: -webkit-box;
+    display: box;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #333;
+    font-size: 32rpx;
     border: 0;
 }
 
-.phone-input-num, .phone-input-code {
+.input-phone {
     font-size: 32rpx;
     color: #999;
     border: none;
@@ -39,50 +45,24 @@ page {
     -webkit-box-flex: 1;
 }
 
-.phone-input-num {
-    width: 60%;
-}
-
-.phone-input-code {
-    width: 40%;
-}
-
-.tv-get-code {
+.code {
     border-left: 1px #e5e5e5 solid;
     text-align: center;
     font-size: 34rpx;
     padding: 0 35rpx;
-    color: #0092ff;
+    color: #7aa42d;
 }
 
-.phone-tip {
-    margin: 40rpx 0 40rpx 25rpx;
-    font-size: 26rpx;
-    color: #999;
-}
-
-.verify-button {
+.login {
     display: block;
     margin: 0 25rpx;
     height: 88rpx;
-    background: #0092ff;
+    background: #7aa42d;
+    margin-top: 100rpx;
     color: #fff;
     font-size: 36rpx;
     line-height: 88rpx;
     text-align: center;
-    border: 1px #0092ff solid;
+    border: 1px #7aa42d solid;
     border-radius: 6rpx;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-    .phone-verify {
-        border-top-width: 0.5px;
-        border-bottom-width: 0.5px;
-    }
-    .phone-input {
-        border-bottom-width: 0.5px;
-    }
-    .get-code {
-        border-left-width: 0.5px;
-    }
 }

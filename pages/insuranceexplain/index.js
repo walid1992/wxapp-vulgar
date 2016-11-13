@@ -1,4 +1,4 @@
-var insApi = require('../../api/ins/ins.js')
+var insApi = require('../../api/task/index.js')
 
 var app = getApp()
 
@@ -9,7 +9,6 @@ Page({
 
     onLoad() {
         this.getPlanList()
-        app.getUserInfo()
     },
 
     // 下拉刷新

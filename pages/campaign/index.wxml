@@ -14,8 +14,8 @@
         </view>
     </view>
 
-    <block wx:for="{{list}}">
-        <view class="list-plan" bindtap="toInsuranceDetail" data-id="{{item.id}}">
+    <block wx:for="{{list}}" wx:key="id">
+        <view class="list-plan" bindtap="toItem" data-id="{{item.id}}">
             <image src="{{item.campaignUrl?item.campaignUrl:'../../images/ic_place_holder.png'}}"/>
             <div>
               <text class="tv-name">{{item.campaignName}}</text>

@@ -1,13 +1,13 @@
 .container {
-    background-color: #F2f2f2;
+    background-color: #f0f0f0;
 }
 
 .userinfo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 50rpx 0;
     align-items: center;
-    background: #0092ff;
+    background: white;
 }
 
 .userinfo-avatar {

@@ -12,7 +12,6 @@ Page({
 
     onLoad() {
         this.getPlanList()
-        app.getUserInfo()
     },
 
     // 下拉刷新
@@ -28,23 +27,27 @@ Page({
 
     getPlanList() {
         var self = this;
-        taskApi.list(self.data.list.length, 10, function (res) {
-            wx.stopPullDownRefresh()
-            wx.hideToast()
-            // 如果数据为空，则显示没有更多数据
-            var hothidden = true
-            if (res.data.length <= 0) {
-                setTimeout(function () {
-                    self.setData({
-                        hothidden: false
-                    })
-                }, 200)
+        taskApi.list(self.data.list.length, 10, {
+            success: function (data) {
+                wx.stopPullDownRefresh()
+                wx.hideToast()
+                // 如果数据为空，则显示没有更多数据
+                var hothidden = true
+                if (res.data.length <= 0) {
+                    setTimeout(function () {
+                        self.setData({
+                            hothidden: false
+                        })
+                    }, 200)
+                }
+                self.setData({
+                    hothidden: hothidden,
+                    list: self.data.list.concat(res.data),
+                })
+            },
+            fail: function (code, msg) {
+                console.log('error' + msg)
             }
-
-            self.setData({
-                hothidden: hothidden,
-                list: self.data.list.concat(res.data),
-            })
         })
     },
 

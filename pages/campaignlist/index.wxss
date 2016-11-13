@@ -1,0 +1,70 @@
+.v-root {
+    height: 1334rpx;
+    width: 100%;
+}
+
+.sv-box {
+    display: block;
+    height: 100%;
+    font-family: Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans CN", "PingFang SC", Roboto, "微软雅黑", "Heiti SC", "Microsoft Yahei", sans-serif
+}
+
+.list-plan {
+    display: flex;
+    background: white;
+    width: 100%;
+    padding: 20rpx;
+    border-bottom: 1px #dadada solid;
+}
+
+.list-plan image {
+    width: 150rpx;
+    margin-right: 20rpx;
+}
+
+.list-plan div {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-plan div .tv-name {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.list-plan div .tv-commission-rate {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.list-plan div .tv-price {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.hot-box-more {
+    text-align: center;
+    font-size: 22rpx;
+    color: #999;
+    margin-bottom: 30rpx;
+    margin-top: 30rpx;
+}
+
+.hot-box-more image {
+    width: 80rpx;
+    height: 16rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.v-action {
+    position:fixed;
+    height: 80rpx;
+    width: 100%;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    color: white;
+    bottom: 0rpx;
+    background-color: #7aa42d;
+}

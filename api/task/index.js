@@ -8,7 +8,7 @@
  *   2、对扩展开放，对修改关闭（开放封闭原则））
  */
 
-var api = require('../api.js')
+var api = require('../index.js')
 
 var apiURL = {
     // 互助列表接口
@@ -16,10 +16,10 @@ var apiURL = {
 }
 
 module.exports = {
-    list: function(start, size, callback) {
-        api.requestGetWithBody(apiURL.list, {
+    list: function(start, size, call) {
+        api.requestGet(apiURL.list, {
             "start": start,
             "size": size
-        }, callback)
+        }, call)
     }
 }

@@ -1,19 +1,17 @@
-<view class="phone-verify">
-	<view class="phone-input">
+<view class="verify">
+	<view class="v-phone">
 		<text>手机号码</text>
-		<input class="phone-input-num" type="number" value="{{phone}}" bindinput="phoneChange" placeholder="请填写手机号" />
-		<view class="tv-get-code" bindtap="getCodeTap">{{codeButtonText}}</view>
+		<input class="input-phone" type="number" value="{{phone}}" bindinput="phoneChange" placeholder="请填写手机号" />
+		<view class="code" bindtap="getCodeTap">{{codeButtonText}}</view>
 	</view>
 
-	<view class="phone-input no-border">
+	<view class="v-code">
 		<text>验证码</text>
-		<input class="phone-input-code" type="number" maxlength="6" bindinput="codeChange" pattern="[0-9]*" placeholder="输入验证码" />
+		<input class="input-phone" type="number" maxlength="6" bindinput="codeChange" pattern="[0-9]*" placeholder="输入验证码" />
 	</view>
 </view>
 
-<view class="phone-tip">收不到验证码？请拨打客服电话<a href="tel:400-686-1179">400-686-1179</a></view>
-
-<view class="verify-button" bindtap="validate">登录</view>
+<view class="login" bindtap="validate">登录</view>
 
 <modal hidden="{{errorMsgHidden}}" bindconfirm="errorMsgSuccess" no-cancel>
 	{{errorMsg}}

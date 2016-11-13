@@ -5,6 +5,7 @@ Page({
         userInfo: {},
         userListInfo: [{
             leftItem: '我的账户',
+            margin: '20rpx',
             showArrow: true,
         }, {
             leftItem: '邀请好友 （一起赚钱）',
@@ -26,11 +27,10 @@ Page({
     },
 
     onLoad: function() {
-        var that = this
-            //调用应用实例的方法获取全局数据
+        var self = this
         app.getUserInfo(function(userInfo) {
             //更新数据
-            that.setData({
+            self.setData({
                 userInfo: userInfo
             })
         })
