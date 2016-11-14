@@ -91,18 +91,3 @@
     right: 20rpx;
     color: #999;
 }
-
-.hot-box-more {
-    text-align: center;
-    font-size: 22rpx;
-    color: #999;
-    margin-bottom: 20rpx;
-    margin-top: 30rpx;
-}
-
-.hot-box-more image {
-    width: 80rpx;
-    height: 16rpx;
-    display: block;
-    margin: 0 auto;
-}

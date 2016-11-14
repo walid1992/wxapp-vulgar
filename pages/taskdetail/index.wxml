@@ -24,14 +24,4 @@
         </view>
     </block>
 
-    <!-- 没有更多的时候 -->
-    <view hidden="{{hotshidden}}" class="hot-box-more">
-        <view wx:if="{{hothidden}}">
-            <image src="/images/loading.gif" mode="aspectFill" />
-        </view>
-        <view wx:else>
-            <text> 没有更多了 </text>
-        </view>
-    </view>
-
 </scroll-view>

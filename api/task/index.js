@@ -1,18 +1,21 @@
 /**
  * Created by walid on 16/10/10.
- * ins api utils
- * （每一个api目录都对应一个人，别人要拿他这个api下的数据，只需从他这里拿就可以了，
- *   n个界面调用这个接口，也只需通过它来调用，以后修改也方便，也不用传递过多参数，
- *   而且这个api也仅仅负责业务的周转，具体的网络请求发起由apiapi.js来调用，
- *   1、职责分工明确（单一职责原则）
- *   2、对扩展开放，对修改关闭（开放封闭原则））
+ * task api utils
  */
 
 var api = require('../index.js')
 
 var apiURL = {
-    // 互助列表接口
-    list: '/v1/task/list'
+    // 任务列表接口
+    list: '/v1/task/list',
+    // 任务详情接口
+    get: '/v1/task/get',
+    // 用户任务列表
+    userList: '/v1/task/user/list',
+    // 领取任务
+    userreceivetask: '/v1/task/userreceivetask',
+    // 提交任务
+    post: '/v1/task/post'
 }
 
 module.exports = {
@@ -21,5 +24,29 @@ module.exports = {
             "start": start,
             "size": size
         }, call)
-    }
+    },
+    get: function(taskId, call) {
+        api.requestGet(apiURL.get, {
+            "taskId": taskId
+        }, call)
+    },
+    userList: function(status, start, size, call) {
+        api.requestGet(apiURL.userList, {
+            "status": status,
+            "start": start,
+            "size": size
+        }, call)
+    },
+    userreceivetask: function(taskId, call) {
+        api.requestPost(apiURL.userreceivetask, {
+            "taskId": taskId
+        }, call)
+    },
+    // post: function(status, start, size, call) {
+    //     api.requestPost(apiURL.post, {
+    //         "status": status,
+    //         "start": start,
+    //         "size": size
+    //     }, call)
+    // }
 }
