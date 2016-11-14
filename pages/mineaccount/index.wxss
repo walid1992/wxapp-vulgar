@@ -1,8 +1,8 @@
 .container {
-    background-color: #F2f2f2;
+    background-color: #f0f0f0;
 }
 
-.weui-cell-acatar {
+.v-avatar {
     position: relative;
     display: flex;
     width: 100%;
@@ -34,7 +34,7 @@
     background-color: white;
 }
 
-.tv_cell_left {
+.tv-cell-left {
     position: absolute;
     font-size: 30rpx;
     color: #333;
@@ -57,15 +57,4 @@
     height: 16rpx;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-}
-
-.btn_logout {
-    width: 100%;
-    height: 100rpx;
-    color: #0092ff;
-    text-align: center;
-    line-height: 100rpx;
-    font-size: 28rpx;
-    margin-top: 20rpx;
-    background-color: white;
 }

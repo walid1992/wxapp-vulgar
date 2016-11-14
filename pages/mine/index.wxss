@@ -2,7 +2,7 @@
     background-color: #f0f0f0;
 }
 
-.userinfo {
+.user {
     display: flex;
     flex-direction: row;
     padding: 50rpx 0;
@@ -10,15 +10,27 @@
     background: white;
 }
 
-.userinfo-avatar {
+.user .avatar {
     width: 128rpx;
     height: 128rpx;
     margin: 20rpx;
     border-radius: 50%;
 }
 
-.userinfo-nickname {
+.user div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user div .nickname {
     color: #333;
+    font-size: 40rpx;
+}
+
+.user div .phone {
+    color: #999;
+    font-size: 36rpx;
 }
 
 .weui_cell {

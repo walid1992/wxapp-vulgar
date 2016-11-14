@@ -1,30 +1,27 @@
-var router = require( 'config/router.js' )
+var router = require('config/router.js')
 
 //app.js
-App( {
-    onLaunch() { },
-
-    getUserInfo: function( cb ) {
-        var that = this
-        if( this.globalData.userInfo ) {
-            typeof cb == "function" && cb( this.globalData.userInfo )
-        } else {
-            //调用登录接口
-            wx.login( {
-                success: function() {
-                    wx.getUserInfo( {
-                        success: function( res ) {
-                            that.globalData.userInfo = res.userInfo
-                            typeof cb == "function" && cb( that.globalData.userInfo )
-                        }
-                    })
-                }
-            })
-        }
+App({
+    onLaunch() {
+        let self = this
+        wx.login({
+            success: function () {
+                wx.getUserInfo({
+                    success: function (res) {
+                        self.globalData.userInfo.avatarUrl = res.userInfo.avatarUrl
+                        self.globalData.userInfo.nickName = res.userInfo.nickName
+                    }
+                })
+            }
+        })
     },
 
     globalData: {
-        userInfo: null,
+        userInfo: {
+            phoneNumber: '未绑定手机号',
+            avatarUrl: '',
+            nickName: '匿名用户'
+        },
     },
     router: router,
 })

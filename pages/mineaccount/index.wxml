@@ -3,16 +3,15 @@
 </modal>
 
 <view class="container">
-    <view class="weui-cell-acatar">
-        <text class="tv_cell_left"> 头像 </text>
+    <view class="v-avatar">
+        <text class="tv-cell-left">头像</text>
         <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     </view>
-    <block wx:for="{{userListInfo}}">
-        <view class="weui_cell" style="margin-top:{{item.margin}};">
-            <text class="tv_cell_left"> {{item.leftItem}} </text>
-            <text wx:if="{{item.rightItem}} == null" class="tv_cell_right">{{item.rightItem}}</text>
-            <view class="with_arrow"></view>
+    <block wx:for-index="index" wx:for="{{userListInfo}}">
+        <view class="weui_cell" data-index="{{index}}" bindtap="cellItemClick" style="margin-top:{{item.margin}};">
+             <text class="tv-cell-left"> {{item.leftItem}} </text>
+             <text wx:if="{{item.rightItem}} == null" class="tv_cell_right">{{item.rightItem}}</text>
+             <view class="with_arrow"></view>
         </view>
     </block>
-    <text class="btn_logout" bindtap="logoutTap">退出登录</text>
 </view>
