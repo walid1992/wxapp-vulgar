@@ -5,13 +5,17 @@ var app = getApp()
 
 Page({
     data: {
+        id: 0,
         // 显示加载更多 loading
         hothidden: true,
         list: [],
     },
 
-    onLoad() {
-        this.getPlanList()
+    onLoad(options) {
+        this.requestData()
+        this.setData({
+            id: options.id
+        })
     },
 
     // 下拉刷新
@@ -25,7 +29,7 @@ Page({
         that.getPlanList()
     },
 
-    getPlanList() {
+    requestData() {
         var self = this;
         taskApi.list(self.data.list.length, 10, {
             success: function(data) {
@@ -73,7 +77,7 @@ Page({
     toItem(e) {
         var id = e.currentTarget.dataset.id
         wx.navigateTo({
-            url: router.taskdetail.url + '?id=' + id
+            url: router.planItem.url + '?id=' + id
         })
     }
 })

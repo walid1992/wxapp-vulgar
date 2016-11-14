@@ -1,7 +1,7 @@
 var router = {
-    planList: {
+    taskdetail: {
         name: '互助列表页',
-        url: '/pages/index/index'
+        url: '/pages/taskdetail/index'
     },
     campaignList: {
         name: '互助列表页',

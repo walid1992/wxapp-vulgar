@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/task/index",
+        "pages/taskdetail/index",
         "pages/campaign/index",
         "pages/campaignlist/index",
         "pages/mine/index",
@@ -27,7 +28,7 @@
             "iconPath": "images/ic_task.png",
             "selectedIconPath": "images/ic_task_select.png",
             "text": "好任务"
-        },{
+        }, {
             "pagePath": "pages/campaign/index",
             "iconPath": "images/ic_baby.png",
             "selectedIconPath": "images/ic_baby_select.png",
