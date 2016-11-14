@@ -16,13 +16,13 @@
 
     <block wx:for="{{list}}" wx:key="id">
         <view class="list-plan" bindtap="toItem" data-id="{{item.id}}">
-            <image src="{{item.campaignUrl?item.campaignUrl:'../../images/ic_place_holder.png'}}"/>
+            <image src="{{item.campaignUrl?item.campaignUrl:'../../images/ic_place_holder.png'}}" />
             <div>
-              <text class="tv-name">{{item.campaignName}}</text>
-              <text class="tv-ratio">佣金 :{{item.commissionRatio}}</text>
-              <text class="tv-desc">{{item.campaignDesc}}</text>
-              <text class="tv-effect-confirm">效果认定期 :{{item.effectConfirm}}</text>
-              <text class="tv-settlement-confirm">结算周期 :{{item.settlementConfirm}}</text>
+                <text class="tv-name">{{item.campaignName}}</text>
+                <text class="tv-ratio">佣金 :{{item.commissionRatio}}</text>
+                <text class="tv-desc">{{item.campaignDesc}}</text>
+                <text class="tv-effect-confirm">效果认定期 :{{item.effectConfirm}}</text>
+                <text class="tv-settlement-confirm">结算周期 :{{item.settlementConfirm}}</text>
             </div>
         </view>
     </block>

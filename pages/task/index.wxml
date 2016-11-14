@@ -1,4 +1,3 @@
-
 <scroll-view class="sv-box" scroll-y="true" bindscroll="scroll">
 
     <view class="v-top" style="margin-top:30rpx;">
@@ -17,7 +16,7 @@
 
     <block wx:for="{{list}}" wx:key="id">
         <view class="list-plan" bindtap="toItem" data-id="{{item.id}}">
-            <image src="../../images/ic_launcher.png"/>
+            <image src="../../images/ic_launcher.png" />
             <text class="tv-task-name">{{item.taskTitle}}</text>
             <text class="tv-money">{{item.commission}}元</text>
             <text class="tv-residue-degree">| 剩余次数{{item.residueAmount}}次</text>

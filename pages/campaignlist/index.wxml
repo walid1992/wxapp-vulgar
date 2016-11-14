@@ -2,11 +2,11 @@
 
     <block wx:for="{{list}}" wx:key="id">
         <view class="list-plan" bindtap="toItem" data-id="{{item.id}}">
-            <image src="{{item.picUrl?item.picUrl:'../../images/ic_place_holder.png'}}"/>
+            <image src="{{item.picUrl?item.picUrl:'../../images/ic_place_holder.png'}}" />
             <div>
-              <text class="tv-name">{{item.productName}}</text>
-              <text class="tv-commission-rate">佣金 :{{item.commissionRateStr}}</text>
-              <text class="tv-price">收益 :{{item.price}}元</text>
+                <text class="tv-name">{{item.productName}}</text>
+                <text class="tv-commission-rate">佣金 :{{item.commissionRateStr}}</text>
+                <text class="tv-price">收益 :{{item.price}}元</text>
             </div>
         </view>
     </block>

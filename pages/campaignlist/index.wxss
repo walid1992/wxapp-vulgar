@@ -58,7 +58,7 @@
 }
 
 .v-action {
-    position:fixed;
+    position: fixed;
     height: 80rpx;
     width: 100%;
     text-align: center;

@@ -8,30 +8,30 @@ Page({
             margin: '20rpx',
             showArrow: true,
         }, {
-                leftItem: '钱包余额',
-                showArrow: true,
-                rightItem: '暂无数据',
-            }, {
-                leftItem: '受邀伙伴',
-                margin: '20rpx',
-                showArrow: true,
-            }, {
-                leftItem: '填写邀请码',
-                showArrow: true,
-                rightItem: '未设置',
-            }, {
-                leftItem: '我的专属邀请码',
-                margin: '20rpx',
-                showArrow: true,
-            }, {
-                leftItem: '当前版本',
-                rightItem: 'V 1.0.0 (内测版)',
-                margin: '20rpx',
-                showArrow: false,
-            }]
+            leftItem: '钱包余额',
+            showArrow: true,
+            rightItem: '暂无数据',
+        }, {
+            leftItem: '受邀伙伴',
+            margin: '20rpx',
+            showArrow: true,
+        }, {
+            leftItem: '填写邀请码',
+            showArrow: true,
+            rightItem: '未设置',
+        }, {
+            leftItem: '我的专属邀请码',
+            margin: '20rpx',
+            showArrow: true,
+        }, {
+            leftItem: '当前版本',
+            rightItem: 'V 1.0.0 (内测版)',
+            margin: '20rpx',
+            showArrow: false,
+        }]
     },
 
-    onLoad: function () {
+    onLoad: function() {
         var self = this
         self.setData({
             userInfo: app.globalData.userInfo
@@ -49,7 +49,7 @@ Page({
         console.log("index = " + index)
         var url
         if (index == 0) {
-            url = app.router.login.url
+            url = app.router.mineaccount.url
         } else if (index == 1) {
             url = app.router.insuranceexplain.url
         } else if (index == 2) {

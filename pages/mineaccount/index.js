@@ -6,25 +6,23 @@ Page({
         userListInfo: []
     },
 
-    onLoad: function () {
+    onLoad: function() {
         this.setData({
             userInfo: app.globalData.userInfo,
-            userListInfo: [
-                {
-                    icon: '../../images/iconfont-dingdan.png',
-                    leftItem: '姓名',
-                    rightItem: 'walid',
-                    margin: '20rpx',
-                }, {
-                    icon: '../../images/iconfont-card.png',
-                    leftItem: '手机号',
-                    rightItem: app.globalData.userInfo.phoneNumber,
-                }, {
-                    icon: '../../images/iconfont-icontuan.png',
-                    leftItem: '绑定微信',
-                    rightItem: '已绑定',
-                }
-            ]
+            userListInfo: [{
+                icon: '../../images/iconfont-dingdan.png',
+                leftItem: '姓名',
+                rightItem: 'walid',
+                margin: '20rpx',
+            }, {
+                icon: '../../images/iconfont-card.png',
+                leftItem: '手机号',
+                rightItem: app.globalData.userInfo.phoneNumber,
+            }, {
+                icon: '../../images/iconfont-icontuan.png',
+                leftItem: '绑定微信',
+                rightItem: '已绑定',
+            }]
         })
     },
 
@@ -38,13 +36,13 @@ Page({
         }
     },
 
-    logoutTap: function (e) {
+    logoutTap: function(e) {
         this.setData({
             modalHidden: false
         })
     },
 
-    modalChange: function (e) {
+    modalChange: function(e) {
         this.setData({
             modalHidden: true
         })

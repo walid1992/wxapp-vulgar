@@ -3,8 +3,8 @@
     <view class="user" bindtap="headTap">
         <image class="avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
         <div>
-          <text class="nickname">{{userInfo.nickName}}</text>
-          <text class="phone">{{userInfo.phoneNumber}}</text>
+            <text class="nickname">{{userInfo.nickName}}</text>
+            <text class="phone">{{userInfo.phoneNumber}}</text>
         </div>
     </view>
     <block wx:for-index="index" wx:for="{{userListInfo}}">
