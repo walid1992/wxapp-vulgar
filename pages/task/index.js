@@ -33,7 +33,7 @@ Page({
                 wx.hideToast()
                 // 如果数据为空，则显示没有更多数据
                 var hothidden = true
-                if (res.data.length <= 0) {
+                if (data.length <= 0) {
                     setTimeout(function () {
                         self.setData({
                             hothidden: false
@@ -42,7 +42,7 @@ Page({
                 }
                 self.setData({
                     hothidden: hothidden,
-                    list: self.data.list.concat(res.data),
+                    list: self.data.list.concat(data),
                 })
             },
             fail: function (code, msg) {
