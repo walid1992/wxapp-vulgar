@@ -36,7 +36,7 @@
     width: 150rpx;
     height: 60rpx;
     line-height: 60rpx;
-    top: 80rpx;
+    top: 60rpx;
     right: 0;
     text-align: center;
     color: white;
@@ -48,7 +48,9 @@
 
 .v-middle {
     width: 100%;
-    padding: 30rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-bottom: 30rpx;
     display: flex;
     flex-direction: column;
     background-color: white;
