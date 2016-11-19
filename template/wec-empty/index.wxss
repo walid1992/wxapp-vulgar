@@ -6,11 +6,11 @@
 }
 
 .iv-empty {
-    width: 100rpx;
-    height: 100rpx;
+    width: 100 rpx;
+    height: 100 rpx;
 }
 
 .tv-empty-tip {
-    font-size: 30rpx;
-    margin-top: 20rpx;
+    font-size: 30 rpx;
+    margin-top: 20 rpx;
 }

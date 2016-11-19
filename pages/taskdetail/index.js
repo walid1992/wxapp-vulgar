@@ -1,7 +1,11 @@
-var taskApi = require('../../api/task/index.js')
-var router = require('../../config/router.js')
-
-var app = getApp()
+/**
+ * @author walid
+ * @date 2016/11/19
+ * @description 任务详情页
+ */
+const taskApi = require('../../api/task/index.js');
+const router = require('../../config/router.js');
+const app = getApp();
 
 Page({
     data: {
@@ -22,15 +26,20 @@ Page({
     },
 
     requestData() {
-        var self = this;
+        let self = this;
         taskApi.get(self.data.id, {
-            success: function(data) {
+            success: function (data) {
                 wx.hideToast()
+                console.log(data)
+
+                data.taskInfoSteps.forEach(function (value, index) {
+                    value.picJson = JSON.parse(value.picJson)
+                })
                 self.setData({
                     taskInfoVo: data,
                 })
             },
-            fail: function(code, msg) {
+            fail: function (code, msg) {
                 wx.hideToast()
                 wx.showToast({
                     title: msg,
@@ -42,8 +51,20 @@ Page({
         })
     },
 
+    toPreview(e) {
+        let stepIndex = e.target.dataset.stepIndex
+        let urls = []
+        this.data.taskInfoVo.taskInfoSteps[stepIndex].picJson.forEach(function (value, index) {
+            urls.push(value.smallUrl)
+        })
+        wx.previewImage({
+            current: e.target.dataset.current,
+            urls: urls
+        })
+    },
+
     toMineTask(e) {
-        var id = e.currentTarget.dataset.id
+        let id = e.currentTarget.dataset.id;
         wx.navigateTo({
             url: router.mineTask.url
         })

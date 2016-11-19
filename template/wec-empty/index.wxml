@@ -1,6 +1,7 @@
 <template name="wxc-empty">
-  <view class="v-empty" style="display: flex;flex-direction: column;width: 100%;margin-top:200rpx;align-items: center;justify-content: center;background:#f0f0f0;">
-      <image class="iv-empty" style="width: 100rpx;height: 100rpx;" src="../../images/ic_data_empty.png"></image>
-      <text class="tv-empty-tip" style="font-size: 30rpx;margin-top: 20rpx;color:#666666;">暂无数据</text>
-  </view>
+    <view class="v-empty"
+          style="display: flex;flex-direction: column;width: 100%;margin-top:200rpx;align-items: center;justify-content: center;background:#f0f0f0;">
+        <image class="iv-empty" style="width: 100rpx;height: 100rpx;" src="../../images/ic_data_empty.png"></image>
+        <text class="tv-empty-tip" style="font-size: 30rpx;margin-top: 20rpx;color:#666666;">暂无数据</text>
+    </view>
 </template>

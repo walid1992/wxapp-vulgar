@@ -1,6 +1,6 @@
 var router = {
     taskdetail: {
-        name: '互助列表页',
+        name: '任务详情页',
         url: '/pages/taskdetail/index'
     },
     campaignList: {
