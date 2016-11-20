@@ -47,18 +47,18 @@ Page({
                                     action: '提交任务 (' + utils.formatResiduedTimes(data.userTaskItem.disabledTimeCountDown / 1000 - time) + ')'
                                 })
                             }, 1000)
-                            break;
+                            break
                         case 2:
                             setInterval(function () {
                                 time = ++time;
                                 self.setData({
-                                    action: '提交任务 (' + utils.formatResiduedTimes(data.userTaskItem.auditTimeCountDown / 1000 - time) + ')'
+                                    action: '审核中 (' + utils.formatResiduedTimes(data.userTaskItem.auditTimeCountDown / 1000 - time) + ')'
                                 })
                             }, 1000)
-                            break;
+                            break
                         default:
                             action = '已结束'
-                            break;
+                            break
                     }
 
                 } else {
@@ -93,5 +93,5 @@ Page({
 
     toAction(e) {
 
-    },
+    }
 })
