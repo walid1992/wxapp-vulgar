@@ -1,4 +1,11 @@
-var app = getApp()
+/**
+ * @author walid
+ * @date 2016/11/19
+ * @description 个人资料页
+ */
+
+let app = getApp()
+
 Page({
     data: {
         userInfo: {},

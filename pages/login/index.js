@@ -1,4 +1,10 @@
-var commonApi = require('../../api/common/index.js')
+/**
+ * @author walid
+ * @date 2016/11/19
+ * @description 登录页
+ */
+
+let commonApi = require('../../api/common/index.js')
 
 Page({
     data: {
@@ -67,10 +73,10 @@ Page({
 
         commonApi
             .getauthcode(this.data.phone, {
-                success: function(data) {
+                success: function (data) {
                     that.showErrormsg('验证码已发送')
                 },
-                fail: function(code, msg) {
+                fail: function (code, msg) {
                     that.showErrormsg(msg)
                     that.setData({
                         getCodeLock: false
@@ -104,8 +110,9 @@ Page({
             }
             count--
         }
+
         setInvalTime()
-        var phoneTimer = setInterval(function() {
+        var phoneTimer = setInterval(function () {
             setInvalTime()
         }, 1000)
     },
@@ -133,7 +140,7 @@ Page({
         this.setData({
             loginLocked: true
         })
-        this.signIn(function(data) {
+        this.signIn(function (data) {
             wx.setStorageSync('userId', data.userId)
             wx.setStorageSync('mobile', data.userAccount.mobile)
             wx.setStorageSync('token', data.token)
@@ -164,7 +171,7 @@ Page({
                 'content-type': 'application/x-www-form-urlencoded'
             },
             method: 'POST',
-            success: function(res) {
+            success: function (res) {
                 if (res.data.code == 0) {
                     callback && callback(res.data.data)
                 } else {

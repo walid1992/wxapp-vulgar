@@ -36,9 +36,12 @@
                        src="{{img.smallUrl}}"
                        data-step-index="{{index}}"
                        data-current="{{img.smallUrl}}"
-                       bindtap="toPreview"/>
+                       bindtap="toPreview"></image>
             </div>
         </view>
     </block>
-
 </scroll-view>
+
+<view class="v-action" wx:if="{{action}}" bindtap="toAction">
+    <text>{{action}}</text>
+</view>

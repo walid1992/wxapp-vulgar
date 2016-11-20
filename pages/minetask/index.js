@@ -1,3 +1,9 @@
+/**
+ * @author walid
+ * @date 2016/11/19
+ * @description 我的任务页
+ */
+
 Page({
     data: {
         winWidth: 0,
@@ -12,10 +18,10 @@ Page({
      * 页面初始化
      * options 为页面跳转所带来的参数
      */
-    onLoad: function(options) {
-        var that = this
+    onLoad: function (options) {
+        let that = this
         wx.getSystemInfo({
-            success: function(res) {
+            success: function (res) {
                 that.setData({
                     winWidth: res.windowWidth,
                     winHeight: res.windowHeight
@@ -29,50 +35,55 @@ Page({
         })
     },
 
-    onReady: function() {
+    onReady: function () {
         // 页面渲染完成
-        var that = this;
+        let self = this
         // 数据加载完成后 延迟隐藏loading
-        setTimeout(function() {
+        setTimeout(function () {
             wx.hideToast()
         }, 500)
     },
 
-    // 下拉刷新
+    /**
+     * 下拉刷新
+     */
     onPullDownRefresh() {
-        var that = this
-        setTimeout(function() {
+        setTimeout(function () {
             wx.hideToast()
         }, 200)
     },
 
-    onReachBottom: function() {
-        var self = this
+    /**
+     * 加载更多
+     */
+    onReachBottom: function () {
+        let self = this
         if (!self.data.hothidden) {
             return
         }
-        // 加载更多 loading
         self.setData({
             hothidden: false,
         })
-        self.getPlanList()
+        self.getTaskList()
     },
 
-    getPlanList() {
-        var self = this;
-        campaignApi.list(self.data.list.length, 10, function(res) {
+    /**
+     * 获取计划
+     */
+    getTaskList() {
+        let self = this
+        campaignApi.list(self.data.list.length, 10, function (res) {
             wx.stopPullDownRefresh()
             wx.hideToast()
-                // 如果数据为空，则显示没有更多数据
-            var hothidden = true
+            // 如果数据为空，则显示没有更多数据
+            let hothidden = true
             if (res.data.length <= 0) {
-                setTimeout(function() {
+                setTimeout(function () {
                     self.setData({
                         hothidden: false
                     })
                 }, 200)
             }
-
             self.setData({
                 hothidden: hothidden,
                 list: self.data.list.concat(res.data),
@@ -80,20 +91,27 @@ Page({
         })
     },
 
-    // 滑动切换tab
-    bindChange: function(e) {
-        var that = this;
-        that.setData({
+    /**
+     * 滑动切换tab
+     * @param e
+     */
+    bindChange: function (e) {
+        let self = this
+        self.setData({
             currentTab: e.detail.current
         })
     },
-    // 点击tab切换
-    swichNav: function(e) {
-        var that = this;
+    /**
+     * 点击tab切换
+     * @param e
+     * @returns {boolean}
+     */
+    swichNav: function (e) {
+        let self = this
         if (this.data.currentTab === e.target.dataset.current) {
             return false;
         } else {
-            that.setData({
+            self.setData({
                 currentTab: e.target.dataset.current
             })
         }

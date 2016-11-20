@@ -1,4 +1,10 @@
-var app = getApp()
+/**
+ * @author walid
+ * @date 2016/11/19
+ * @description 个人中心
+ */
+
+let app = getApp()
 
 Page({
     data: {
@@ -32,7 +38,7 @@ Page({
     },
 
     onLoad: function() {
-        var self = this
+        let self = this
         self.setData({
             userInfo: app.globalData.userInfo
         })
@@ -45,9 +51,9 @@ Page({
     },
 
     cellItemClick(e) {
-        var index = e.currentTarget.dataset.index
+        let index = e.currentTarget.dataset.index
         console.log("index = " + index)
-        var url
+        let url
         if (index == 0) {
             url = app.router.mineaccount.url
         } else if (index == 1) {

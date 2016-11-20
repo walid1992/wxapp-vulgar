@@ -1,6 +1,11 @@
-var insApi = require('../../api/task/index.js')
+/**
+ * @author walid
+ * @date 2016/11/19
+ * @description 产品说明页
+ */
 
-var app = getApp()
+let insApi = require('../../api/task/index.js')
+let app = getApp()
 
 Page({
     data: {
@@ -8,15 +13,15 @@ Page({
     },
 
     onLoad() {
-        this.getPlanList()
+        this.getTaskList()
     },
 
     // 下拉刷新
     onPullDownRefresh() {
-        this.getPlanList()
+        this.getTaskList()
     },
 
-    getPlanList() {
+    getTaskList() {
         var self = this;
         insApi.list(function(res) {
             wx.stopPullDownRefresh()

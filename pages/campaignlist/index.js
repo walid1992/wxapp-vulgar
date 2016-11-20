@@ -1,7 +1,12 @@
-var campaignApi = require('../../api/campaign/index.js')
-var router = require('../../config/router.js')
+/**
+ * @author walid
+ * @date 2016/11/19
+ * @description 活动列表页
+ */
 
-var app = getApp()
+let campaignApi = require('../../api/campaign/index.js')
+let router = require('../../config/router.js')
+let app = getApp()
 
 Page({
     data: {
@@ -12,7 +17,7 @@ Page({
     },
 
     onLoad(options) {
-        this.getPlanList()
+        this.getTaskList()
         this.setData({
             id: options.id
         })
@@ -26,18 +31,18 @@ Page({
             icon: 'loading',
             duration: 10000
         })
-        self.getPlanList()
+        self.getTaskList()
     },
 
-    getPlanList() {
-        var self = this;
+    getTaskList() {
+        let self = this
         campaignApi
             .productList(self.data.id, self.data.list.length, 10, {
                 success: function(data) {
                     wx.stopPullDownRefresh()
                     wx.hideToast()
                         // 如果数据为空，则显示没有更多数据
-                    var hothidden = true
+                    let hothidden = true
                     if (data.length <= 0) {
                         setTimeout(function() {
                             self.setData({
@@ -55,7 +60,7 @@ Page({
     },
 
     onReachBottom: function() {
-        var self = this
+        let self = this
         if (!self.data.hothidden) {
             return
         }
@@ -63,11 +68,11 @@ Page({
         self.setData({
             hothidden: false,
         })
-        self.getPlanList()
+        self.getTaskList()
     },
 
     toItem(e) {
-        var id = e.currentTarget.dataset.id
+        let id = e.currentTarget.dataset.id
         wx.navigateTo({
             url: router.planItem.url + '?id=' + id
         })

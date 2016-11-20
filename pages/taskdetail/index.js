@@ -3,14 +3,17 @@
  * @date 2016/11/19
  * @description 任务详情页
  */
-const taskApi = require('../../api/task/index.js');
-const router = require('../../config/router.js');
-const app = getApp();
+
+import taskApi from '../../api/task/index.js'
+import router from '../../config/router.js'
+import utils from '../../utils/util'
+const app = getApp()
 
 Page({
     data: {
         id: 0,
         taskInfoVo: {},
+        action: ''
     },
 
     onLoad(options) {
@@ -30,23 +33,48 @@ Page({
         taskApi.get(self.data.id, {
             success: function (data) {
                 wx.hideToast()
-                console.log(data)
-
+                let action = '领取任务'
                 data.taskInfoSteps.forEach(function (value, index) {
                     value.picJson = JSON.parse(value.picJson)
                 })
+                if (data.userTaskItem) {
+                    let time = 0
+                    switch (data.userTaskItem.status) {
+                        case 1:
+                            setInterval(function () {
+                                time = ++time;
+                                self.setData({
+                                    action: '提交任务 (' + utils.formatResiduedTimes(data.userTaskItem.disabledTimeCountDown / 1000 - time) + ')'
+                                })
+                            }, 1000)
+                            break;
+                        case 2:
+                            setInterval(function () {
+                                time = ++time;
+                                self.setData({
+                                    action: '提交任务 (' + utils.formatResiduedTimes(data.userTaskItem.auditTimeCountDown / 1000 - time) + ')'
+                                })
+                            }, 1000)
+                            break;
+                        default:
+                            action = '已结束'
+                            break;
+                    }
+
+                } else {
+                    action = data.canApply ? '领取任务' : '已结束'
+                }
                 self.setData({
                     taskInfoVo: data,
+                    action: action
                 })
             },
             fail: function (code, msg) {
-                wx.hideToast()
                 wx.showToast({
                     title: msg,
                     icon: 'error',
-                    duration: 10000
+                    duration: 2000
                 })
-                console.log('error' + msg)
             }
         })
     },
@@ -63,10 +91,7 @@ Page({
         })
     },
 
-    toMineTask(e) {
-        let id = e.currentTarget.dataset.id;
-        wx.navigateTo({
-            url: router.mineTask.url
-        })
-    }
+    toAction(e) {
+
+    },
 })

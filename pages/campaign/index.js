@@ -1,7 +1,11 @@
-var campaignApi = require('../../api/campaign/index.js')
-var router = require('../../config/router.js')
-
-var app = getApp()
+/**
+ * @author walid
+ * @date 2016/11/19
+ * @description 活动主页
+ */
+let campaignApi = require('../../api/campaign/index.js')
+let router = require('../../config/router.js')
+let app = getApp()
 
 Page({
     data: {
@@ -11,7 +15,7 @@ Page({
     },
 
     onLoad() {
-        this.getPlanList()
+        this.getTaskList()
     },
 
     // 下拉刷新
@@ -22,10 +26,10 @@ Page({
             icon: 'loading',
             duration: 10000
         })
-        self.getPlanList()
+        self.getTaskList()
     },
 
-    getPlanList() {
+    getTaskList() {
         var self = this;
         campaignApi
             .list(self.data.list.length, 10, {
@@ -61,7 +65,7 @@ Page({
         self.setData({
             hothidden: false,
         })
-        self.getPlanList()
+        self.getTaskList()
     },
 
     toItem(e) {

@@ -1,7 +1,14 @@
-var taskApi = require('../../api/task/index.js')
-var router = require('../../config/router.js')
+/**
+ * @author walid
+ * @date 2016/11/20
+ * @description 任务首页
+ */
 
-var app = getApp()
+import taskApi from '../../api/task/index.js'
+import router from '../../config/router.js'
+import utils from '../../utils/util'
+
+let app = getApp()
 
 Page({
     data: {
@@ -11,30 +18,30 @@ Page({
     },
 
     onLoad() {
-        this.getPlanList()
+        this.getTaskList()
     },
 
     // 下拉刷新
     onPullDownRefresh() {
-        var that = this
+        let self = this
         wx.showToast({
             title: '加载中...',
             icon: 'loading',
             duration: 10000
         })
-        that.getPlanList()
+        self.getTaskList()
     },
 
-    getPlanList() {
-        var self = this;
+    getTaskList() {
+        let self = this
         taskApi.list(self.data.list.length, 10, {
-            success: function(data) {
+            success: function (data) {
                 wx.stopPullDownRefresh()
                 wx.hideToast()
-                    // 如果数据为空，则显示没有更多数据
-                var hothidden = true
+                // 如果数据为空，则显示没有更多数据
+                let hothidden = true
                 if (data.length <= 0) {
-                    setTimeout(function() {
+                    setTimeout(function () {
                         self.setData({
                             hothidden: false
                         })
@@ -45,14 +52,14 @@ Page({
                     list: self.data.list.concat(data),
                 })
             },
-            fail: function(code, msg) {
+            fail: function (code, msg) {
                 console.log('error' + msg)
             }
         })
     },
 
-    onReachBottom: function() {
-        var self = this
+    onReachBottom: function () {
+        let self = this
         if (!self.data.hothidden) {
             return
         }
@@ -60,18 +67,18 @@ Page({
         self.setData({
             hothidden: false,
         })
-        self.getPlanList()
+        self.getTaskList()
     },
 
     toMineTask(e) {
-        var id = e.currentTarget.dataset.id
+        let id = e.currentTarget.dataset.id
         wx.navigateTo({
             url: router.mineTask.url
         })
     },
 
     toItem(e) {
-        var id = e.currentTarget.dataset.id
+        let id = e.currentTarget.dataset.id
         wx.navigateTo({
             url: router.taskdetail.url + '?id=' + id
         })
