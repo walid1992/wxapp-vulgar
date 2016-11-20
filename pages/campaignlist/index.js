@@ -4,8 +4,9 @@
  * @description 活动列表页
  */
 
-let campaignApi = require('../../api/campaign/index.js')
-let router = require('../../config/router.js')
+import campaignApi from '../../api/campaign/index.js'
+import router from '../../router/config.js'
+
 let app = getApp()
 
 Page({

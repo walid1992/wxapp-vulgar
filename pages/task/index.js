@@ -5,7 +5,7 @@
  */
 
 import taskApi from '../../api/task/index.js'
-import router from '../../config/router.js'
+import router from '../../router/config.js'
 import utils from '../../utils/util'
 
 let app = getApp()

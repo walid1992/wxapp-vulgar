@@ -1,4 +1,10 @@
-var router = require('config/router.js')
+/**
+ * @author walid
+ * @date 2016/11/19
+ * @description root app
+ */
+
+import router from  'router/index.js'
 
 //app.js
 App({

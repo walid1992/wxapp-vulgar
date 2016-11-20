@@ -52,7 +52,6 @@ Page({
 
     cellItemClick(e) {
         let index = e.currentTarget.dataset.index
-        console.log("index = " + index)
         let url
         if (index == 0) {
             url = app.router.mineaccount.url

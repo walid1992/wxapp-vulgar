@@ -1,10 +1,14 @@
-var router = {
+const router = {
     taskdetail: {
         name: '任务详情页',
         url: '/pages/taskdetail/index'
     },
+    submittask: {
+        name: '提交任务也',
+        url: '/pages/submittask/index'
+    },
     campaignList: {
-        name: '互助列表页',
+        name: '活动列表页',
         url: '/pages/campaignlist/index'
     },
     insuranceexplain: {

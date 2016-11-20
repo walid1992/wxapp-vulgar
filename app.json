@@ -2,6 +2,7 @@
     "pages": [
         "pages/task/index",
         "pages/taskdetail/index",
+        "pages/submittask/index",
         "pages/campaign/index",
         "pages/campaignlist/index",
         "pages/mine/index",

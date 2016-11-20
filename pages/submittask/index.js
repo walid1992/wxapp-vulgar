@@ -5,8 +5,8 @@
  */
 
 import taskApi from '../../api/task/index.js'
-import router from '../../router/index.js'
-import utils from '../../utils/util.js'
+import router from '../../router/config.js'
+import utils from '../../utils/util'
 const app = getApp()
 
 Page({
@@ -139,15 +139,14 @@ Page({
                     })
                     return
                 }
-                router.push(router.config.taskdetail.url, {
-                    id: self.data.id
+                wx.showToast({
+                    title: '进入任务详情页',
+                    icon: 'success',
+                    duration: 2000
                 })
             }
         } else {
-            router.push(router.config.taskdetail.url, {
-                id: self.data.id
-            })
-            // self.userreceivetask()
+            self.userreceivetask()
         }
     }
 })

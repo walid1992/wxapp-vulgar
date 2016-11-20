@@ -1,0 +1,47 @@
+<scroll-view class="sv-box" scroll-y="true" bindscroll="scroll">
+
+    <view class="v-top">
+        <text class="tv-task-name">{{taskInfoVo.taskTitle}}</text>
+        <text class="tv-desc">剩余次数{{taskInfoVo.residueAmount}}次 | 截止{{taskInfoVo.endTime}}</text>
+        <text class="tv-commission">{{taskInfoVo.commission}}元</text>
+    </view>
+
+    <view style="width:100%;height:20rpx;background-color:#bbbbbb;"/>
+
+    <view class="v-middle">
+        <text>任务总数：{{taskInfoVo.taskAmount}}</text>
+        <text>审核时间：{{taskInfoVo.auditInfo}}小时</text>
+        <text>任务限制：{{taskInfoVo.taskConstraintDesc}}</text>
+        <text>任务介绍</text>
+        <view style="width:90%;height:2rpx;margin-top:30rpx;background-color:black;"/>
+        <text>{{taskInfoVo.taskInfo}}</text>
+    </view>
+
+    <view style="width:100%;height:20rpx;background-color:#bbbbbb;"/>
+
+    <view class="v-step">
+        <text class="tv-step-title">任务步骤</text>
+        <view style="width:100%;height:1px;margin-top:30rpx;background-color:#999999;"/>
+    </view>
+
+    <block wx:for="{{taskInfoVo.taskInfoSteps}}" wx:key="id">
+        <view class="v-step-list" data-id="{{item.id}}">
+            <text class="tv-number">第{{index + 1}}步</text>
+            <text class="tv-content">{{item.content}}</text>
+            <div class="v-image">
+                <image wx:for="{{item.picJson}}"
+                       wx:for-item="img"
+                       wx:for-index="idx"
+                       wx:key="id"
+                       src="{{img.smallUrl}}"
+                       data-step-index="{{index}}"
+                       data-current="{{img.smallUrl}}"
+                       bindtap="toPreview"></image>
+            </div>
+        </view>
+    </block>
+</scroll-view>
+
+<view class="v-action" wx:if="{{action}}" bindtap="toAction">
+    <text>{{action}}</text>
+</view>

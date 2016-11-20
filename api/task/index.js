@@ -3,9 +3,9 @@
  * task api utils
  */
 
-var api = require('../index.js')
+import api from '../index.js'
 
-var apiURL = {
+let apiURL = {
     // 任务列表接口
     list: '/v1/task/list',
     // 任务详情接口
@@ -19,34 +19,27 @@ var apiURL = {
 }
 
 module.exports = {
-    list: function(start, size, call) {
+    list: function (start, size, call) {
         api.requestGet(apiURL.list, {
             "start": start,
             "size": size
         }, call)
     },
-    get: function(taskId, call) {
+    get: function (taskId, call) {
         api.requestGet(apiURL.get, {
             "taskId": taskId
         }, call)
     },
-    userList: function(status, start, size, call) {
+    userList: function (status, start, size, call) {
         api.requestGet(apiURL.userList, {
             "status": status,
             "start": start,
             "size": size
         }, call)
     },
-    userreceivetask: function(taskId, call) {
+    userreceivetask: function (taskId, call) {
         api.requestPost(apiURL.userreceivetask, {
             "taskId": taskId
         }, call)
-    },
-    // post: function(status, start, size, call) {
-    //     api.requestPost(apiURL.post, {
-    //         "status": status,
-    //         "start": start,
-    //         "size": size
-    //     }, call)
-    // }
+    }
 }
