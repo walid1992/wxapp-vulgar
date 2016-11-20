@@ -144,10 +144,7 @@ Page({
                 })
             }
         } else {
-            router.push(router.config.taskdetail.url, {
-                id: self.data.id
-            })
-            // self.userreceivetask()
+            self.userreceivetask()
         }
     }
 })
