@@ -1,52 +1,58 @@
 /**
- * Created by walid on 16/10/10.
- * api 封装
+ * @author walid
+ * @date 2016/11/21
+ * @description 网络请求工具类
  */
 
-var apiURL = {
+const apiURL = {
     baseUrl: 'http://123.57.2.62:8089',
 }
 
-var callback = {
-    success: function (data) { },
-    fail: function (code, msg) { }
-}
-
-function request(url, method, body, call) {
+function request(reqObj = {}) {
     wx.request({
-        url: apiURL.baseUrl + url,
-        method: method,
-        data: body,
-        header: {
-            source: "weapp"
-        },
+        url: apiURL.baseUrl + reqObj.url,
+        method: reqObj.method,
+        data: reqObj.data,
+        header: reqObj.header,
         success: function (res) {
             // 成功数据回调
             if (res.data.code == 200) {
-                if (call && call.success) {
-                    call.success(res.data.data)
+                if (reqObj.success) {
+                    reqObj.success(res.data.data)
                 }
             } else {
-                if (call && call.fail) {
-                    call.fail(res.data.code, res.data.message)
+                if (reqObj.fail) {
+                    reqObj.fail(res.data.code, res.data.message)
                 }
             }
             console.log(res.data)
         },
         fail: function (res) {
-            if (call && call.fail) {
-                call.fail(res.data.code, res.data.message)
+            if (reqObj.fail) {
+                reqObj.fail(res.data.code, res.data.message)
             }
         }
     })
 }
 
 module.exports = {
-    requestGet: function requestGet(url, body, call) {
-        return request(url, "GET", body, call)
+    requestGet: function requestGet(reqObj = {}) {
+        let defaultObj = {
+            header: {
+                'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'GET'
+        }
+        return request(Object.assign(reqObj, defaultObj))
     },
 
-    requestPost: function requestPost(url, body, call) {
-        return request(url, "POST", body, call)
+    requestPost: function requestPost(reqObj) {
+        let defaultObj = {
+            header: {
+                'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'POST'
+        }
+        return request(Object.assign(reqObj, defaultObj))
     }
 }

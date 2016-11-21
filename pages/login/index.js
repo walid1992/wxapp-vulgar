@@ -72,7 +72,10 @@ Page({
         that.countdown()
 
         commonApi
-            .getauthcode(this.data.phone, {
+            .getauthcode({
+                data: {
+                    getauthcode: this.data.phone
+                },
                 success: function (data) {
                     that.showErrormsg('验证码已发送')
                 },
@@ -93,8 +96,11 @@ Page({
 
     //倒计时
     countdown() {
-        var that = this
-        var count = 60
+        let that = this
+        let count = 60
+        let phoneTimer = setInterval(function () {
+            setInvalTime()
+        }, 1000);
 
         function setInvalTime() {
             if (count == 0) {
@@ -112,14 +118,11 @@ Page({
         }
 
         setInvalTime()
-        var phoneTimer = setInterval(function () {
-            setInvalTime()
-        }, 1000)
     },
 
     //提交验证
     validate() {
-        var that = this
+        let that = this
         if (!this.data.phone) {
             this.showErrormsg('请输入您的手机号码');
             this.setData({
@@ -156,7 +159,7 @@ Page({
 
     //登录请求
     signIn(callback) {
-        var that = this
+        let that = this
         wx.request({
             url: api.signIn.url,
             data: {

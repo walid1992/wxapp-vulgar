@@ -34,7 +34,11 @@ Page({
 
     getTaskList() {
         let self = this
-        taskApi.list(self.data.list.length, 10, {
+        taskApi.list({
+            data: {
+                start: self.data.list.length,
+                size: 10
+            },
             success: function (data) {
                 wx.stopPullDownRefresh()
                 wx.hideToast()

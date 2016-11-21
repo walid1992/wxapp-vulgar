@@ -1,11 +1,12 @@
 /**
- * Created by walid on 16/10/10.
- * ins campaign utils
+ * @author walid
+ * @date 2016/11/21
+ * @description campaign API
  */
 
-var api = require('../index.js')
+import utils from  '../index.js'
 
-var apiURL = {
+const apiURL = {
     // 宝贝列表接口
     list: '/v1/campaign/list',
     // 宝贝产品列表接口
@@ -13,17 +14,20 @@ var apiURL = {
 }
 
 module.exports = {
-    list: function (start, size, call) {
-        api.requestGet(apiURL.list, {
-            "start": start,
-            "size": size
-        }, call)
+
+    list: function (reqObj = {}) {
+        reqObj.url = apiURL.list
+        utils.requestGet(reqObj)
     },
-    productList: function (campaignId, start, size, call) {
-        api.requestGet(apiURL.productList, {
-            "campaignId":campaignId,
-            "start": start,
-            "size": size
-        }, call)
-    }
+
+    /**
+     "campaignId":campaignId,
+     "start": start,
+     "size": size
+     * @param reqObj
+     */
+    productList: function (reqObj = {}) {
+        reqObj.url = apiURL.productList
+        utils.requestGet(reqObj)
+    },
 }

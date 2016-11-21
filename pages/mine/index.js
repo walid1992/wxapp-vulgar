@@ -4,6 +4,8 @@
  * @description 个人中心
  */
 
+import router from '../../router/index.js'
+
 let app = getApp()
 
 Page({
@@ -37,7 +39,7 @@ Page({
         }]
     },
 
-    onLoad: function() {
+    onLoad: function () {
         let self = this
         self.setData({
             userInfo: app.globalData.userInfo
@@ -45,27 +47,23 @@ Page({
     },
 
     headTap(e) {
-        wx.navigateTo({
-            url: app.router.mineaccount.url
-        })
+        router.navigateTo(app.router.config.mineaccount.url)
     },
 
     cellItemClick(e) {
         let index = e.currentTarget.dataset.index
         let url
         if (index == 0) {
-            url = app.router.mineaccount.url
+            url = app.router.config.mineaccount.url
         } else if (index == 1) {
-            url = app.router.insuranceexplain.url
+            url = app.router.config.insuranceexplain.url
         } else if (index == 2) {
-            url = app.router.mineincome.url
+            url = app.router.config.mineincome.url
         } else if (index == 3) {
-            url = app.router.protocol.url
+            url = app.router.config.protocol.url
         } else if (index == 4) {
             return
         }
-        wx.navigateTo({
-            url: url
-        })
+        router.navigateTo(url)
     },
 })

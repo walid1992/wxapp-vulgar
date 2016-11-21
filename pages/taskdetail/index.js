@@ -31,7 +31,10 @@ Page({
 
     requestData() {
         let self = this;
-        taskApi.get(self.data.id, {
+        taskApi.get({
+            data: {
+                taskId: self.data.id
+            },
             success: function (data) {
                 wx.hideToast()
                 let action = '领取任务'
@@ -99,7 +102,10 @@ Page({
 
     userreceivetask(){
         let self = this;
-        taskApi.userreceivetask(self.data.id, {
+        taskApi.userreceivetask({
+            data: {
+                taskId: self.data.id
+            },
             success: function (data) {
                 wx.hideToast()
                 self.requestData()
@@ -118,7 +124,7 @@ Page({
         let stepIndex = e.target.dataset.stepIndex
         let urls = []
         this.data.taskInfoVo.taskInfoSteps[stepIndex].picJson.forEach(function (value, index) {
-            urls.push(value.smallUrl)
+            urls.navigateTo(value.smallUrl)
         })
         wx.previewImage({
             current: e.target.dataset.current,

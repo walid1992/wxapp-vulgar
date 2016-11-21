@@ -1,9 +1,10 @@
 /**
- * Created by walid on 16/10/10.
- * task api utils
+ * @author walid
+ * @date 2016/11/21
+ * @description task API
  */
 
-import api from '../index.js'
+import utils from '../index.js'
 
 let apiURL = {
     // 任务列表接口
@@ -19,27 +20,29 @@ let apiURL = {
 }
 
 module.exports = {
-    list: function (start, size, call) {
-        api.requestGet(apiURL.list, {
-            "start": start,
-            "size": size
-        }, call)
+    list: function (reqObj = {}) {
+        reqObj.url = apiURL.list
+        utils.requestGet(reqObj)
     },
-    get: function (taskId, call) {
-        api.requestGet(apiURL.get, {
-            "taskId": taskId
-        }, call)
+
+    get: function (reqObj = {}) {
+        reqObj.url = apiURL.get
+        utils.requestGet(reqObj)
     },
-    userList: function (status, start, size, call) {
-        api.requestGet(apiURL.userList, {
-            "status": status,
-            "start": start,
-            "size": size
-        }, call)
+
+    /**
+     "status": status,
+     "start": start,
+     "size": size
+     * @param reqObj
+     */
+    userList: function (reqObj = {}) {
+        reqObj.url = apiURL.userList
+        utils.requestGet(reqObj)
     },
-    userreceivetask: function (taskId, call) {
-        api.requestPost(apiURL.userreceivetask, {
-            "taskId": taskId
-        }, call)
-    }
+
+    userreceivetask: function (reqObj = {}) {
+        reqObj.url = apiURL.userreceivetask
+        utils.requestGet(reqObj)
+    },
 }

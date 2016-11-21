@@ -1,20 +1,24 @@
 /**
- * Created by walid on 16/10/13.
- * common api utils
+ * @author walid
+ * @date 2016/11/21
+ * @description common API
  */
 
-var api = require('../index.js')
+import utils from '../index.js'
 
-var apiURL = {
+const apiURL = {
     // 获取验证码
     getauthcode: '/v1/common/getauthcode'
 }
 
 module.exports = {
-    getauthcode: function (telephone, call) {
-        api.requestGet(apiURL.getauthcode, {
-            'telephone': telephone,
-            'countryCode': '86'
-        }, call)
-    }
+    /**
+     'telephone': telephone,
+     'countryCode': '86'
+     * @param reqObj
+     */
+    getauthcode: function (reqObj = {}) {
+        reqObj.url = apiURL.getauthcode
+        utils.requestGet(reqObj)
+    },
 }

@@ -38,14 +38,19 @@ Page({
     getTaskList() {
         let self = this
         campaignApi
-            .productList(self.data.id, self.data.list.length, 10, {
-                success: function(data) {
+            .productList({
+                data: {
+                    campaignId: self.data.id,
+                    start: self.data.list.length,
+                    size: 10
+                },
+                success: function (data) {
                     wx.stopPullDownRefresh()
                     wx.hideToast()
-                        // 如果数据为空，则显示没有更多数据
+                    // 如果数据为空，则显示没有更多数据
                     let hothidden = true
                     if (data.length <= 0) {
-                        setTimeout(function() {
+                        setTimeout(function () {
                             self.setData({
                                 hothidden: false
                             })
@@ -60,7 +65,7 @@ Page({
             })
     },
 
-    onReachBottom: function() {
+    onReachBottom: function () {
         let self = this
         if (!self.data.hothidden) {
             return

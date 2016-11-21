@@ -13,14 +13,17 @@ function _params(obj = {}) {
 
 module.exports = {
     config: config,
-    push: function (url, obj = {}) {
+    navigateTo: function (url, obj = {}) {
         wx.navigateTo({
             url: url + '?' + _params(obj)
         })
     },
-    pop: function (taskId, call) {
-        api.requestGet(apiURL.get, {
-            "taskId": taskId
-        }, call)
+    redirectTo: function (url, obj = {}) {
+        wx.redirectTo({
+            url: url + '?' + _params(obj)
+        })
+    },
+    navigateBack: function (delta = 1) {
+        wx.navigateBack(delta)
     }
 }
