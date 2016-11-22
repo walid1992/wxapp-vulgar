@@ -118,7 +118,7 @@ Page({
         let stepIndex = e.target.dataset.stepIndex
         let urls = []
         this.data.taskInfoVo.taskInfoSteps[stepIndex].picJson.forEach(function (value, index) {
-            urls.navigateTo(value.smallUrl)
+            urls.push(value.smallUrl)
         })
         wx.previewImage({
             current: e.target.dataset.current,

@@ -43,6 +43,6 @@ module.exports = {
 
     userreceivetask: function (reqObj = {}) {
         reqObj.url = apiURL.userreceivetask
-        utils.requestGet(reqObj)
+        utils.requestPost(reqObj)
     },
 }
