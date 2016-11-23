@@ -12,32 +12,30 @@ const app = getApp()
 Page({
     data: {
         id: 0,
-        taskInfoVo: {},
+        tempFilePaths: [],
         taskEnd: false,
         action: ''
     },
 
     onLoad(options) {
-        wx.showToast({
-            title: '加载中...',
-            icon: 'loading',
-            duration: 10000
-        })
-        this.setData({
+        let self = this
+        app.showLoading()
+        self.setData({
             id: options.id
         })
-        this.requestData()
+        self.requestData()
     },
 
     requestData() {
-        let self = this;
-        taskApi.get(self.data.id, {
+        let self = this
+        taskApi.get({
+            data: {
+                taskId: self.data.id
+            },
             success: function (data) {
-                wx.hideToast()
-                let action = '领取任务'
-                data.taskInfoSteps.forEach(function (value, index) {
-                    value.picJson = JSON.parse(value.picJson)
-                })
+                app.dismissLoading()
+                let action = '提交任务'
+                let taskEnd = false
                 if (data.userTaskItem) {
                     let time = 0
                     let totalTime
@@ -51,40 +49,28 @@ Page({
                                         taskEnd: true,
                                         action: '已结束'
                                     })
+                                    return
                                 }
                                 self.setData({
                                     taskEnd: false,
-                                    action: '提交任务 (' + utils.formatResiduedTimes(totalTime - time) + ')'
+                                    action: '(请在' + utils.formatResiduedTimes(totalTime - time) + '之内提交)'
                                 })
                             }, 1000)
-                            break
-                        case 2:
-                            totalTime = data.userTaskItem.auditTimeCountDown / 1000
-                            setInterval(function () {
-                                time = ++time
-                                if (totalTime - time <= 0) {
-                                    self.setData({
-                                        taskEnd: true,
-                                        action: '已结束'
-                                    })
-                                }
-                                self.setData({
-                                    taskEnd: false,
-                                    action: '审核中 (' + utils.formatResiduedTimes(totalTime / 1000 - time) + ')'
-                                })
-                            }, 1000)
+                            taskEnd = false
                             break
                         default:
+                            taskEnd = true
                             action = '已结束'
                             break
                     }
-
                 } else {
-                    action = data.canApply ? '领取任务' : '已结束'
+                    taskEnd = true
+                    action = '已结束'
                 }
+                app.dismissLoading()
                 self.setData({
-                    taskInfoVo: data,
-                    action: action
+                    action: action,
+                    taskEnd: taskEnd
                 })
             },
             fail: function (code, msg) {
@@ -98,10 +84,10 @@ Page({
     },
 
     userreceivetask(){
-        let self = this;
+        let self = this
         taskApi.userreceivetask(self.data.id, {
             success: function (data) {
-                wx.hideToast()
+                app.dismissLoading()
                 self.requestData()
             },
             fail: function (code, msg) {
@@ -114,39 +100,45 @@ Page({
         })
     },
 
-    toPreview(e) {
-        let stepIndex = e.target.dataset.stepIndex
-        let urls = []
-        this.data.taskInfoVo.taskInfoSteps[stepIndex].picJson.forEach(function (value, index) {
-            urls.push(value.smallUrl)
+    toAdd(e) {
+        let self = this
+        wx.chooseImage({
+            count: 6,
+            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function (res) {
+                console.log('res.tempFilePaths', res.tempFilePaths)
+                self.setData({
+                    tempFilePaths: res.tempFilePaths
+                })
+                console.log('self.tempFilePaths', self.data.tempFilePaths)
+            }
         })
+    },
+
+    toPreview(e) {
+        let self = this
+        let current = e.target.dataset.current
         wx.previewImage({
-            current: e.target.dataset.current,
-            urls: urls
+            current: current,
+            urls: self.data.tempFilePaths
         })
     },
 
     toAction(e) {
         let self = this
-        let taskInfoVo = self.data.taskInfoVo
-        if (taskInfoVo.userTaskItem) {
-            if (taskInfoVo.userTaskItem.status == 1) {
-                if (self.taskEnd) {
-                    wx.showToast({
-                        title: '任务已结束',
-                        icon: 'success',
-                        duration: 2000
-                    })
-                    return
-                }
-                wx.showToast({
-                    title: '进入任务详情页',
-                    icon: 'success',
-                    duration: 2000
-                })
-            }
-        } else {
-            self.userreceivetask()
+        if (self.taskEnd) {
+            wx.showToast({
+                title: '任务已结束',
+                icon: 'success',
+                duration: 2000
+            })
+            return
         }
+        wx.showToast({
+            title: '提交任务',
+            icon: 'success',
+            duration: 2000
+        })
     }
 })

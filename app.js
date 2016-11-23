@@ -5,8 +5,8 @@
  */
 
 import router from  'router/index.js'
+import loading from  './utils/loading.js'
 
-//app.js
 App({
     onLaunch() {
         let self = this
@@ -20,6 +20,14 @@ App({
                 })
             }
         })
+    },
+
+    showLoading(duration = 10000) {
+        loading.show(duration)
+    },
+
+    dismissLoading(){
+        loading.dismiss()
     },
 
     globalData: {

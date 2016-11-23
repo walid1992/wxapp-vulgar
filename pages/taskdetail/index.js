@@ -18,11 +18,7 @@ Page({
     },
 
     onLoad(options) {
-        wx.showToast({
-            title: '加载中...',
-            icon: 'loading',
-            duration: 10000
-        })
+        app.showLoading()
         this.setData({
             id: options.id
         })
@@ -36,7 +32,7 @@ Page({
                 taskId: self.data.id
             },
             success: function (data) {
-                wx.hideToast()
+                app.dismissLoading()
                 let action = '领取任务'
                 data.taskInfoSteps.forEach(function (value, index) {
                     value.picJson = JSON.parse(value.picJson)
@@ -83,7 +79,7 @@ Page({
                     }
 
                 } else {
-                    action = data.canApply ? '领取任务' : '已结束'
+                    action = '领取任务'
                 }
                 self.setData({
                     taskInfoVo: data,
@@ -150,7 +146,19 @@ Page({
                 })
             }
         } else {
-            self.userreceivetask()
+            // TODO 测试
+            // if (!self.data.taskInfoVo.canApply) {
+            //     wx.showToast({
+            //         title: '暂时不能领取任务，请确认是否登录~',
+            //         icon: 'success',
+            //         duration: 2000
+            //     })
+            //     return
+            // }
+            // self.userreceivetask()
+            router.navigateTo(router.config.submittask.url, {
+                id: self.data.id
+            })
         }
     }
 })
