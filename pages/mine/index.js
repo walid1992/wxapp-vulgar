@@ -5,7 +5,6 @@
  */
 
 import router from '../../router/index.js'
-
 let app = getApp()
 
 Page({
