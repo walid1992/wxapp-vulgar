@@ -3,8 +3,8 @@
     <view class="user" bindtap="headTap">
         <image class="avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
         <div>
-            <text class="nickname">{{userInfo.nickName}}</text>
-            <text class="phone">{{userInfo.phoneNumber}}</text>
+            <text class="nickname">{{userInfo.name}}</text>
+            <text class="phone">{{userInfo.phoneNum}}</text>
         </div>
     </view>
     <block wx:for-index="index" wx:for="{{userListInfo}}">
@@ -17,9 +17,4 @@
             <view wx:if="{{item.showArrow}}" class="iv-arrow"></view>
         </view>
     </block>
-    <view class="v_below">
-        <text class="tv_server_time">客服电话 400-686-1179</text>
-        <text class="tv_server_time">服务时间 10:00~22:00</text>
-        <text class="tv_server_time">官方邮箱 dida@shuidihuzhu.com</text>
-    </view>
 </view>

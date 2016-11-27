@@ -11,9 +11,13 @@ const router = {
         name: '活动列表页',
         url: '/pages/campaignlist/index'
     },
-    insuranceexplain: {
-        name: '险种说明页',
-        url: '/pages/insuranceexplain/index'
+    settlement: {
+        name: '收入流水页面',
+        url: '/pages/settlement/index'
+    },
+    withdraw: {
+        name: '提现历史',
+        url: '/pages/withdraw/index'
     },
     login: {
         name: '登录',
@@ -34,6 +38,10 @@ const router = {
     mineTask: {
         name: '我的任务',
         url: '/pages/minetask/index'
+    },
+    modifyAlipay: {
+        name: '修改支付宝信息',
+        url: '/pages/mineaccount/alipay'
     },
 }
 

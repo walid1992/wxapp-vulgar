@@ -1,0 +1,52 @@
+page {
+    line-height: 1.6;
+    background: white;
+    box-sizing: border-box;
+}
+
+.verify {
+    margin-top: 30rpx;
+    padding-left: 25rpx;
+    background: #fff;
+    border-top: 1px #e5e5e5 solid;
+    border-bottom: 1px #e5e5e5 solid;
+}
+
+.verify text {
+    display: block;
+    width: 150rpx;
+}
+
+.v-alipay {
+    display: -webkit-box;
+    display: box;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1px #e5e5e5 solid;
+    color: #333;
+    font-size: 32rpx;
+}
+
+
+.input-alipay {
+    font-size: 32rpx;
+    color: #999;
+    border: none;
+    height: 100%;
+    -webkit-box-flex: 1;
+}
+
+
+.postAlipay {
+    display: block;
+    margin: 0 25rpx;
+    height: 88rpx;
+    background: #7aa42d;
+    margin-top: 100rpx;
+    color: #fff;
+    font-size: 36rpx;
+    line-height: 88rpx;
+    text-align: center;
+    border: 1px #7aa42d solid;
+    border-radius: 6rpx;
+}

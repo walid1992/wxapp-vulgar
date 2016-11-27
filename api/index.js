@@ -5,7 +5,7 @@
  */
 
 const apiURL = {
-    baseUrl: 'http://123.57.2.62:8089',
+    baseUrl: 'https://www.hbbtj.com',
 }
 
 function request(reqObj = {}) {
@@ -39,7 +39,8 @@ module.exports = {
     requestGet: function requestGet(reqObj = {}) {
         let defaultObj = {
             header: {
-                'content-type': 'application/x-www-form-urlencoded'
+                'content-type': 'application/x-www-form-urlencoded',
+                'Authorization': wx.getStorageSync('ticket')
             },
             method: 'GET'
         }
@@ -49,7 +50,8 @@ module.exports = {
     requestPost: function requestPost(reqObj) {
         let defaultObj = {
             header: {
-                'content-type': 'application/x-www-form-urlencoded'
+                'content-type': 'application/x-www-form-urlencoded',
+                'Authorization': wx.getStorageSync('ticket')
             },
             method: 'POST'
         }

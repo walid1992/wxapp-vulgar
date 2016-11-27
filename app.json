@@ -8,9 +8,11 @@
     "pages/mine/index",
     "pages/login/index",
     "pages/mineaccount/index",
+    "pages/mineaccount/alipay",
     "pages/protocol/index",
     "pages/minetask/index",
-    "pages/insuranceexplain/index"
+    "pages/withdraw/index",
+    "pages/settlement/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -5,6 +5,8 @@
  */
 
 let commonApi = require('../../api/common/index.js')
+let userApi = require('../../api/user/index.js')
+let app = getApp()
 
 Page({
     data: {
@@ -74,7 +76,8 @@ Page({
         commonApi
             .getauthcode({
                 data: {
-                    getauthcode: this.data.phone
+                    telephone: this.data.phone,
+                    countryCode: '86'
                 },
                 success: function (data) {
                     that.showErrormsg('验证码已发送')
@@ -143,47 +146,36 @@ Page({
         this.setData({
             loginLocked: true
         })
-        this.signIn(function (data) {
-            wx.setStorageSync('userId', data.userId)
-            wx.setStorageSync('mobile', data.userAccount.mobile)
-            wx.setStorageSync('token', data.token)
-            if (that.data.redirectUrl) {
-                wx.redirectTo({
-                    url: that.data.redirectUrl
-                })
-                return;
-            }
-            wx.navigateBack()
-        })
-    },
 
-    //登录请求
-    signIn(callback) {
-        let that = this
-        wx.request({
-            url: api.signIn.url,
-            data: {
-                thirdType: 1,
-                openId: wx.getStorageSync('openId'),
-                mobile: this.data.phone,
-                mobileCode: this.data.verifyCode,
-                scope: 'base',
-                thirdToken: wx.getStorageSync('thirdToken')
-            },
-            header: {
-                'content-type': 'application/x-www-form-urlencoded'
-            },
-            method: 'POST',
-            success: function (res) {
-                if (res.data.code == 0) {
-                    callback && callback(res.data.data)
-                } else {
-                    that.showErrormsg(res.data.msg)
+        //绑定手机号码
+        userApi
+            .bindtelephone({
+                data: {
+                    telephone: this.data.phone,
+                    authCode: this.data.verifyCode,
+                    type:2
+                },
+                success: function (data) {
+                    app.globalData.userInfo.phoneNum = data.phone
+                    if (that.data.redirectUrl) {
+                        wx.redirectTo({
+                            url: that.data.redirectUrl
+                        })
+                        return;
+                    }
+                    wx.navigateBack()
+                },
+                fail: function (code, msg) {
+                    that.showErrormsg(msg)
                     that.setData({
                         loginLocked: false
                     })
                 }
-            }
-        })
+            })
     }
+
+
+
+    
+    
 })

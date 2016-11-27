@@ -17,7 +17,9 @@ Page({
         }, {
             leftItem: '钱包余额',
             showArrow: true,
-            rightItem: '暂无数据',
+        }, {
+            leftItem: '提现历史',
+            showArrow: true,
         }, {
             leftItem: '受邀伙伴',
             margin: '20rpx',
@@ -55,9 +57,9 @@ Page({
         if (index == 0) {
             url = app.router.config.mineaccount.url
         } else if (index == 1) {
-            url = app.router.config.insuranceexplain.url
+            url = app.router.config.settlement.url
         } else if (index == 2) {
-            url = app.router.config.mineincome.url
+            url = app.router.config.withdraw.url
         } else if (index == 3) {
             url = app.router.config.protocol.url
         } else if (index == 4) {
