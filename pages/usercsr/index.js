@@ -4,7 +4,7 @@
  * @description 受邀伙伴
  */
 
-let userApi = require('../../api/user/index.js')
+import userApi from '../../api/user/index.js'
 import router from '../../router/config.js'
 import utils from '../../utils/util'
 

@@ -4,7 +4,7 @@
  * @description 提现页面
  */
 
-let userApi = require('../../api/user/index.js')
+import userApi from '../../api/user/index.js'
 import router from '../../router/index.js'
 
 const app = getApp()

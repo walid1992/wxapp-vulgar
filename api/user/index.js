@@ -19,6 +19,16 @@ const apiURL = {
 }
 
 export default {
+
+    withdrawlist: function (reqObj = {}) {
+        reqObj.url = apiURL.withdrawlist
+        utils.requestGet(reqObj)
+    },
+
+    usercsr: function (reqObj = {}) {
+        reqObj.url = apiURL.usercsr
+        utils.requestGet(reqObj)
+    },
     
     loginbyopenid: function (reqObj = {}) {
         reqObj.url = apiURL.loginbyopenid
@@ -47,16 +57,6 @@ export default {
 
     withdraw: function (reqObj = {}) {
         reqObj.url = apiURL.withdraw
-        utils.requestGet(reqObj)
-    },
-
-     withdrawlist: function (reqObj = {}) {
-        reqObj.url = apiURL.withdrawlist
-        utils.requestGet(reqObj)
-    },
-
-    usercsr: function (reqObj = {}) {
-        reqObj.url = apiURL.usercsr
         utils.requestGet(reqObj)
     },
 }
