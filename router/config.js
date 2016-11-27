@@ -27,6 +27,10 @@ const router = {
         name: '我的',
         url: '/pages/mine/index'
     },
+    usercsr: {
+        name: '受邀伙伴',
+        url: '/pages/usercsr/index'
+    },
     mineaccount: {
         name: '个人资料',
         url: '/pages/mineaccount/index'

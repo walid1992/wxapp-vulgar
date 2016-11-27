@@ -12,7 +12,8 @@
     "pages/protocol/index",
     "pages/minetask/index",
     "pages/withdraw/index",
-    "pages/settlement/index"
+    "pages/settlement/index",
+    "pages/usercsr/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

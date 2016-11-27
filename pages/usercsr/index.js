@@ -1,7 +1,7 @@
 /**
  * @author 陶明
- * @date 2016/11/27
- * @description 提现页面
+ * @date 2016/11/28
+ * @description 受邀伙伴
  */
 
 let userApi = require('../../api/user/index.js')
@@ -18,7 +18,7 @@ Page({
     },
 
     onLoad() {
-        this.getUserWithdrawList()
+        this.getUserCsr()
     },
 
     // 下拉刷新
@@ -29,12 +29,12 @@ Page({
             icon: 'loading',
             duration: 10000
         })
-        self.getUserWithdrawList()
+        self.getUserCsr()
     },
 
-    getUserWithdrawList() {
+    getUserCsr() {
         let self = this
-        userApi.withdrawlist({
+        userApi.usercsr({
             data: {
                 start: self.data.list.length,
                 size: 10
@@ -71,6 +71,6 @@ Page({
         self.setData({
             hothidden: false,
         })
-        self.getUserWithdrawList()
+        self.getUserCsr()
     }
 })

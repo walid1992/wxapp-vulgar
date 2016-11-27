@@ -4,7 +4,7 @@
         <view class="list-settlement" data-id="{{item.id}}">
             <view class="settlement-left">
                 <view><text>收款账号：{{item.alipay}}</text></view>
-                <view><text>提现时间：{{item.createdTime}}</text></view>
+                <view><text>申请时间：{{item.createdTime}}</text></view>
             </view>
             <view class="settlement-right">
                 <view style="color: #7aa42d;"><text>{{item.amount}}元</text></view>
@@ -24,8 +24,4 @@
             <text> 没有更多了 </text>
         </view>
     </view>
-
 </scroll-view>
-<view class="v-action" bindtap="toAction">
-    <text>提现</text>
-</view>

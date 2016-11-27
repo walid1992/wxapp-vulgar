@@ -61,7 +61,6 @@
     flex-direction:row;
     font-size: 28rpx;
     margin-top: 10rpx;
-
 }
 
 .list-settlement .settlement-left{

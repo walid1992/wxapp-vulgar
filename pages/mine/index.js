@@ -30,6 +30,7 @@ Page({
             rightItem: '未设置',
         }, {
             leftItem: '我的专属邀请码',
+            rightItem: "",
             margin: '20rpx',
             showArrow: true,
         }, {
@@ -45,6 +46,7 @@ Page({
         self.setData({
             userInfo: app.globalData.userInfo
         })
+        console.log("userInfo:" + app.globalData.userInfo.inviteCode)
     },
 
     headTap(e) {
@@ -61,7 +63,7 @@ Page({
         } else if (index == 2) {
             url = app.router.config.withdraw.url
         } else if (index == 3) {
-            url = app.router.config.protocol.url
+            url = app.router.config.usercsr.url
         } else if (index == 4) {
             return
         }

@@ -51,7 +51,7 @@
     margin: 0 auto;
 }
 
-.list-settlement {
+.list {
     display: flex;
     position: relative;
     background: white;
@@ -64,14 +64,30 @@
 
 }
 
-.list-settlement .settlement-left{
+.list .row-left{
     display: flex;
     flex-direction:column;
-    width:75%;
+    width:15%;
 }
 
-.list-settlement .settlement-right{
+.list .row-middle{
     display: flex;
     flex-direction:column;
-    width:25%
+    width:45%;
+    margin-top: 10rpx;
+}
+
+.list .row-right{
+    display: flex;
+    flex-direction:column;
+    width:40%;
+    margin-top: 10rpx;
+}
+
+
+.avatar {
+    width: 80rpx;
+    height: 80rpx;
+    margin: 10rpx;
+    border-radius: 50%;
 }

@@ -36,10 +36,10 @@ App({
                                     avatarUrl:userInfoRes.userInfo.avatarUrl,
                                     name:data.userInfo.name,
                                     phoneNum:data.userInfo.phone,
-                                    alipay:data.userInfo.alipay
+                                    alipay:data.userInfo.alipay,
+                                    inviteCode:data.userInfo.inviteCode
                                 };
                                 wx.setStorageSync('ticket', data.ticket.ticket);
-
                             },
                             fail: function (code, msg) {
                             }

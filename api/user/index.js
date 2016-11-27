@@ -14,7 +14,8 @@ const apiURL = {
     usersettlements:'/v1/account/user/settlements',
     withdrawtip:'/v1/account/withdrawtip',
     withdraw:'/v1/account/withdraw',
-    withdrawlist:'/v1/account/withdraw/list'
+    withdrawlist:'/v1/account/withdraw/list',
+    usercsr:'/v1/account/csr'
 }
 
 module.exports = {
@@ -51,6 +52,11 @@ module.exports = {
 
      withdrawlist: function (reqObj = {}) {
         reqObj.url = apiURL.withdrawlist
+        utils.requestGet(reqObj)
+    },
+
+    usercsr: function (reqObj = {}) {
+        reqObj.url = apiURL.usercsr
         utils.requestGet(reqObj)
     },
 }
