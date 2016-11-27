@@ -7,8 +7,6 @@
 import campaignApi from '../../api/campaign/index.js'
 import router from '../../router/config.js'
 
-let app = getApp()
-
 Page({
     data: {
         id: 0,

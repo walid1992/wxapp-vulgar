@@ -3,8 +3,10 @@
  * @date 2016/11/26
  * @description 修改支付宝信息页面
  */
-let userApi = require('../../api/user/index.js')
-let app = getApp()
+
+import userApi from '../../api/user/index.js'
+
+const app = getApp()
 
 Page({
     data: {

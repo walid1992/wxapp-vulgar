@@ -32,7 +32,7 @@ Page({
                 taskId: self.data.id
             },
             success: function (data) {
-                app.dismissLoading()
+                app.hideToast()
                 let action = '领取任务'
                 data.taskInfoSteps.forEach(function (value, index) {
                     value.picJson = JSON.parse(value.picJson)
@@ -107,11 +107,7 @@ Page({
                 self.requestData()
             },
             fail: function (code, msg) {
-                wx.showToast({
-                    title: msg,
-                    icon: 'error',
-                    duration: 2000
-                })
+                app.showToast(msg)
             }
         })
     },
@@ -134,11 +130,7 @@ Page({
         if (taskInfoVo.userTaskItem) {
             if (taskInfoVo.userTaskItem.status == 1) {
                 if (self.taskEnd) {
-                    wx.showToast({
-                        title: '任务已结束',
-                        icon: 'success',
-                        duration: 2000
-                    })
+                    app.showToast('任务已结束')
                     return
                 }
                 router.navigateTo(router.config.taskdetail.url, {

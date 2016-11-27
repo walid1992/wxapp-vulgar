@@ -58,21 +58,21 @@
     width: 100%;
     height: 140rpx;
     border-bottom: 1px #dadada solid;
-    flex-direction:row;
+    flex-direction: row;
     font-size: 28rpx;
     margin-top: 10rpx;
 }
 
-.list-settlement .settlement-left{
+.list-settlement .settlement-left {
     display: flex;
-    flex-direction:column;
-    width:63%;
+    flex-direction: column;
+    width: 63%;
 }
 
-.list-settlement .settlement-right{
+.list-settlement .settlement-right {
     display: flex;
-    flex-direction:column;
-    width:37%
+    flex-direction: column;
+    width: 37%
 }
 
 .v-action {

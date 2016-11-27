@@ -5,7 +5,7 @@
  */
 
 import router from  'router/index.js'
-import loading from  './utils/loading.js'
+import loading from  './utils/wx-toast.js'
 import api from  './api/user/index.js'
 
 App({
@@ -42,6 +42,8 @@ App({
                                 wx.setStorageSync('ticket', data.ticket.ticket);
                             },
                             fail: function (code, msg) {
+
+
                             }
                         })
 
@@ -51,16 +53,20 @@ App({
         })
     },
 
-    showLoading(duration = 10000) {
-        loading.show(duration)
+    showLoading(duration) {
+        loading.showLoading(duration)
     },
 
-    dismissLoading(){
-        loading.dismiss()
+    showToast(msg, duration) {
+        loading.showToast(msg, duration)
+    },
+
+    hideToast(){
+        loading.hideToast()
     },
 
     globalData: {
-        userInfo:null,
+        userInfo: null,
         ticketInfo: null
     },
     router: router,

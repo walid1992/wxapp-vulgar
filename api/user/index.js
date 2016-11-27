@@ -18,7 +18,7 @@ const apiURL = {
     usercsr:'/v1/account/csr'
 }
 
-module.exports = {
+export default {
     
     loginbyopenid: function (reqObj = {}) {
         reqObj.url = apiURL.loginbyopenid
