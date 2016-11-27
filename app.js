@@ -39,9 +39,6 @@ App({
                                     alipay: data.userInfo.alipay
                                 };
                                 wx.setStorageSync('ticket', data.ticket.ticket);
-
-                            },
-                            fail: function (code, msg) {
                             }
                         })
 

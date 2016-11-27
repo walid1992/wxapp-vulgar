@@ -17,7 +17,7 @@ const apiURL = {
     withdrawlist:'/v1/account/withdraw/list'
 }
 
-module.exports = {
+export default {
     
     loginbyopenid: function (reqObj = {}) {
         reqObj.url = apiURL.loginbyopenid

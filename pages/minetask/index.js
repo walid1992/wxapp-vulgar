@@ -14,10 +14,6 @@ Page({
         hothidden: true,
     },
 
-    /**
-     * 页面初始化
-     * options 为页面跳转所带来的参数
-     */
     onLoad: function (options) {
         let that = this
         wx.getSystemInfo({

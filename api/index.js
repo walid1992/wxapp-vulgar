@@ -35,7 +35,7 @@ function request(reqObj = {}) {
     })
 }
 
-module.exports = {
+export default {
     requestGet: function requestGet(reqObj = {}) {
         let defaultObj = {
             header: {

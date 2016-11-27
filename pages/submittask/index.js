@@ -5,8 +5,8 @@
  */
 
 import taskApi from '../../api/task/index.js'
-import router from '../../router/config.js'
 import utils from '../../utils/util'
+
 const app = getApp()
 
 Page({
@@ -74,11 +74,7 @@ Page({
                 })
             },
             fail: function (code, msg) {
-                wx.showToast({
-                    title: msg,
-                    icon: 'error',
-                    duration: 2000
-                })
+                app.showToast(msg)
             }
         })
     },
@@ -91,11 +87,7 @@ Page({
                 self.requestData()
             },
             fail: function (code, msg) {
-                wx.showToast({
-                    title: msg,
-                    icon: 'error',
-                    duration: 2000
-                })
+                app.showToast(msg)
             }
         })
     },
@@ -128,17 +120,9 @@ Page({
     toAction(e) {
         let self = this
         if (self.taskEnd) {
-            wx.showToast({
-                title: '任务已结束',
-                icon: 'success',
-                duration: 2000
-            })
+            app.showToast('任务已结束')
             return
         }
-        wx.showToast({
-            title: '提交任务',
-            icon: 'success',
-            duration: 2000
-        })
+        app.showToast('提交任务')
     }
 })

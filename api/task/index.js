@@ -19,7 +19,7 @@ let apiURL = {
     post: '/v1/task/post'
 }
 
-module.exports = {
+export default {
     list: function (reqObj = {}) {
         reqObj.url = apiURL.list
         utils.requestGet(reqObj)

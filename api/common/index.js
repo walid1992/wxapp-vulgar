@@ -11,7 +11,7 @@ const apiURL = {
     getauthcode: '/v1/common/getauthcode'
 }
 
-module.exports = {
+export default {
     /**
      'telephone': telephone,
      'countryCode': '86'

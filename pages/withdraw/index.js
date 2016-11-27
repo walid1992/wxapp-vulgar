@@ -5,10 +5,9 @@
  */
 
 let userApi = require('../../api/user/index.js')
-import router from '../../router/config.js'
-import utils from '../../utils/util'
+import router from '../../router/index.js'
 
-let app = getApp()
+const app = getApp()
 
 Page({
     data: {
@@ -21,14 +20,12 @@ Page({
         this.getUserWithdrawList()
     },
 
-    // 下拉刷新
+    /**
+     *  下拉刷新
+     */
     onPullDownRefresh() {
         let self = this
-        wx.showToast({
-            title: '加载中...',
-            icon: 'loading',
-            duration: 10000
-        })
+        app.showLoading()
         self.getUserWithdrawList()
     },
 
@@ -41,7 +38,7 @@ Page({
             },
             success: function (data) {
                 wx.stopPullDownRefresh()
-                wx.hideToast()
+                app.hideToast()
                 // 如果数据为空，则显示没有更多数据
                 let hothidden = true
                 if (data.length <= 0) {
@@ -57,11 +54,14 @@ Page({
                 })
             },
             fail: function (code, msg) {
-                console.log('error' + msg)
+                app.showToast(msg)
             }
         })
     },
 
+    /**
+     * 滚动到底部
+     */
     onReachBottom: function () {
         let self = this
         if (!self.data.hothidden) {

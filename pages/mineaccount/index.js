@@ -3,9 +3,10 @@
  * @date 2016/11/19
  * @description 个人资料页
  */
+
 import router from '../../router/index.js'
 
-let app = getApp()
+const app = getApp()
 
 Page({
     data: {

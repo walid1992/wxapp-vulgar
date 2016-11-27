@@ -4,9 +4,10 @@
  * @description 登录页
  */
 
-let commonApi = require('../../api/common/index.js')
-let userApi = require('../../api/user/index.js')
-let app = getApp()
+import commonApi from '../../api/common/index.js'
+import userApi from '../../api/common/index.js'
+
+const app = getApp()
 
 Page({
     data: {
@@ -153,7 +154,7 @@ Page({
                 data: {
                     telephone: this.data.phone,
                     authCode: this.data.verifyCode,
-                    type:2
+                    type: 2
                 },
                 success: function (data) {
                     app.globalData.userInfo.phoneNum = data.phone
@@ -175,7 +176,4 @@ Page({
     }
 
 
-
-    
-    
 })

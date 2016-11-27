@@ -13,7 +13,7 @@ const apiURL = {
     productList: '/v1/campaign/product/list'
 }
 
-module.exports = {
+export default {
 
     list: function (reqObj = {}) {
         reqObj.url = apiURL.list

@@ -1,10 +1,11 @@
 /**
- * @author walid
+ * @author TaoMing
  * @date 2016/11/19
  * @description 我的钱包
  */
 
 import userApi from '../../api/user/index.js'
+
 const app = getApp()
 
 Page({
