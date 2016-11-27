@@ -1,14 +1,22 @@
 <scroll-view class="sv-box" scroll-y="true" bindscroll="scroll">
-    
+
     <block wx:for="{{list}}" wx:key="id">
         <view class="list" data-id="{{item.id}}">
-            <view class="row-left"><image class="avatar" src="{{item.avatar}}" background-size="cover"></image></view>
+            <view class="row-left">
+                <image class="avatar" src="{{item.avatar}}" background-size="cover"></image>
+            </view>
             <view class="row-middle">
-                <view><text>{{item.name}}</text></view>
-                <view><text>{{item.phone}}</text></view>
+                <view>
+                    <text>{{item.name}}</text>
+                </view>
+                <view>
+                    <text>{{item.phone}}</text>
+                </view>
             </view>
             <view class="row-right">
-                <view><text>{{item.createdTime}}</text></view>
+                <view>
+                    <text>{{item.createdTime}}</text>
+                </view>
             </view>
         </view>
     </block>
@@ -16,10 +24,10 @@
     <!-- 没有更多的时候 -->
     <view hidden="{{hotshidden}}" class="hot-box-more">
         <view wx:if="{{hothidden}}">
-            <image src="/images/loading.gif" mode="aspectFill" />
+            <image src="/images/loading.gif" mode="aspectFill"/>
         </view>
         <view wx:else>
-            <text> 没有更多了 </text>
+            <text> 没有更多了</text>
         </view>
     </view>
 </scroll-view>
