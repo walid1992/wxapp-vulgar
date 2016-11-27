@@ -33,7 +33,7 @@ Page({
                 taskId: self.data.id
             },
             success: function (data) {
-                app.dismissLoading()
+                app.hideToast()
                 let action = '提交任务'
                 let taskEnd = false
                 if (data.userTaskItem) {
@@ -67,7 +67,7 @@ Page({
                     taskEnd = true
                     action = '已结束'
                 }
-                app.dismissLoading()
+                app.hideToast()
                 self.setData({
                     action: action,
                     taskEnd: taskEnd
@@ -87,7 +87,7 @@ Page({
         let self = this
         taskApi.userreceivetask(self.data.id, {
             success: function (data) {
-                app.dismissLoading()
+                app.hideToast()
                 self.requestData()
             },
             fail: function (code, msg) {

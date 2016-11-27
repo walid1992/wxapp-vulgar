@@ -6,20 +6,36 @@
             <text class="tv-toptip-value">30.00 元</text>
         </view>
     </view>
-    
+
     <block wx:for="{{list}}" wx:key="id">
         <view class="list-settlement" data-id="{{item.id}}">
             <view class="settlement-left">
-                <view><text>{{item.bizName}}</text></view>
-                <view><text>收入来源：{{item.bizTypeName}}</text></view>
-                <view wx:if="{{item.type == 0}}"><text>账单类型：自己获得 </text></view>
-                <view wx:elif="{{item.type == 1}}"><text>账单类型：下属返点</text></view>
-                <view wx:else><text>账单类型：未知错误</text></view>
+                <view>
+                    <text>{{item.bizName}}</text>
+                </view>
+                <view>
+                    <text>收入来源：{{item.bizTypeName}}</text>
+                </view>
+                <view wx:if="{{item.type == 0}}">
+                    <text>账单类型：自己获得</text>
+                </view>
+                <view wx:elif="{{item.type == 1}}">
+                    <text>账单类型：下属返点</text>
+                </view>
+                <view wx:else>
+                    <text>账单类型：未知错误</text>
+                </view>
             </view>
             <view class="settlement-right">
-                <view style="color: #7aa42d;"><text>{{item.commission}}元</text></view>
-                <view style="color: #7aa42d;"><text>已到账</text></view>
-                <view><text>{{item.createdTime}}</text></view>
+                <view style="color: #7aa42d;">
+                    <text>{{item.commission}}元</text>
+                </view>
+                <view style="color: #7aa42d;">
+                    <text>已到账</text>
+                </view>
+                <view>
+                    <text>{{item.createdTime}}</text>
+                </view>
             </view>
         </view>
     </block>
@@ -27,10 +43,10 @@
     <!-- 没有更多的时候 -->
     <view hidden="{{hotshidden}}" class="hot-box-more">
         <view wx:if="{{hothidden}}">
-            <image src="/images/loading.gif" mode="aspectFill" />
+            <image src="/images/loading.gif" mode="aspectFill"/>
         </view>
         <view wx:else>
-            <text> 没有更多了 </text>
+            <text> 没有更多了</text>
         </view>
     </view>
 

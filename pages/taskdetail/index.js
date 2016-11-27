@@ -32,7 +32,7 @@ Page({
                 taskId: self.data.id
             },
             success: function (data) {
-                app.dismissLoading()
+                app.hideToast()
                 let action = '领取任务'
                 data.taskInfoSteps.forEach(function (value, index) {
                     value.picJson = JSON.parse(value.picJson)

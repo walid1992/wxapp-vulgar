@@ -4,15 +4,11 @@
  * @description 我的钱包
  */
 
-let userApi = require('../../api/user/index.js')
-import router from '../../router/config.js'
-import utils from '../../utils/util'
-
-let app = getApp()
+import userApi from '../../api/user/index.js'
+const app = getApp()
 
 Page({
     data: {
-        // 显示加载更多 loading
         hothidden: true,
         list: [],
     },
@@ -24,11 +20,7 @@ Page({
     // 下拉刷新
     onPullDownRefresh() {
         let self = this
-        wx.showToast({
-            title: '加载中...',
-            icon: 'loading',
-            duration: 10000
-        })
+        app.showLoading()
         self.getUserSettlements()
     },
 
@@ -41,7 +33,7 @@ Page({
             },
             success: function (data) {
                 wx.stopPullDownRefresh()
-                wx.hideToast()
+                app.hideToast()
                 // 如果数据为空，则显示没有更多数据
                 let hothidden = true
                 if (data.length <= 0) {
@@ -57,7 +49,7 @@ Page({
                 })
             },
             fail: function (code, msg) {
-                console.log('error' + msg)
+                app.showToast(msg)
             }
         })
     },
@@ -79,7 +71,7 @@ Page({
         wx.showModal({
             title: '温馨提示',
             content: '确认向支付宝账号' + app.globalData.userInfo.alipay + "提现吗?",
-            success: function(res) {
+            success: function (res) {
                 if (res.confirm) {
                     self.withdrawtip()
                 }
@@ -90,30 +82,24 @@ Page({
     withdrawtip() {
         let self = this
         userApi.withdrawtip({
-            data: { 
-            },
+            data: {},
             success: function (data) {
                 wx.showModal({
                     title: '温馨提示',
                     content: data.tipString,
-                    success: function(res) {
+                    success: function (res) {
                         if (res.confirm) {
-                            if(data.withdrawMark){
+                            if (data.withdrawMark) {
                                 self.withdraw()
-                            }else{
+                            } else {
 
                             }
                         }
                     }
                 })
-                
             },
             fail: function (code, msg) {
-                wx.showToast({
-                    title: msg,
-                    icon: 'success',
-                    duration: 2000
-                })
+                app.showToast(msg)
             }
         })
     },
@@ -121,20 +107,18 @@ Page({
     withdraw() {
         let self = this
         userApi.withdraw({
-            data: { 
-            },
+            data: {},
             success: function (data) {
                 wx.showModal({
                     title: '温馨提示',
                     content: data.tipString,
-                    success: function(res) {
-                        
+                    success: function (res) {
+
                     }
                 })
-                
             },
             fail: function (code, msg) {
-                console.log('error' + msg)
+                app.showToast(msg)
             }
         })
     }

@@ -5,12 +5,12 @@
  */
 
 function formatTime(date) {
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
-    let hour = date.getHours();
-    let minute = date.getMinutes();
-    let second = date.getSeconds();
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    let day = date.getDate()
+    let hour = date.getHours()
+    let minute = date.getMinutes()
+    let second = date.getSeconds()
     return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
@@ -37,14 +37,14 @@ function formatNumber(n) {
 }
 
 function urlParam(name) {
-    let results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    let results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href)
     if (!results) {
-        return '';
+        return ''
     }
-    return results[1] || '';
+    return results[1] || ''
 }
 
-module.exports = {
+export default {
     formatTime: formatTime,
     urlParam: urlParam,
     formatResiduedTimes: formatResiduedTimes
