@@ -5,11 +5,11 @@
     <div class="v-image">
         <image wx:if="{{tempFilePaths}}"
                wx:for="{{tempFilePaths}}"
+               mode="aspecFill"
                src="{{item}}"
                data-current="{{item}}"
                bindtap="toPreview">
         </image>
-
         <image wx:if="{{tempFilePaths.length < 6}}"
                src="./imgs/ic_add_photo.png" bindtap="toAdd">
         </image>
