@@ -99,7 +99,13 @@ Page({
             sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
             sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
             success: function (res) {
-                console.log('res.tempFilePaths', res.tempFilePaths)
+                wx.getImageInfo({
+                    src: res.tempFilePaths[0],
+                    success: function (res) {
+                        console.log(res.width)
+                        console.log(res.height)
+                    }
+                })
                 self.setData({
                     tempFilePaths: res.tempFilePaths
                 })

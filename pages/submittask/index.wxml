@@ -10,7 +10,7 @@
                bindtap="toPreview">
         </image>
 
-        <image wx:if="{{tempFilePaths.length <= 0}}"
+        <image wx:if="{{tempFilePaths.length < 6}}"
                src="./imgs/ic_add_photo.png" bindtap="toAdd">
         </image>
     </div>
