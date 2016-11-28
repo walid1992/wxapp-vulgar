@@ -7,6 +7,8 @@
 import campaignApi from '../../api/campaign/index.js'
 import router from '../../router/config.js'
 
+const app = getApp()
+
 Page({
     data: {
         id: 0,
@@ -16,20 +18,16 @@ Page({
     },
 
     onLoad(options) {
-        this.getTaskList()
         this.setData({
             id: options.id
         })
+        this.getTaskList()
     },
 
     // 下拉刷新
     onPullDownRefresh() {
-        var self = this
-        wx.showToast({
-            title: '加载中...',
-            icon: 'loading',
-            duration: 10000
-        })
+        let self = this
+        app.showLoading()
         self.getTaskList()
     },
 
@@ -44,7 +42,7 @@ Page({
                 },
                 success: function (data) {
                     wx.stopPullDownRefresh()
-                    wx.hideToast()
+                    app.hideToast()
                     // 如果数据为空，则显示没有更多数据
                     let hothidden = true
                     if (data.length <= 0) {

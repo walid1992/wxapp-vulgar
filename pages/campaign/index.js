@@ -23,11 +23,7 @@ Page({
     // 下拉刷新
     onPullDownRefresh() {
         let self = this
-        wx.showToast({
-            title: '加载中...',
-            icon: 'loading',
-            duration: 10000
-        })
+        app.showLoading()
         self.getTaskList()
     },
 
@@ -41,7 +37,7 @@ Page({
                 },
                 success: function (data) {
                     wx.stopPullDownRefresh()
-                    wx.hideToast()
+                    app.hideToast()
                     // 如果数据为空，则显示没有更多数据
                     let hothidden = true
                     if (data.length <= 0) {
