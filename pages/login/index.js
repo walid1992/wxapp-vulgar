@@ -53,7 +53,7 @@ Page({
 
     //获取验证码
     getCodeTap(e) {
-        var that = this;
+        let self = this
         if (!this.data.phone) {
             this.showErrormsg('请填写手机号')
             return
@@ -68,12 +68,10 @@ Page({
         this.setData({
             getCodeLock: true
         })
-        var requestData = {
+        let requestData = {
             mobile: this.data.phone
         }
-
-        that.countdown()
-
+        self.countdown()
         commonApi
             .getauthcode({
                 data: {
@@ -81,11 +79,11 @@ Page({
                     countryCode: '86'
                 },
                 success: function (data) {
-                    that.showErrormsg('验证码已发送')
+                    self.showErrormsg('验证码已发送')
                 },
                 fail: function (code, msg) {
-                    that.showErrormsg(msg)
-                    that.setData({
+                    self.showErrormsg(msg)
+                    self.setData({
                         getCodeLock: false
                     })
                 }
@@ -100,7 +98,7 @@ Page({
 
     //倒计时
     countdown() {
-        let that = this
+        let self = this
         let count = 60
         let phoneTimer = setInterval(function () {
             setInvalTime()
@@ -108,13 +106,13 @@ Page({
 
         function setInvalTime() {
             if (count == 0) {
-                that.setData({
+                self.setData({
                     codeButtonText: '获取验证码',
                     getCodeLock: false
                 });
                 clearInterval(phoneTimer);
             } else {
-                that.setData({
+                self.setData({
                     codeButtonText: count + '秒后重试'
                 });
             }
@@ -126,7 +124,7 @@ Page({
 
     //提交验证
     validate() {
-        let that = this
+        let self = this
         if (!this.data.phone) {
             this.showErrormsg('请输入您的手机号码');
             this.setData({
@@ -158,17 +156,17 @@ Page({
                 },
                 success: function (data) {
                     app.globalData.userInfo.phoneNum = data.phone
-                    if (that.data.redirectUrl) {
+                    if (self.data.redirectUrl) {
                         wx.redirectTo({
-                            url: that.data.redirectUrl
+                            url: self.data.redirectUrl
                         })
                         return;
                     }
                     wx.navigateBack()
                 },
                 fail: function (code, msg) {
-                    that.showErrormsg(msg)
-                    that.setData({
+                    self.showErrormsg(msg)
+                    self.setData({
                         loginLocked: false
                     })
                 }
