@@ -23,6 +23,6 @@
 
 </scroll-view>
 
-<view class="v-action">
+<view class="v-action" bindtap="toAction">
     <text>自定义商品</text>
 </view>

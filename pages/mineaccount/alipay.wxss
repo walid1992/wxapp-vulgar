@@ -27,7 +27,6 @@ page {
     font-size: 32rpx;
 }
 
-
 .input-alipay {
     font-size: 32rpx;
     color: #999;
@@ -35,7 +34,6 @@ page {
     height: 100%;
     -webkit-box-flex: 1;
 }
-
 
 .postAlipay {
     display: block;

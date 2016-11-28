@@ -11,6 +11,14 @@ const router = {
         name: '活动列表页',
         url: '/pages/campaignlist/index'
     },
+    campaigndetail: {
+        name: '商品推广界面',
+        url: '/pages/campaigndetail/index'
+    },
+    campaigncustom: {
+        name: '自定义推广',
+        url: '/pages/campaigncustom/index'
+    },
     settlement: {
         name: '收入流水页面',
         url: '/pages/settlement/index'

@@ -5,7 +5,7 @@
  */
 
 import campaignApi from '../../api/campaign/index.js'
-import router from '../../router/config.js'
+import router from '../../router/index.js'
 
 const app = getApp()
 
@@ -75,8 +75,15 @@ Page({
 
     toItem(e) {
         let id = e.currentTarget.dataset.id
-        wx.navigateTo({
-            url: router.planItem.url + '?id=' + id
+        router.navigateTo(router.config.campaigndetail.url, {
+            id: id
         })
-    }
+    },
+
+    toAction(e) {
+        let self = this
+        router.navigateTo(router.config.campaigncustom.url, {
+            id: self.data.id
+        })
+    },
 })

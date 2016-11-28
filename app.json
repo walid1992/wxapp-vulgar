@@ -5,6 +5,8 @@
     "pages/submittask/index",
     "pages/campaign/index",
     "pages/campaignlist/index",
+    "pages/campaigndetail/index",
+    "pages/campaigncustom/index",
     "pages/mine/index",
     "pages/login/index",
     "pages/mineaccount/index",

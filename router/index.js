@@ -11,7 +11,7 @@ function _params(obj = {}) {
     return Object.keys(obj).map(k => `${_(k)}=${_(obj[k])}`).join('&')
 }
 
-module.exports = {
+export default {
     config: config,
     navigateTo: function (url, obj = {}) {
         wx.navigateTo({

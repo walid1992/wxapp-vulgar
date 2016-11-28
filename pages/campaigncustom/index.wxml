@@ -1,0 +1,23 @@
+<scroll-view class="sv-box" scroll-y="true" bindscroll="scroll">
+
+    <view class="v-top">
+        <image src="{{campaignInfoVo.campaignUrl?campaignInfoVo.campaignUrl:'../../images/ic_place_holder.png'}}"/>
+        <div>
+            <text class="tv-name">{{campaignInfoVo.campaignName}}</text>
+            <text class="tv-commission-rate">佣金 :{{campaignInfoVo.commissionRatio}}</text>
+            <text class="tv-desc">{{campaignInfoVo.campaignDesc}}</text>
+        </div>
+    </view>
+
+    <view class="v-middle">
+        <text class="text-explain-tip">商品说明</text>
+        <text class="text-explain">{{campaignInfoVo.bInfo}}</text>
+        <text class="text-generate-qrcode-tip">请输入您要推广的商品链接~</text>
+
+        <input wx:if="!qrCodeUrl" class="input-link" bindinput="bindLinkInput" placeholder="请输入您要推广的商品链接"/>
+        <image wx:else src="{{qrCodeUrl?qrCodeUrl:'../../images/ic_place_holder.png'}}"/>
+    </view>
+
+    <view class="btn-generate" bindtap="toGenerate">生成二维码</view>
+
+</scroll-view>
