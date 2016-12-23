@@ -1,37 +1,37 @@
 <scroll-view class="sv-box" scroll-y="true" bindscroll="scroll">
 
-    <view class="v-top" style="margin-top:30rpx;">
-        <view class="v-toptip" bindtap="toMineTask">
-            <text class="tv-toptip-title">我的任务</text>
-            <text class="tv-toptip-value">30.00 元</text>
-        </view>
-
-        <view class="v-divider" />
-
-        <view class="v-toptip">
-            <text class="tv-toptip-title">任务收入</text>
-            <text class="tv-toptip-value">30.00 元</text>
-        </view>
+  <view class="v-top" style="margin-top:30rpx;">
+    <view class="v-toptip" bindtap="toMineTask">
+      <text class="tv-toptip-title">我的任务</text>
+      <text class="tv-toptip-value">30.00 元</text>
     </view>
 
-    <block wx:for="{{list}}" wx:key="id">
-        <view class="list-plan" bindtap="toItem" data-id="{{item.id}}">
-            <image src="../../images/ic_launcher.png" />
-            <text class="tv-task-name">{{item.taskTitle}}</text>
-            <text class="tv-money">{{item.commission}}元</text>
-            <text class="tv-residue-degree">| 剩余次数{{item.residueAmount}}次</text>
-            <text class="tv-time">{{item.endTime}}</text>
-        </view>
-    </block>
+    <view class="v-divider"/>
 
-    <!-- 没有更多的时候 -->
-    <view hidden="{{hotshidden}}" class="hot-box-more">
-        <view wx:if="{{hothidden}}">
-            <image src="/images/loading.gif" mode="aspectFill" />
-        </view>
-        <view wx:else>
-            <text> 没有更多了 </text>
-        </view>
+    <view class="v-toptip">
+      <text class="tv-toptip-title">任务收入</text>
+      <text class="tv-toptip-value">30.00 元</text>
     </view>
+  </view>
+
+  <block wx:for="{{list}}" wx:key="id">
+    <view class="list-plan" bindtap="toItem" data-id="{{item.id}}">
+      <image src="../../images/ic_launcher.png"/>
+      <text class="tv-task-name">{{item.taskTitle}}</text>
+      <text class="tv-money">{{item.commission}}元</text>
+      <text class="tv-residue-degree">| 剩余次数{{item.residueAmount}}次</text>
+      <text class="tv-time">{{item.endTime}}</text>
+    </view>
+  </block>
+
+  <!-- 没有更多的时候 -->
+  <view hidden="{{hotshidden}}" class="hot-box-more">
+    <view wx:if="{{hothidden}}">
+      <image src="/images/loading.gif" mode="aspectFill"/>
+    </view>
+    <view wx:else>
+      <text> 没有更多了</text>
+    </view>
+  </view>
 
 </scroll-view>

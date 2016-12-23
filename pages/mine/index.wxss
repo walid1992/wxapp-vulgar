@@ -1,88 +1,88 @@
 .container {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .user {
-    display: flex;
-    flex-direction: row;
-    padding: 50rpx 0;
-    align-items: center;
-    background: white;
+  display: flex;
+  flex-direction: row;
+  padding: 50rpx 0;
+  align-items: center;
+  background: white;
 }
 
 .user .avatar {
-    width: 128rpx;
-    height: 128rpx;
-    margin: 20rpx;
-    border-radius: 50%;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
 }
 
 .user div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .user div .nickname {
-    color: #333;
-    font-size: 40rpx;
+  color: #333;
+  font-size: 40rpx;
 }
 
 .user div .phone {
-    color: #999;
-    font-size: 36rpx;
+  color: #999;
+  font-size: 36rpx;
 }
 
 .weui_cell {
-    position: relative;
-    display: flex;
-    padding: 15px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border-bottom: 1px solid #dadada;
-    background-color: white;
+  position: relative;
+  display: flex;
+  padding: 15px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #dadada;
+  background-color: white;
 }
 
 .weui_cell_hd image {
-    width: 100%;
-    height: 20px;
-    vertical-align: -2px;
+  width: 100%;
+  height: 20px;
+  vertical-align: -2px;
 }
 
 .tv_cell_left {
-    position: absolute;
-    font-size: 30rpx;
-    color: #333;
-    left: 20rpx;
+  position: absolute;
+  font-size: 30rpx;
+  color: #333;
+  left: 20rpx;
 }
 
 .tv_cell_right {
-    position: absolute;
-    font-size: 28rpx;
-    color: #999999;
-    right: 50rpx;
+  position: absolute;
+  font-size: 28rpx;
+  color: #999999;
+  right: 50rpx;
 }
 
 .iv-arrow {
-    position: absolute;
-    right: 30rpx;
-    border-top: 2rpx solid #c7c7c7;
-    border-right: 2rpx solid #c7c7c7;
-    width: 16rpx;
-    height: 16rpx;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+  position: absolute;
+  right: 30rpx;
+  border-top: 2rpx solid #c7c7c7;
+  border-right: 2rpx solid #c7c7c7;
+  width: 16rpx;
+  height: 16rpx;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 .v_below {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tv_server_time {
-    font-size: 28rpx;
-    color: #999999;
-    margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 20rpx;
 }

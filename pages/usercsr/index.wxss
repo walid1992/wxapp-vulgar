@@ -1,92 +1,92 @@
 .v-root {
-    height: 1334rpx;
-    width: 100%;
+  height: 1334rpx;
+  width: 100%;
 }
 
 .sv-box {
-    display: block;
-    height: 100%;
-    font-family: Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans CN", "PingFang SC", Roboto, "微软雅黑", "Heiti SC", "Microsoft Yahei", sans-serif
+  display: block;
+  height: 100%;
+  font-family: Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans CN", "PingFang SC", Roboto, "微软雅黑", "Heiti SC", "Microsoft Yahei", sans-serif
 }
 
 .v-top {
-    height: 220rpx;
-    width: 100%;
-    margin-bottom: 20rpx;
-    display: flex;
-    background-color: #7aa42d;
+  height: 220rpx;
+  width: 100%;
+  margin-bottom: 20rpx;
+  display: flex;
+  background-color: #7aa42d;
 }
 
 .v-toptip {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    flex-direction: column;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
 }
 
 .tv-toptip-title {
-    font-size: 34rpx;
-    color: white;
+  font-size: 34rpx;
+  color: white;
 }
 
 .tv-toptip-value {
-    font-size: 50rpx;
-    color: white;
+  font-size: 50rpx;
+  color: white;
 }
 
 .hot-box-more {
-    text-align: center;
-    font-size: 22rpx;
-    color: #999;
-    margin-bottom: 20rpx;
-    margin-top: 30rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+  margin-top: 30rpx;
 }
 
 .hot-box-more image {
-    width: 80rpx;
-    height: 16rpx;
-    display: block;
-    margin: 0 auto;
+  width: 80rpx;
+  height: 16rpx;
+  display: block;
+  margin: 0 auto;
 }
 
 .list {
-    display: flex;
-    position: relative;
-    background: white;
-    width: 100%;
-    height: 100rpx;
-    border-bottom: 1px #dadada solid;
-    flex-direction: row;
-    font-size: 28rpx;
-    margin-top: 10rpx;
+  display: flex;
+  position: relative;
+  background: white;
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1px #dadada solid;
+  flex-direction: row;
+  font-size: 28rpx;
+  margin-top: 10rpx;
 
 }
 
 .list .row-left {
-    display: flex;
-    flex-direction: column;
-    width: 15%;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
 }
 
 .list .row-middle {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin-top: 10rpx;
 }
 
 .list .row-right {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-top: 10rpx;
 }
 
 .avatar {
-    width: 80rpx;
-    height: 80rpx;
-    margin: 10rpx;
-    border-radius: 50%;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 10rpx;
+  border-radius: 50%;
 }

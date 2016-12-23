@@ -1,21 +1,21 @@
 <scroll-view class="content" scroll-y="true" bindscroll="scroll">
-    <text>请输入任务完成信息</text>
-    <input placeholder="输入内容" auto-focus/>
-    <text>请提交任务截图</text>
-    <div class="v-image">
-        <image wx:if="{{tempFilePaths}}"
-               wx:for="{{tempFilePaths}}"
-               mode="aspecFill"
-               src="{{item}}"
-               data-current="{{item}}"
-               bindtap="toPreview">
-        </image>
-        <image wx:if="{{tempFilePaths.length < 6}}"
-               src="./imgs/ic_add_photo.png" bindtap="toAdd">
-        </image>
-    </div>
+  <text>请输入任务完成信息</text>
+  <input placeholder="输入内容" auto-focus/>
+  <text>请提交任务截图</text>
+  <div class="v-image">
+    <image wx:if="{{tempFilePaths}}"
+           wx:for="{{tempFilePaths}}"
+           mode="aspecFill"
+           src="{{item}}"
+           data-current="{{item}}"
+           bindtap="toPreview">
+    </image>
+    <image wx:if="{{tempFilePaths.length < 6}}"
+           src="./imgs/ic_add_photo.png" bindtap="toAdd">
+    </image>
+  </div>
 </scroll-view>
 
 <view class="v-action" bindtap="toAction">
-    <text>{{action}}</text>
+  <text>{{action}}</text>
 </view>

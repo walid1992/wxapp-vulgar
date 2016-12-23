@@ -10,70 +10,70 @@ import router from '../../router/config.js'
 let app = getApp()
 
 Page({
-    data: {
-        // 显示加载更多 loading
-        hothidden: true,
-        list: [],
-    },
+  data: {
+    // 显示加载更多 loading
+    hothidden: true,
+    list: [],
+  },
 
-    onLoad() {
-        this.getTaskList()
-    },
+  onLoad() {
+    this.getTaskList()
+  },
 
-    // 下拉刷新
-    onPullDownRefresh() {
-        let self = this
-        app.showLoading()
-        self.getTaskList()
-    },
+  // 下拉刷新
+  onPullDownRefresh() {
+    let self = this
+    app.showLoading()
+    self.getTaskList()
+  },
 
-    getTaskList() {
-        let self = this
-        campaignApi
-            .list({
-                data: {
-                    start: self.data.list.length,
-                    size: 10
-                },
-                success: function (data) {
-                    wx.stopPullDownRefresh()
-                    app.hideToast()
-                    // 如果数据为空，则显示没有更多数据
-                    let hothidden = true
-                    if (data.length <= 0) {
-                        setTimeout(function () {
-                            self.setData({
-                                hothidden: false
-                            })
-                        }, 200)
-                    }
-                    self.setData({
-                        hothidden: hothidden,
-                        list: self.data.list.concat(data),
-                    })
-                },
-                fail: function (code, msg) {
-                    console.log('error' + msg)
-                }
-            })
-    },
-
-    onReachBottom: function () {
-        let self = this
-        if (!self.data.hothidden) {
-            return
+  getTaskList() {
+    let self = this
+    campaignApi
+      .list({
+        data: {
+          start: self.data.list.length,
+          size: 10
+        },
+        success: function (data) {
+          wx.stopPullDownRefresh()
+          app.hideToast()
+          // 如果数据为空，则显示没有更多数据
+          let hothidden = true
+          if (data.length <= 0) {
+            setTimeout(function () {
+              self.setData({
+                hothidden: false
+              })
+            }, 200)
+          }
+          self.setData({
+            hothidden: hothidden,
+            list: self.data.list.concat(data),
+          })
+        },
+        fail: function (code, msg) {
+          console.log('error' + msg)
         }
-        // 加载更多 loading
-        self.setData({
-            hothidden: false,
-        })
-        self.getTaskList()
-    },
+      })
+  },
 
-    toItem(e) {
-        let id = e.currentTarget.dataset.id
-        wx.navigateTo({
-            url: router.campaignList.url + '?id=' + id
-        })
+  onReachBottom: function () {
+    let self = this
+    if (!self.data.hothidden) {
+      return
     }
+    // 加载更多 loading
+    self.setData({
+      hothidden: false,
+    })
+    self.getTaskList()
+  },
+
+  toItem(e) {
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: router.campaignList.url + '?id=' + id
+    })
+  }
 })

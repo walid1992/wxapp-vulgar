@@ -7,7 +7,7 @@
 const app = getApp()
 
 Page({
-    data: {
-        modalHidden: true,
-    },
+  data: {
+    modalHidden: true,
+  },
 })

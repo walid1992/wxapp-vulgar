@@ -1,11 +1,11 @@
 <view class="verify">
-    <view class="v-alipay">
-        <input class="input-alipay" type="number" value="{{alipay}}" bindinput="alipayChange" placeholder="请填写支付宝信息"/>
-    </view>
+  <view class="v-alipay">
+    <input class="input-alipay" type="number" value="{{alipay}}" bindinput="alipayChange" placeholder="请填写支付宝信息"/>
+  </view>
 </view>
 
 <view class="postAlipay" bindtap="postAlipay">保存</view>
 
 <modal hidden="{{errorMsgHidden}}" bindconfirm="errorMsgSuccess" no-cancel>
-    {{errorMsg}}
+  {{errorMsg}}
 </modal>

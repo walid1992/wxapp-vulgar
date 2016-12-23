@@ -1,74 +1,74 @@
 .v-root {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .sv-box {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 .list-plan {
-    display: flex;
-    background: white;
-    width: 100%;
-    padding: 20rpx;
-    border-bottom: 1px #dadada solid;
+  display: flex;
+  background: white;
+  width: 100%;
+  padding: 20rpx;
+  border-bottom: 1px #dadada solid;
 }
 
 .list-plan image {
-    width: 150rpx;
-    height: 80rpx;
-    margin-right: 20rpx;
+  width: 150rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
 }
 
 .list-plan div {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .list-plan div .tv-name {
-    font-size: 32rpx;
-    color: #333;
+  font-size: 32rpx;
+  color: #333;
 }
 
 .list-plan div .tv-commission-rate {
-    font-size: 28rpx;
-    color: #666;
-    margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 20rpx;
 }
 
 .list-plan div .tv-price {
-    font-size: 28rpx;
-    color: #666;
-    margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 20rpx;
 }
 
 .hot-box-more {
-    text-align: center;
-    font-size: 22rpx;
-    color: #999;
-    margin-bottom: 30rpx;
-    margin-top: 30rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #999;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
 }
 
 .hot-box-more image {
-    width: 80rpx;
-    height: 16rpx;
-    display: block;
-    margin: 0 auto;
+  width: 80rpx;
+  height: 16rpx;
+  display: block;
+  margin: 0 auto;
 }
 
 .v-action {
-    width: 100%;
-    height: 80rpx;
-    position: fixed;
-    line-height: 80rpx;
-    text-align: center;
-    font-size: 30rpx;
-    color: white;
-    bottom: 0rpx;
-    background-color: #7aa42d;
+  width: 100%;
+  height: 80rpx;
+  position: fixed;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: white;
+  bottom: 0rpx;
+  background-color: #7aa42d;
 }

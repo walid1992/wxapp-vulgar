@@ -1,95 +1,95 @@
 .sv-box {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: #f0f0f0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #f0f0f0;
 }
 
 .v-top {
-    width: 100%;
-    display: flex;
-    background: white;
-    margin-top: 20rpx;
-    padding: 20rpx;
-    border-bottom: 1px #dadada solid;
+  width: 100%;
+  display: flex;
+  background: white;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  border-bottom: 1px #dadada solid;
 }
 
 .v-top image {
-    width: 150rpx;
-    height: 80rpx;
-    margin-right: 20rpx;
+  width: 150rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
 }
 
 .v-top div {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .v-top div .tv-name {
-    font-size: 32rpx;
-    color: #333;
+  font-size: 32rpx;
+  color: #333;
 }
 
 .v-top div .tv-commission-rate {
-    font-size: 28rpx;
-    color: #666;
-    margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 20rpx;
 }
 
 .v-top div .tv-desc {
-    font-size: 28rpx;
-    color: #666;
-    margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 20rpx;
 }
 
 .v-middle {
-    width: 100%;
-    display: flex;
-    padding: 20rpx;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  padding: 20rpx;
+  flex-direction: column;
 }
 
 .v-middle .text-explain-tip {
-    font-size: 28rpx;
-    color: #333;
+  font-size: 28rpx;
+  color: #333;
 }
 
 .v-middle .text-explain {
-    font-size: 28rpx;
-    color: #666;
-    margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 20rpx;
 }
 
 .v-middle .text-generate-qrcode-tip {
-    font-size: 28rpx;
-    color: #666;
-    margin-top: 40rpx;
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 40rpx;
 }
 
 .input-link {
-    font-size: 28rpx;
-    color: #333;
-    /*border: none;*/
-    width: 100%;
-    height: 200rpx;
+  font-size: 28rpx;
+  color: #333;
+  /*border: none;*/
+  width: 100%;
+  height: 200rpx;
 }
 
 .v-middle image {
-    width: 400rpx;
-    height: 400rpx;
-    margin: 40rpx auto 0 auto;
+  width: 400rpx;
+  height: 400rpx;
+  margin: 40rpx auto 0 auto;
 }
 
 .btn-generate {
-    display: block;
-    margin: 0 25rpx;
-    height: 88rpx;
-    background: #7aa42d;
-    margin-top: 100rpx;
-    color: #fff;
-    font-size: 36rpx;
-    line-height: 88rpx;
-    text-align: center;
-    border: 1px #7aa42d solid;
-    border-radius: 6rpx;
+  display: block;
+  margin: 0 25rpx;
+  height: 88rpx;
+  background: #7aa42d;
+  margin-top: 100rpx;
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 88rpx;
+  text-align: center;
+  border: 1px #7aa42d solid;
+  border-radius: 6rpx;
 }

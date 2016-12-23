@@ -1,7 +1,7 @@
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .flex_auto {
-    flex: 1;
+  flex: 1;
 }

@@ -1,108 +1,108 @@
 .swiper-tab {
-    height: 80rpx;
-    line-height: 80rpx;
-    margin-top: 20rpx;
-    background: white;
-    display: flex;
-    z-index: 4;
-    border-bottom: 2rpx solid #bbbbbb;
-    position: relative;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 20rpx;
+  background: white;
+  display: flex;
+  z-index: 4;
+  border-bottom: 2rpx solid #bbbbbb;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .swiper-tab-list {
-    width: 25%;
-    margin: 0 20rpx;
-    padding: 0 4rpx;
-    font-size: 28rpx;
-    text-align: center;
+  width: 25%;
+  margin: 0 20rpx;
+  padding: 0 4rpx;
+  font-size: 28rpx;
+  text-align: center;
 }
 
 .swiper-select {
-    width: 25%;
-    border-bottom: 6rpx solid #7aa42d;
-    color: #7aa42d;
+  width: 25%;
+  border-bottom: 6rpx solid #7aa42d;
+  color: #7aa42d;
 }
 
 .swiper-box {
-    display: block;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .hot-box {
-    display: block;
-    height: 100%;
+  display: block;
+  height: 100%;
 }
 
 .hot-box-main {
-    display: block;
-    overflow: hidden;
-    height: 100%;
-    margin-bottom: 20px;
-    background: #FFF;
+  display: block;
+  overflow: hidden;
+  height: 100%;
+  margin-bottom: 20px;
+  background: #FFF;
 }
 
 .hot-box-top {
-    padding: 20px;
-    border-bottom: 1px solid #F6F6F6;
-    text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #F6F6F6;
+  text-align: center;
 }
 
 .hot-box-title {
-    font-size: 32rpx;
-    height: 30px;
-    line-height: 32px;
-    font-weight: 400;
-    color: #444;
-    padding: 5px 10px;
-    border: 1px solid #444;
+  font-size: 32rpx;
+  height: 30px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #444;
+  padding: 5px 10px;
+  border: 1px solid #444;
 }
 
 .list-box {
-    padding: 20px 20px 20px 40px;
-    display: block;
-    font-size: 30rpx;
-    border-bottom: 1px solid #F6F6F6;
-    position: relative;
+  padding: 20px 20px 20px 40px;
+  display: block;
+  font-size: 30rpx;
+  border-bottom: 1px solid #F6F6F6;
+  position: relative;
 }
 
 .list-box::after {
-    display: block;
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: #ff6511;
-    border-radius: 50%;
-    top: 25px;
-    left: 20px;
+  display: block;
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ff6511;
+  border-radius: 50%;
+  top: 25px;
+  left: 20px;
 }
 
 .list-box-title {
-    font-weight: 400;
-    line-height: 42rpx;
+  font-weight: 400;
+  line-height: 42rpx;
 }
 
 .list-box-sub {
-    font-size: 24rpx;
-    color: #666;
-    padding-top: 6px;
+  font-size: 24rpx;
+  color: #666;
+  padding-top: 6px;
 }
 
 .hot-box-more {
-    text-align: center;
-    font-size: 22rpx;
-    color: #999;
-    margin-bottom: 30px;
+  text-align: center;
+  font-size: 22rpx;
+  color: #999;
+  margin-bottom: 30px;
 }
 
 .hot-box-more image {
-    width: 80px;
-    height: 16px;
-    display: block;
-    margin: 0 auto;
+  width: 80px;
+  height: 16px;
+  display: block;
+  margin: 0 auto;
 }

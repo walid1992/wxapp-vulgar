@@ -1,16 +1,16 @@
 .v-empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .iv-empty {
-    width: 100rpx;
-    height: 100rpx;
+  width: 100rpx;
+  height: 100rpx;
 }
 
 .tv-empty-tip {
-    font-size: 30rpx;
-    margin-top: 20rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
 }
