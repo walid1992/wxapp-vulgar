@@ -19,7 +19,7 @@ const apiURL = {
 
 export default {
 
-  list: function (reqObj = {}) {
+  list (reqObj = {}) {
     reqObj.url = apiURL.list
     utils.requestGet(reqObj)
   },
@@ -30,7 +30,7 @@ export default {
    "size": size
    * @param reqObj
    */
-  productList: function (reqObj = {}) {
+  productList (reqObj = {}) {
     reqObj.url = apiURL.productList
     utils.requestGet(reqObj)
   },
@@ -39,7 +39,7 @@ export default {
    * @param reqObj
    * campaignProductId":campaignProductId
    */
-  productGet: function (reqObj = {}) {
+  productGet (reqObj = {}) {
     reqObj.url = apiURL.productGet
     utils.requestGet(reqObj)
   },
@@ -48,9 +48,9 @@ export default {
    * @param reqObj
    * campaignId:campaignId
    */
-  get: function (reqObj = {}) {
+  get (reqObj = {}) {
     reqObj.url = apiURL.get
     utils.requestGet(reqObj)
-  },
+  }
 
 }

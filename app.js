@@ -5,7 +5,7 @@
  */
 
 import router from  'router/index.js'
-import loading from  './utils/wx-toast.js'
+import loading from  './utils/toast.js'
 import api from  './api/user/index.js'
 
 App({

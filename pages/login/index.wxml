@@ -12,7 +12,3 @@
 </view>
 
 <view class="login" bindtap="validate">绑定手机</view>
-
-<modal hidden="{{errorMsgHidden}}" bindconfirm="errorMsgSuccess" no-cancel>
-  {{errorMsg}}
-</modal>

@@ -5,8 +5,8 @@ page {
 }
 
 .verify {
-  margin-top: 30 rpx;
-  padding-left: 25 rpx;
+  margin-top: 30rpx;
+  padding-left: 25rpx;
   background: #fff;
   border-top: 1px #e5e5e5 solid;
   border-bottom: 1px #e5e5e5 solid;
@@ -14,31 +14,31 @@ page {
 
 .verify text {
   display: block;
-  width: 150 rpx;
+  width: 150rpx;
 }
 
 .v-phone {
   display: -webkit-box;
   display: box;
-  height: 100 rpx;
-  line-height: 100 rpx;
+  height: 100rpx;
+  line-height: 100rpx;
   border-bottom: 1px #e5e5e5 solid;
   color: #333;
-  font-size: 32 rpx;
+  font-size: 32rpx;
 }
 
 .v-code {
   display: -webkit-box;
   display: box;
-  height: 100 rpx;
-  line-height: 100 rpx;
+  height: 100rpx;
+  line-height: 100rpx;
   color: #333;
-  font-size: 32 rpx;
+  font-size: 32rpx;
   border: 0;
 }
 
 .input-phone {
-  font-size: 32 rpx;
+  font-size: 32rpx;
   color: #999;
   border: none;
   height: 100%;
@@ -48,21 +48,21 @@ page {
 .code {
   border-left: 1px #e5e5e5 solid;
   text-align: center;
-  font-size: 34 rpx;
-  padding: 0 35 rpx;
+  font-size: 34rpx;
+  padding: 0 35rpx;
   color: #7aa42d;
 }
 
 .login {
   display: block;
-  margin: 0 25 rpx;
-  height: 88 rpx;
+  margin: 0 25rpx;
+  height: 88rpx;
   background: #7aa42d;
-  margin-top: 100 rpx;
+  margin-top: 100rpx;
   color: #fff;
-  font-size: 36 rpx;
-  line-height: 88 rpx;
+  font-size: 36rpx;
+  line-height: 88rpx;
   text-align: center;
   border: 1px #7aa42d solid;
-  border-radius: 6 rpx;
+  border-radius: 6rpx;
 }

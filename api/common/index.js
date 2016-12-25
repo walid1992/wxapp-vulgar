@@ -17,7 +17,7 @@ export default {
    'countryCode': '86'
    * @param reqObj
    */
-  getauthcode: function (reqObj = {}) {
+  getauthcode (reqObj = {}) {
     reqObj.url = apiURL.getauthcode
     utils.requestGet(reqObj)
   },

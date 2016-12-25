@@ -20,12 +20,12 @@ let apiURL = {
 }
 
 export default {
-  list: function (reqObj = {}) {
+  list (reqObj = {}) {
     reqObj.url = apiURL.list
     utils.requestGet(reqObj)
   },
 
-  get: function (reqObj = {}) {
+  get (reqObj = {}) {
     reqObj.url = apiURL.get
     utils.requestGet(reqObj)
   },
@@ -36,13 +36,13 @@ export default {
    "size": size
    * @param reqObj
    */
-  userList: function (reqObj = {}) {
+  userList (reqObj = {}) {
     reqObj.url = apiURL.userList
     utils.requestGet(reqObj)
   },
 
-  userreceivetask: function (reqObj = {}) {
+  userreceivetask (reqObj = {}) {
     reqObj.url = apiURL.userreceivetask
     utils.requestPost(reqObj)
-  },
+  }
 }

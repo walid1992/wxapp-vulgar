@@ -5,7 +5,7 @@
  */
 
 import commonApi from '../../api/common/index.js'
-import userApi from '../../api/common/index.js'
+import userApi from '../../api/user/index.js'
 
 const app = getApp()
 
@@ -15,9 +15,7 @@ Page({
     codeButtonText: '获取验证码',
     phone: '',
     verifyCode: '',
-    errorMsgHidden: true,
     loginLocked: false,
-    errorMsg: '',
     redirectUrl: ''
   },
 
@@ -33,21 +31,13 @@ Page({
   codeChange(e) {
     this.setData({
       verifyCode: e.detail.value
-    });
+    })
   },
 
   //手机号change
   phoneChange(e) {
     this.setData({
       phone: e.detail.value
-    });
-  },
-
-  //显示错误信息
-  showErrormsg(msg) {
-    this.setData({
-      errorMsg: msg,
-      errorMsgHidden: false
     })
   },
 
@@ -55,11 +45,11 @@ Page({
   getCodeTap(e) {
     let self = this
     if (!this.data.phone) {
-      this.showErrormsg('请填写手机号')
+      app.showToast('请填写手机号')
       return
     }
     if (!/^1\d{10}$/.test(this.data.phone)) {
-      this.showErrormsg('请输入正确的手机号码')
+      app.showToast('请输入正确的手机号码')
       return
     }
     if (this.data.getCodeLock) {
@@ -78,22 +68,16 @@ Page({
           telephone: this.data.phone,
           countryCode: '86'
         },
-        success: function (data) {
-          self.showErrormsg('验证码已发送')
+        success (data) {
+          app.showToast('验证码已发送')
         },
-        fail: function (code, msg) {
-          self.showErrormsg(msg)
+        fail (code, msg) {
+          app.showToast(msg)
           self.setData({
             getCodeLock: false
           })
         }
       })
-  },
-
-  errorMsgSuccess() {
-    this.setData({
-      errorMsgHidden: true
-    });
   },
 
   //倒计时
@@ -126,14 +110,14 @@ Page({
   validate() {
     let self = this
     if (!this.data.phone) {
-      this.showErrormsg('请输入您的手机号码');
+      app.showToast('请输入您的手机号码');
       this.setData({
         loginLocked: false
       })
       return
     }
     if (!this.data.verifyCode) {
-      this.showErrormsg('请输入您收到的验证码');
+      app.showToast('请输入您收到的验证码');
       this.setData({
         loginLocked: false
       })
@@ -154,7 +138,7 @@ Page({
           authCode: this.data.verifyCode,
           type: 2
         },
-        success: function (data) {
+        success (data) {
           app.globalData.userInfo.phoneNum = data.phone
           if (self.data.redirectUrl) {
             wx.redirectTo({
@@ -164,14 +148,12 @@ Page({
           }
           wx.navigateBack()
         },
-        fail: function (code, msg) {
-          self.showErrormsg(msg)
+        fail (code, msg) {
+          app.showToast(msg)
           self.setData({
             loginLocked: false
           })
         }
       })
   }
-
-
 })

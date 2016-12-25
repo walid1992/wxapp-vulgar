@@ -13,17 +13,17 @@ function _params(obj = {}) {
 
 export default {
   config: config,
-  navigateTo: function (url, obj = {}) {
+  navigateTo (url, obj = {}) {
     wx.navigateTo({
       url: url + '?' + _params(obj)
     })
   },
-  redirectTo: function (url, obj = {}) {
+  redirectTo (url, obj = {}) {
     wx.redirectTo({
       url: url + '?' + _params(obj)
     })
   },
-  navigateBack: function (delta = 1) {
+  navigateBack (delta = 1) {
     wx.navigateBack(delta)
   }
 }

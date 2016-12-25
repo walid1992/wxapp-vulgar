@@ -58,7 +58,7 @@ Page({
       })
   },
 
-  onReachBottom: function () {
+  onReachBottom () {
     let self = this
     if (!self.data.hothidden) {
       return

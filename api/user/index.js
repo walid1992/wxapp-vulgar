@@ -20,43 +20,43 @@ const apiURL = {
 
 export default {
 
-  withdrawlist: function (reqObj = {}) {
+  withdrawlist (reqObj = {}) {
     reqObj.url = apiURL.withdrawlist
     utils.requestGet(reqObj)
   },
 
-  usercsr: function (reqObj = {}) {
+  usercsr (reqObj = {}) {
     reqObj.url = apiURL.usercsr
     utils.requestGet(reqObj)
   },
 
-  loginbyopenid: function (reqObj = {}) {
+  loginbyopenid (reqObj = {}) {
     reqObj.url = apiURL.loginbyopenid
     utils.requestPost(reqObj)
   },
 
-  bindtelephone: function (reqObj = {}) {
+  bindtelephone (reqObj = {}) {
     reqObj.url = apiURL.bindtelephone
     utils.requestPost(reqObj)
   },
 
-  profileupdate: function (reqObj = {}) {
+  profileupdate (reqObj = {}) {
     reqObj.url = apiURL.profileupdate
     utils.requestPost(reqObj)
   },
 
-  usersettlements: function (reqObj = {}) {
+  usersettlements (reqObj = {}) {
     reqObj.url = apiURL.usersettlements
     utils.requestGet(reqObj)
   },
 
-  withdrawtip: function (reqObj = {}) {
+  withdrawtip (reqObj = {}) {
     reqObj.url = apiURL.withdrawtip
     utils.requestGet(reqObj)
   },
 
-  withdraw: function (reqObj = {}) {
+  withdraw (reqObj = {}) {
     reqObj.url = apiURL.withdraw
     utils.requestGet(reqObj)
-  },
+  }
 }

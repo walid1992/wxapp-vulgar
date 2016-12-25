@@ -40,7 +40,7 @@ Page({
           start: self.data.list.length,
           size: 10
         },
-        success: function (data) {
+        success (data) {
           wx.stopPullDownRefresh()
           app.hideToast()
           // 如果数据为空，则显示没有更多数据

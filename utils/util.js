@@ -45,7 +45,5 @@ function urlParam(name) {
 }
 
 export default {
-  formatTime: formatTime,
-  urlParam: urlParam,
-  formatResiduedTimes: formatResiduedTimes
+  formatTime, urlParam, formatResiduedTimes
 }

@@ -14,7 +14,7 @@ function request(reqObj = {}) {
     method: reqObj.method,
     data: reqObj.data,
     header: reqObj.header,
-    success: function (res) {
+    success (res) {
       // 成功数据回调
       if (res.data.code == 200) {
         if (reqObj.success) {
@@ -27,7 +27,7 @@ function request(reqObj = {}) {
       }
       console.log(res.data)
     },
-    fail: function (res) {
+    fail (res) {
       if (reqObj.fail) {
         reqObj.fail(res.data.code, res.data.message)
       }
@@ -36,7 +36,7 @@ function request(reqObj = {}) {
 }
 
 export default {
-  requestGet: function requestGet(reqObj = {}) {
+  requestGet(reqObj = {}) {
     let defaultObj = {
       header: {
         'content-type': 'application/x-www-form-urlencoded',
@@ -47,7 +47,7 @@ export default {
     return request(Object.assign(reqObj, defaultObj))
   },
 
-  requestPost: function requestPost(reqObj) {
+  requestPost (reqObj) {
     let defaultObj = {
       header: {
         'content-type': 'application/x-www-form-urlencoded',

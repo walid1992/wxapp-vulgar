@@ -1,4 +1,4 @@
-const router = {
+export default {
   taskdetail: {
     name: '任务详情页',
     url: '/pages/taskdetail/index'
@@ -56,5 +56,3 @@ const router = {
     url: '/pages/mineaccount/alipay'
   },
 }
-
-export default router
