@@ -31,7 +31,7 @@ Page({
       data: {
         taskId: self.data.id
       },
-      success: function (data) {
+      success (data) {
         app.hideToast()
         let action = '领取任务'
         data.taskInfoSteps.forEach(function (value, index) {
@@ -86,12 +86,8 @@ Page({
           action: action
         })
       },
-      fail: function (code, msg) {
-        wx.showToast({
-          title: msg,
-          icon: 'error',
-          duration: 2000
-        })
+      fail (code, msg) {
+        app.showToast(msg)
       }
     })
   },
@@ -102,11 +98,11 @@ Page({
       data: {
         taskId: self.data.id
       },
-      success: function (data) {
-        wx.hideToast()
+      success (data) {
+        app.hideToast()
         self.requestData()
       },
-      fail: function (code, msg) {
+      fail (code, msg) {
         app.showToast(msg)
       }
     })

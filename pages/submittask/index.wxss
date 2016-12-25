@@ -4,6 +4,7 @@
   height: 93%;
   position: absolute;
   top: 0rpx;
+  padding: 20rpx;
 }
 
 .content text {
@@ -12,30 +13,21 @@
   margin-top: 30rpx;
 }
 
-.v-step {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  padding-left: 30rpx;
-  padding-top: 30rpx;
-}
-
 .v-image {
   width: 100%;
   margin-top: 20rpx;
-  padding-left: 20rpx;
-  padding-right: 20rpx;
+  box-sizing: border-box;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
 }
 
 .v-image image {
   width: 120rpx;
   height: 120rpx;
-  margin-left: 20rpx;
-  border: 1px solid;
+  margin-top: 20rpx;
+  margin-left: 27rpx;
+  margin-right: 27rpx;
+  border: #dadada 1px solid;
 }
 
 .v-action {

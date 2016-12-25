@@ -32,7 +32,7 @@ Page({
       data: {
         taskId: self.data.id
       },
-      success: function (data) {
+      success (data) {
         app.hideToast()
         let action = '提交任务'
         let taskEnd = false
@@ -73,7 +73,7 @@ Page({
           taskEnd: taskEnd
         })
       },
-      fail: function (code, msg) {
+      fail (code, msg) {
         app.showToast(msg)
       }
     })
@@ -82,11 +82,11 @@ Page({
   userreceivetask(){
     let self = this
     taskApi.userreceivetask(self.data.id, {
-      success: function (data) {
+      success (data) {
         app.hideToast()
         self.requestData()
       },
-      fail: function (code, msg) {
+      fail (code, msg) {
         app.showToast(msg)
       }
     })
@@ -98,16 +98,10 @@ Page({
       count: 6,
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
-        wx.getImageInfo({
-          src: res.tempFilePaths[0],
-          success: function (res) {
-            console.log(res.width)
-            console.log(res.height)
-          }
-        })
+      success (res) {
+        let tempFilePaths = self.data.tempFilePaths.concat(res.tempFilePaths)
         self.setData({
-          tempFilePaths: res.tempFilePaths
+          tempFilePaths: tempFilePaths
         })
         console.log('self.tempFilePaths', self.data.tempFilePaths)
       }
@@ -117,6 +111,7 @@ Page({
   toPreview(e) {
     let self = this
     let current = e.target.dataset.current
+    console.log('current', current)
     wx.previewImage({
       current: current,
       urls: self.data.tempFilePaths
