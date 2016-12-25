@@ -1,3 +1,9 @@
+/**
+ * @author walid
+ * @date 2016/11/20
+ * @description 路由配置
+ */
+
 export default {
   taskdetail: {
     name: '任务详情页',
