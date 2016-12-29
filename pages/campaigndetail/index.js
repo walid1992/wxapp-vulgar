@@ -36,7 +36,7 @@ Page({
         data: {
           campaignProductId: self.data.id
         },
-        success: function (data) {
+        success(data) {
           app.hideToast()
           self.setData({
             campaignProductVo: data,

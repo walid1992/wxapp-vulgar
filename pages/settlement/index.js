@@ -32,7 +32,7 @@ Page({
         start: self.data.list.length,
         size: 10
       },
-      success: function (data) {
+      success(data) {
         wx.stopPullDownRefresh()
         app.hideToast()
         // 如果数据为空，则显示没有更多数据
@@ -49,7 +49,7 @@ Page({
           list: self.data.list.concat(data),
         })
       },
-      fail: function (code, msg) {
+      fail(code, msg) {
         app.showToast(msg)
       }
     })
@@ -84,11 +84,11 @@ Page({
     let self = this
     userApi.withdrawtip({
       data: {},
-      success: function (data) {
+      success(data) {
         wx.showModal({
           title: '温馨提示',
           content: data.tipString,
-          success: function (res) {
+          success(res) {
             if (res.confirm) {
               if (data.withdrawMark) {
                 self.withdraw()
@@ -99,26 +99,25 @@ Page({
           }
         })
       },
-      fail: function (code, msg) {
+      fail(code, msg) {
         app.showToast(msg)
       }
     })
   },
 
   withdraw() {
-    let self = this
     userApi.withdraw({
       data: {},
-      success: function (data) {
+      success(data) {
         wx.showModal({
           title: '温馨提示',
           content: data.tipString,
-          success: function (res) {
+          success(res) {
 
           }
         })
       },
-      fail: function (code, msg) {
+      fail(code, msg) {
         app.showToast(msg)
       }
     })

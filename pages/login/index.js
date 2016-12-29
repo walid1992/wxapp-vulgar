@@ -68,10 +68,10 @@ Page({
           telephone: this.data.phone,
           countryCode: '86'
         },
-        success (data) {
+        success(data) {
           app.showToast('验证码已发送')
         },
-        fail (code, msg) {
+        fail(code, msg) {
           app.showToast(msg)
           self.setData({
             getCodeLock: false
@@ -138,7 +138,7 @@ Page({
           authCode: this.data.verifyCode,
           type: 2
         },
-        success (data) {
+        success(data) {
           app.globalData.userInfo.phoneNum = data.phone
           if (self.data.redirectUrl) {
             wx.redirectTo({
@@ -148,7 +148,7 @@ Page({
           }
           wx.navigateBack()
         },
-        fail (code, msg) {
+        fail(code, msg) {
           app.showToast(msg)
           self.setData({
             loginLocked: false

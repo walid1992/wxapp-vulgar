@@ -4,6 +4,8 @@
  * @description 我的任务页
  */
 
+const app = getApp()
+
 Page({
   data: {
     winWidth: 0,
@@ -14,29 +16,24 @@ Page({
     hothidden: true,
   },
 
-  onLoad: function (options) {
+  onLoad(options) {
     let that = this
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
           winWidth: res.windowWidth,
           winHeight: res.windowHeight
-        });
+        })
       }
     })
-    wx.showToast({
-      title: '加载中...',
-      icon: 'loading',
-      duration: 10000
-    })
+    app.showLoading()
   },
 
   onReady: function () {
     // 页面渲染完成
-    let self = this
     // 数据加载完成后 延迟隐藏loading
     setTimeout(function () {
-      wx.hideToast()
+      app.hideToast()
     }, 500)
   },
 
@@ -45,7 +42,7 @@ Page({
    */
   onPullDownRefresh() {
     setTimeout(function () {
-      wx.hideToast()
+      app.hideToast()
     }, 200)
   },
 

@@ -15,8 +15,7 @@ Page({
     userListInfo: []
   },
 
-  onLoad: function () {
-
+  onLoad() {
     let alipay = "绑定支付宝账号"
     let iphone = "暂未绑定号码"
     if (app.globalData.userInfo.alipay != null) {
@@ -25,7 +24,6 @@ Page({
     if (app.globalData.userInfo.phoneNum != null) {
       iphone = app.globalData.userInfo.phoneNum
     }
-
     this.setData({
       userInfo: app.globalData.userInfo,
       userListInfo: [{
@@ -50,7 +48,7 @@ Page({
   },
 
   cellItemClick(e) {
-    var index = e.currentTarget.dataset.index
+    let index = e.currentTarget.dataset.index
     console.log("index = " + index)
     if (index == 1) {
       let url = app.router.config.login.url
@@ -62,13 +60,13 @@ Page({
     }
   },
 
-  logoutTap: function (e) {
+  logoutTap(e) {
     this.setData({
       modalHidden: false
     })
   },
 
-  modalChange: function (e) {
+  modalChange(e) {
     this.setData({
       modalHidden: true
     })

@@ -50,7 +50,7 @@ Page({
         data: {
           campaignId: self.data.id
         },
-        success (data) {
+        success(data) {
           app.hideToast()
           self.setData({
             campaignInfoVo: data,

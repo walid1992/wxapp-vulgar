@@ -5,7 +5,7 @@
  */
 
 export default {
-  showLoading (duration = 10000) {
+  showLoading(duration = 10000) {
     wx.showToast({
       title: '加载中',
       icon: 'loading',
@@ -13,7 +13,7 @@ export default {
     })
   },
 
-  showToast (msg = '消息', duration = 2000) {
+  showToast(msg = '消息', duration = 2000) {
     wx.showToast({
       title: msg,
       icon: 'success',
@@ -21,7 +21,7 @@ export default {
     })
   },
 
-  hideToast () {
+  hideToast() {
     wx.hideToast()
   }
 }

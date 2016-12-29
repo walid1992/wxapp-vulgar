@@ -36,7 +36,7 @@ Page({
         start: self.data.list.length,
         size: 10
       },
-      success: function (data) {
+      success(data) {
         wx.stopPullDownRefresh()
         app.hideToast()
         // 如果数据为空，则显示没有更多数据
@@ -53,7 +53,7 @@ Page({
           list: self.data.list.concat(data),
         })
       },
-      fail: function (code, msg) {
+      fail(code, msg) {
         app.showToast(msg)
       }
     })
@@ -62,7 +62,7 @@ Page({
   /**
    * 滚动到底部
    */
-  onReachBottom: function () {
+  onReachBottom() {
     let self = this
     if (!self.data.hothidden) {
       return

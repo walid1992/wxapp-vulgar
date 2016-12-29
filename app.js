@@ -12,7 +12,7 @@ App({
   onLaunch() {
     let self = this
     wx.login({
-      success: function (loginRes) {
+      success(loginRes) {
         wx.getUserInfo({
           success: function (userInfoRes) {
             //TODO:转义+和&防止转义为空
@@ -27,22 +27,21 @@ App({
             }
             api.loginbyopenid({
               data: data,
-              success: function (data) {
+              success(data) {
                 self.globalData.ticketInfo = {
                   ticket: data.ticket.ticket,
                   refreshToken: data.ticket.refreshToken
-                };
+                }
                 self.globalData.userInfo = {
                   avatarUrl: userInfoRes.userInfo.avatarUrl,
                   name: data.userInfo.name,
                   phoneNum: data.userInfo.phone,
                   alipay: data.userInfo.alipay,
                   inviteCode: data.userInfo.inviteCode
-                };
-                wx.setStorageSync('ticket', data.ticket.ticket);
+                }
+                wx.setStorageSync('ticket', data.ticket.ticket)
               },
-              fail: function (code, msg) {
-
+              fail(code, msg) {
 
               }
             })

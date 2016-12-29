@@ -41,7 +41,7 @@ Page({
     }]
   },
 
-  onLoad: function () {
+  onLoad() {
     let self = this
     self.setData({
       userInfo: app.globalData.userInfo

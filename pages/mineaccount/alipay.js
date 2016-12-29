@@ -39,18 +39,12 @@ Page({
     })
   },
 
-
   postAlipay(e) {
-    var that = this;
+    let that = this
     if (!this.data.alipay) {
       this.showErrormsg('请填写支付宝信息')
       return
     }
-
-    var requestData = {
-      alipay: this.data.alipay
-    }
-
     userApi
       .profileupdate({
         data: {
@@ -62,7 +56,7 @@ Page({
             wx.redirectTo({
               url: that.data.redirectUrl
             })
-            return;
+            return
           }
           wx.navigateBack()
         },
@@ -75,6 +69,6 @@ Page({
   errorMsgSuccess() {
     this.setData({
       errorMsgHidden: true
-    });
+    })
   }
 })
