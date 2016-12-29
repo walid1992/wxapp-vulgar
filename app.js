@@ -14,7 +14,7 @@ App({
     wx.login({
       success(loginRes) {
         wx.getUserInfo({
-          success: function (userInfoRes) {
+          success(userInfoRes) {
             //TODO:转义+和&防止转义为空
             let encodeEncrypt = userInfoRes.encryptData && userInfoRes.encryptData.replace(/\+/g, '%2B').replace(/\&/g, '%26');
             let iv = userInfoRes.iv.replace(/\+/g, '%2B').replace(/\&/g, '%26')
