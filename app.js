@@ -5,7 +5,7 @@
  */
 
 import router from  'router/index.js'
-import loading from  './utils/toast.js'
+import toast from  './utils/toast.js'
 import api from  './api/user/index.js'
 
 App({
@@ -53,15 +53,15 @@ App({
   },
 
   showLoading(duration) {
-    loading.showLoading(duration)
+    toast.showLoading(duration)
   },
 
   showToast(msg, duration) {
-    loading.showToast(msg, duration)
+    toast.showToast(msg, duration)
   },
 
   hideToast(){
-    loading.hideToast()
+    toast.hideToast()
   },
 
   globalData: {
