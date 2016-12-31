@@ -7,7 +7,7 @@
 import api from 'api/index.js'
 import router from 'utils/router.js'
 import routerName from 'router/index.js'
-import toast from 'utils/toast.js'
+import toast from 'utils/wechat/toast.js'
 
 App({
   onLaunch() {
