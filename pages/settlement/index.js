@@ -4,8 +4,6 @@
  * @description 我的钱包
  */
 
-import userApi from '../../api/user/index.js'
-
 const app = getApp()
 
 Page({
@@ -27,7 +25,7 @@ Page({
 
   getUserSettlements() {
     let self = this
-    userApi.usersettlements({
+    app.$api.user.usersettlements({
       data: {
         start: self.data.list.length,
         size: 10
@@ -72,7 +70,7 @@ Page({
     wx.showModal({
       title: '温馨提示',
       content: '确认向支付宝账号' + app.globalData.userInfo.alipay + "提现吗?",
-      success: function (res) {
+      success(res) {
         if (res.confirm) {
           self.withdrawtip()
         }
@@ -82,7 +80,7 @@ Page({
 
   withdrawtip() {
     let self = this
-    userApi.withdrawtip({
+    app.$api.user.withdrawtip({
       data: {},
       success(data) {
         wx.showModal({
@@ -92,8 +90,6 @@ Page({
             if (res.confirm) {
               if (data.withdrawMark) {
                 self.withdraw()
-              } else {
-
               }
             }
           }
@@ -106,7 +102,7 @@ Page({
   },
 
   withdraw() {
-    userApi.withdraw({
+    app.$api.user.withdraw({
       data: {},
       success(data) {
         wx.showModal({

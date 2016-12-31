@@ -4,9 +4,6 @@
  * @description 活动列表页
  */
 
-import campaignApi from '../../api/campaign/index.js'
-import router from '../../router/index.js'
-
 const app = getApp()
 
 Page({
@@ -33,7 +30,7 @@ Page({
 
   getTaskList() {
     let self = this
-    campaignApi
+    app.$api.campaign
       .productList({
         data: {
           campaignId: self.data.id,
@@ -75,14 +72,14 @@ Page({
 
   toItem(e) {
     let id = e.currentTarget.dataset.id
-    router.navigateTo(router.config.campaigndetail.url, {
+    app.$router.navigateTo(app.$routerName.campaigndetail.url, {
       id: id
     })
   },
 
   toAction(e) {
     let self = this
-    router.navigateTo(router.config.campaigncustom.url, {
+    app.$router.navigateTo(app.$routerName.campaigncustom.url, {
       id: self.data.id
     })
   },

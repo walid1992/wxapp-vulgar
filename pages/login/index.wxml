@@ -1,14 +1,23 @@
-<view class="verify">
-  <view class="v-phone">
+<view class="div-verify">
+  <view class="div-input">
     <text>手机号码</text>
-    <input class="input-phone" type="number" value="{{phone}}" bindinput="phoneChange" placeholder="请填写手机号"/>
-    <view class="code" bindtap="getCodeTap">{{codeButtonText}}</view>
+    <input class="input-num" type="number" value="{{phone}}" bindinput="onPhoneChange" placeholder="请填写手机号"/>
+    <view wx:if="{{!code}}" class="text-get-code bule-color" bindtap="toGetCode">获取验证码</view>
+    <view wx:else class="text-get-code">{{code}}</view>
   </view>
 
-  <view class="v-code">
+  <view class="div-input no-border">
     <text>验证码</text>
-    <input class="input-phone" type="number" maxlength="6" bindinput="codeChange" pattern="[0-9]*" placeholder="输入验证码"/>
+    <input
+        class="input-code"
+        type="number"
+        maxlength="6"
+        bindinput="onCodeChange"
+        pattern="[0-9]*"
+        placeholder="输入验证码"/>
   </view>
 </view>
 
-<view class="login" bindtap="validate">绑定手机</view>
+<view class="text-tip">收不到验证码？请拨打客服电话<a href="tel:400-686-1179">400-686-1179</a></view>
+
+<button class="btn-verify" bindtap="validate">验证</button>

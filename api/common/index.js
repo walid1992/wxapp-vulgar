@@ -4,7 +4,7 @@
  * @description common API
  */
 
-import utils from '../index.js'
+import utils from  '../../utils/api.js'
 
 const apiURL = {
   // 获取验证码

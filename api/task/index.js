@@ -4,7 +4,7 @@
  * @description task API
  */
 
-import utils from '../index.js'
+import utils from  '../../utils/api.js'
 
 let apiURL = {
   // 任务列表接口

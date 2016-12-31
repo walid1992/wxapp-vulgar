@@ -1,68 +1,81 @@
 page {
   line-height: 1.6;
-  background: white;
-  box-sizing: border-box;
+  background: #efeff4;
+  padding-top: 30rpx;
 }
 
-.verify {
-  margin-top: 30rpx;
+.div-verify {
+  display: flex;
+  flex-direction: column;
   padding-left: 25rpx;
   background: #fff;
   border-top: 1px #e5e5e5 solid;
   border-bottom: 1px #e5e5e5 solid;
 }
 
-.verify text {
+.div-verify text {
   display: block;
   width: 150rpx;
 }
 
-.v-phone {
-  display: -webkit-box;
-  display: box;
-  height: 100rpx;
-  line-height: 100rpx;
+.div-input {
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  line-height: 88rpx;
   border-bottom: 1px #e5e5e5 solid;
-  color: #333;
+  color: #222;
   font-size: 32rpx;
 }
 
-.v-code {
-  display: -webkit-box;
-  display: box;
-  height: 100rpx;
-  line-height: 100rpx;
-  color: #333;
-  font-size: 32rpx;
+.no-border {
   border: 0;
 }
 
-.input-phone {
+.input-num {
   font-size: 32rpx;
   color: #999;
   border: none;
   height: 100%;
-  -webkit-box-flex: 1;
+  flex: 1;
 }
 
-.code {
-  border-left: 1px #e5e5e5 solid;
+.input-code {
+  font-size: 32rpx;
+  color: #999;
+  border: none;
+  height: 100%;
+  flex: 1;
+}
+
+.text-get-code {
   text-align: center;
-  font-size: 34rpx;
-  padding: 0 35rpx;
+  width: 200rpx;
+  font-size: 28rpx;
+  color: #b2b2b2;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-left: 10rpx;
+  border-left: 1px #e5e5e5 solid;
+}
+
+.bule-color {
   color: #7aa42d;
 }
 
-.login {
-  display: block;
+.text-tip {
+  margin: 40rpx 0 40rpx 25rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.btn-verify {
   margin: 0 25rpx;
   height: 88rpx;
-  background: #7aa42d;
-  margin-top: 100rpx;
+  background-color: #7aa42d;
   color: #fff;
   font-size: 36rpx;
   line-height: 88rpx;
-  text-align: center;
-  border: 1px #7aa42d solid;
-  border-radius: 6rpx;
 }

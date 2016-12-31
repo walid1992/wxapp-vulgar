@@ -17,10 +17,10 @@ Page({
   },
 
   onLoad(options) {
-    let that = this
+    let self = this
     wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
+      success(res) {
+        self.setData({
           winWidth: res.windowWidth,
           winHeight: res.windowHeight
         })
@@ -65,9 +65,9 @@ Page({
    */
   getTaskList() {
     let self = this
-    campaignApi.list(self.data.list.length, 10, function (res) {
+    app.$api.campaign.list(self.data.list.length, 10, function (res) {
       wx.stopPullDownRefresh()
-      wx.hideToast()
+      app.hideToast()
       // 如果数据为空，则显示没有更多数据
       let hothidden = true
       if (res.data.length <= 0) {
@@ -88,7 +88,7 @@ Page({
    * 滑动切换tab
    * @param e
    */
-  bindChange: function (e) {
+  bindChange(e) {
     let self = this
     self.setData({
       currentTab: e.detail.current
@@ -99,7 +99,7 @@ Page({
    * @param e
    * @returns {boolean}
    */
-  swichNav: function (e) {
+  swichNav(e) {
     let self = this
     if (this.data.currentTab === e.target.dataset.current) {
       return false;

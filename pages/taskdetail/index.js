@@ -4,9 +4,8 @@
  * @description 任务详情页
  */
 
-import taskApi from '../../api/task/index.js'
-import router from '../../router/index.js'
 import utils from '../../utils/util.js'
+
 const app = getApp()
 
 Page({
@@ -27,11 +26,11 @@ Page({
 
   requestData() {
     let self = this;
-    taskApi.get({
+    app.$api.task.get({
       data: {
         taskId: self.data.id
       },
-      success (data) {
+      success(data) {
         app.hideToast()
         let action = '领取任务'
         data.taskInfoSteps.forEach(function (value, index) {
@@ -94,15 +93,15 @@ Page({
 
   userreceivetask(){
     let self = this;
-    taskApi.userreceivetask({
+    app.$api.task.userreceivetask({
       data: {
         taskId: self.data.id
       },
-      success (data) {
+      success(data) {
         app.hideToast()
         self.requestData()
       },
-      fail (code, msg) {
+      fail(code, msg) {
         app.showToast(msg)
       }
     })
@@ -129,7 +128,7 @@ Page({
           app.showToast('任务已结束')
           return
         }
-        router.navigateTo(router.config.taskdetail.url, {
+        app.$router.navigateTo(app.$routerName.taskdetail.url, {
           id: self.data.id
         })
       }
@@ -144,7 +143,7 @@ Page({
       //     return
       // }
       // self.userreceivetask()
-      router.navigateTo(router.config.submittask.url, {
+      app.$router.navigateTo(app.$routerName.submittask.url, {
         id: self.data.id
       })
     }

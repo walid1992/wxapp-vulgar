@@ -4,8 +4,6 @@
  * @description 商品推广页
  */
 
-import campaignApi from '../../api/campaign/index.js'
-
 const app = getApp()
 
 Page({
@@ -45,7 +43,7 @@ Page({
 
   loadData() {
     let self = this
-    campaignApi
+    app.$api.campaign
       .get({
         data: {
           campaignId: self.data.id

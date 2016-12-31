@@ -4,9 +4,6 @@
  * @description 提现页面
  */
 
-import userApi from '../../api/user/index.js'
-import router from '../../router/index.js'
-
 const app = getApp()
 
 Page({
@@ -31,7 +28,7 @@ Page({
 
   getUserWithdrawList() {
     let self = this
-    userApi.withdrawlist({
+    app.$api.user.withdrawlist({
       data: {
         start: self.data.list.length,
         size: 10

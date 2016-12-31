@@ -4,8 +4,6 @@
  * @description 个人资料页
  */
 
-import router from '../../router/index.js'
-
 const app = getApp()
 
 Page({
@@ -49,14 +47,11 @@ Page({
 
   cellItemClick(e) {
     let index = e.currentTarget.dataset.index
-    console.log("index = " + index)
     if (index == 1) {
-      let url = app.router.config.login.url
-      router.navigateTo(url)
+      app.$router.navigateTo(app.$routerName.login.url)
     }
     if (index == 2) {
-      let url = app.router.config.modifyAlipay.url
-      router.navigateTo(url)
+      app.$router.navigateTo(app.$routerName.modifyAlipay.url)
     }
   },
 

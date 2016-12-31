@@ -4,8 +4,6 @@
  * @description 修改支付宝信息页面
  */
 
-import userApi from '../../api/user/index.js'
-
 const app = getApp()
 
 Page({
@@ -40,28 +38,26 @@ Page({
   },
 
   postAlipay(e) {
-    let that = this
+    let self = this
     if (!this.data.alipay) {
       this.showErrormsg('请填写支付宝信息')
       return
     }
-    userApi
+    app.$api.user
       .profileupdate({
         data: {
           alipay: this.data.alipay
         },
         success: function (data) {
           app.globalData.userInfo.alipay = data.alipay
-          if (that.data.redirectUrl) {
-            wx.redirectTo({
-              url: that.data.redirectUrl
-            })
+          if (self.data.redirectUrl) {
+            app.$router.redirectTo(self.data.redirectUrl)
             return
           }
-          wx.navigateBack()
+          app.$router.navigateBack()
         },
-        fail: function (code, msg) {
-          that.showErrormsg(msg)
+        fail(code, msg) {
+          self.showErrormsg(msg)
         }
       })
   },

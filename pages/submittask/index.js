@@ -4,7 +4,6 @@
  * @description 任务详情页
  */
 
-import taskApi from '../../api/task/index.js'
 import utils from '../../utils/util'
 
 const app = getApp()
@@ -28,7 +27,7 @@ Page({
 
   requestData() {
     let self = this
-    taskApi.get({
+    app.$api.task.get({
       data: {
         taskId: self.data.id
       },
@@ -81,7 +80,7 @@ Page({
 
   userreceivetask(){
     let self = this
-    taskApi.userreceivetask(self.data.id, {
+    app.$api.task.userreceivetask(self.data.id, {
       success (data) {
         app.hideToast()
         self.requestData()

@@ -4,9 +4,6 @@
  * @description 活动主页
  */
 
-import campaignApi from '../../api/campaign/index.js'
-import router from '../../router/config.js'
-
 let app = getApp()
 
 Page({
@@ -29,7 +26,7 @@ Page({
 
   getTaskList() {
     let self = this
-    campaignApi
+    app.$api.campaign
       .list({
         data: {
           start: self.data.list.length,
@@ -72,8 +69,8 @@ Page({
 
   toItem(e) {
     let id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: router.campaignList.url + '?id=' + id
+    app.$router.navigateTo(app.$routerName.campaignList.url, {
+      id: id
     })
   }
 })

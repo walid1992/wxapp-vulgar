@@ -4,9 +4,6 @@
  * @description 任务首页
  */
 
-import taskApi from '../../api/task/index.js'
-import router from '../../router/index.js'
-
 let app = getApp()
 
 Page({
@@ -29,7 +26,7 @@ Page({
 
   getTaskList() {
     let self = this
-    taskApi.list({
+    app.$api.task.list({
       data: {
         start: self.data.list.length,
         size: 10
@@ -70,12 +67,12 @@ Page({
   },
 
   toMineTask(e) {
-    router.navigateTo(router.config.mineTask.url)
+    app.$router.navigateTo(app.$routerName.mineTask.url)
   },
 
   toItem(e) {
     let id = e.currentTarget.dataset.id
-    router.navigateTo(router.config.taskdetail.url, {
+    app.$router.navigateTo(app.$routerName.taskdetail.url, {
       id: id
     })
   }

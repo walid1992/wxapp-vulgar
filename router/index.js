@@ -23,6 +23,11 @@ export default {
       url: url + '?' + _params(obj)
     })
   },
+  switchTab(url) {
+    wx.switchTab({
+      url: url
+    })
+  },
   navigateBack(delta = 1) {
     wx.navigateBack(delta)
   }

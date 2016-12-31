@@ -4,7 +4,7 @@
  * @description user API
  */
 
-import utils from '../index.js'
+import utils from  '../../utils/api.js'
 
 const apiURL = {
   // 三方登录接口

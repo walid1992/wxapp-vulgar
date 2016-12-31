@@ -4,9 +4,10 @@
  * @description root app
  */
 
+import api from  './api/index.js'
 import router from  'router/index.js'
+import routerName from  './router/config.js'
 import toast from  './utils/toast.js'
-import api from  './api/user/index.js'
 
 App({
   onLaunch() {
@@ -25,7 +26,7 @@ App({
               wxEncryptData: encodeEncrypt,
               iv: iv
             }
-            api.loginbyopenid({
+            api.user.loginbyopenid({
               data: data,
               success(data) {
                 self.globalData.ticketInfo = {
@@ -40,9 +41,6 @@ App({
                   inviteCode: data.userInfo.inviteCode
                 }
                 wx.setStorageSync('ticket', data.ticket.ticket)
-              },
-              fail(code, msg) {
-
               }
             })
 
@@ -64,9 +62,12 @@ App({
     toast.hideToast()
   },
 
+  $api: api,
+  $routerName: routerName,
+  $router: router,
+
   globalData: {
     userInfo: null,
     ticketInfo: null
   },
-  router: router,
 })

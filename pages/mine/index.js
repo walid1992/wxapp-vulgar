@@ -4,7 +4,6 @@
  * @description 个人中心
  */
 
-import router from '../../router/index.js'
 let app = getApp()
 
 Page({
@@ -46,27 +45,26 @@ Page({
     self.setData({
       userInfo: app.globalData.userInfo
     })
-    console.log("userInfo:" + app.globalData.userInfo.inviteCode)
   },
 
   headTap(e) {
-    router.navigateTo(app.router.config.mineaccount.url)
+    app.$router.navigateTo(app.$routerName.mineaccount.url)
   },
 
   cellItemClick(e) {
     let index = e.currentTarget.dataset.index
     let url
     if (index == 0) {
-      url = app.router.config.mineaccount.url
+      url = app.$routerName.mineaccount.url
     } else if (index == 1) {
-      url = app.router.config.settlement.url
+      url = app.$routerName.settlement.url
     } else if (index == 2) {
-      url = app.router.config.withdraw.url
+      url = app.$routerName.withdraw.url
     } else if (index == 3) {
-      url = app.router.config.usercsr.url
+      url = app.$routerName.usercsr.url
     } else if (index == 4) {
       return
     }
-    router.navigateTo(url)
+    app.$router.navigateTo(url)
   },
 })

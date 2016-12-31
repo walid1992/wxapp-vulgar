@@ -4,9 +4,6 @@
  * @description 商品推广页
  */
 
-import campaignApi from '../../api/campaign/index.js'
-import router from '../../router/index.js'
-
 const app = getApp()
 
 Page({
@@ -31,7 +28,7 @@ Page({
 
   loadData() {
     let self = this
-    campaignApi
+    app.$api.campaign
       .productGet({
         data: {
           campaignProductId: self.data.id

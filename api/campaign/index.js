@@ -4,7 +4,7 @@
  * @description campaign API
  */
 
-import utils from  '../index.js'
+import utils from  '../../utils/api.js'
 
 const apiURL = {
   // 宝贝列表接口

@@ -4,15 +4,12 @@
  * @description 登录页
  */
 
-import commonApi from '../../api/common/index.js'
-import userApi from '../../api/user/index.js'
-
 const app = getApp()
 
 Page({
   data: {
     getCodeLock: false,
-    codeButtonText: '获取验证码',
+    code: '',
     phone: '',
     verifyCode: '',
     loginLocked: false,
@@ -28,21 +25,21 @@ Page({
   },
 
   //验证码change
-  codeChange(e) {
+  onCodeChange(e) {
     this.setData({
       verifyCode: e.detail.value
     })
   },
 
   //手机号change
-  phoneChange(e) {
+  onPhoneChange(e) {
     this.setData({
       phone: e.detail.value
     })
   },
 
   //获取验证码
-  getCodeTap(e) {
+  toGetCode(e) {
     let self = this
     if (!this.data.phone) {
       app.showToast('请填写手机号')
@@ -62,7 +59,7 @@ Page({
       mobile: this.data.phone
     }
     self.countdown()
-    commonApi
+    app.$api.common
       .getauthcode({
         data: {
           telephone: this.data.phone,
@@ -85,25 +82,19 @@ Page({
     let self = this
     let count = 60
     let phoneTimer = setInterval(function () {
-      setInvalTime()
-    }, 1000);
-
-    function setInvalTime() {
       if (count == 0) {
         self.setData({
-          codeButtonText: '获取验证码',
+          codeButtonText: '',
           getCodeLock: false
-        });
-        clearInterval(phoneTimer);
+        })
+        clearInterval(phoneTimer)
       } else {
         self.setData({
           codeButtonText: count + '秒后重试'
-        });
+        })
       }
       count--
-    }
-
-    setInvalTime()
+    }, 1000)
   },
 
   //提交验证
@@ -131,7 +122,7 @@ Page({
     })
 
     //绑定手机号码
-    userApi
+    app.$api.user
       .bindtelephone({
         data: {
           telephone: this.data.phone,
@@ -141,12 +132,10 @@ Page({
         success(data) {
           app.globalData.userInfo.phoneNum = data.phone
           if (self.data.redirectUrl) {
-            wx.redirectTo({
-              url: self.data.redirectUrl
-            })
+            app.$router.redirectTo(self.data.redirectUrl)
             return;
           }
-          wx.navigateBack()
+          app.$router.navigateBack()
         },
         fail(code, msg) {
           app.showToast(msg)

@@ -4,9 +4,6 @@
  * @description 受邀伙伴
  */
 
-import userApi from '../../api/user/index.js'
-import router from '../../router/config.js'
-
 const app = getApp()
 
 Page({
@@ -29,7 +26,7 @@ Page({
 
   getUserCsr() {
     let self = this
-    userApi.usercsr({
+    app.$api.user.usercsr({
       data: {
         start: self.data.list.length,
         size: 10
