@@ -1,34 +1,64 @@
 /**
  * @author walid
  * @date 2016/11/20
- * @description router 工具类
+ * @description 路由配置
  */
 
-import config from './config.js'
-
-function _params(obj = {}) {
-  let _ = encodeURIComponent
-  return Object.keys(obj).map(k => `${_(k)}=${_(obj[k])}`).join('&')
-}
-
 export default {
-  config: config,
-  navigateTo(url, obj = {}) {
-    wx.navigateTo({
-      url: url + '?' + _params(obj)
-    })
+  taskdetail: {
+    name: '任务详情页',
+    url: '/pages/taskdetail/index'
   },
-  redirectTo(url, obj = {}) {
-    wx.redirectTo({
-      url: url + '?' + _params(obj)
-    })
+  submittask: {
+    name: '提交任务也',
+    url: '/pages/submittask/index'
   },
-  switchTab(url) {
-    wx.switchTab({
-      url: url
-    })
+  campaignList: {
+    name: '活动列表页',
+    url: '/pages/campaignlist/index'
   },
-  navigateBack(delta = 1) {
-    wx.navigateBack(delta)
-  }
+  campaigndetail: {
+    name: '商品推广界面',
+    url: '/pages/campaigndetail/index'
+  },
+  campaigncustom: {
+    name: '自定义推广',
+    url: '/pages/campaigncustom/index'
+  },
+  settlement: {
+    name: '收入流水页面',
+    url: '/pages/settlement/index'
+  },
+  withdraw: {
+    name: '提现历史',
+    url: '/pages/withdraw/index'
+  },
+  login: {
+    name: '登录',
+    url: '/pages/login/index'
+  },
+  mine: {
+    name: '我的',
+    url: '/pages/mine/index'
+  },
+  usercsr: {
+    name: '受邀伙伴',
+    url: '/pages/usercsr/index'
+  },
+  mineaccount: {
+    name: '个人资料',
+    url: '/pages/mineaccount/index'
+  },
+  protocol: {
+    name: '用户协议',
+    url: '/pages/protocol/index'
+  },
+  mineTask: {
+    name: '我的任务',
+    url: '/pages/minetask/index'
+  },
+  modifyAlipay: {
+    name: '修改支付宝信息',
+    url: '/pages/mineaccount/alipay'
+  },
 }

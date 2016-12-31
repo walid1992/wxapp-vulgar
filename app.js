@@ -4,10 +4,10 @@
  * @description root app
  */
 
-import api from  './api/index.js'
-import router from  'router/index.js'
-import routerName from  './router/config.js'
-import toast from  './utils/toast.js'
+import api from 'api/index.js'
+import router from 'utils/router.js'
+import routerName from 'router/index.js'
+import toast from 'utils/toast.js'
 
 App({
   onLaunch() {
