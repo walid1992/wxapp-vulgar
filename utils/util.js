@@ -36,14 +36,6 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
-function urlParam(name) {
-  let results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href)
-  if (!results) {
-    return ''
-  }
-  return results[1] || ''
-}
-
 export default {
-  formatTime, urlParam, formatResiduedTimes
+  formatTime, formatResiduedTimes
 }
