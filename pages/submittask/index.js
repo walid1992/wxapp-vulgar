@@ -4,7 +4,7 @@
  * @description 任务详情页
  */
 
-import utils from '../../utils/util'
+import utils from '../../utils/date'
 
 const app = getApp()
 
