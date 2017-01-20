@@ -28,7 +28,7 @@ function formatResiduedTimes(long) {
     hour = Math.floor(minute / 60)
     minute = minute % 60
   }
-  return hour + "时" + minute + "分" + second + "秒"
+  return hour + '时' + minute + '分' + second + '秒'
 }
 
 function formatNumber(n) {

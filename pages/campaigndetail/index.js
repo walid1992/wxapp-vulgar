@@ -9,7 +9,7 @@ const app = getApp()
 Page({
   data: {
     id: 0,
-    campaignProductVo: {},
+    campaignProductVo: {}
   },
 
   onLoad(options) {
@@ -36,7 +36,7 @@ Page({
         success(data) {
           app.hideToast()
           self.setData({
-            campaignProductVo: data,
+            campaignProductVo: data
           })
         }
       })

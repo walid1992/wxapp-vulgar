@@ -5,7 +5,7 @@
  */
 
 const apiURL = {
-  baseUrl: 'https://www.hbbtj.com',
+  baseUrl: 'https://www.hbbtj.com'
 }
 
 function request(reqObj = {}) {

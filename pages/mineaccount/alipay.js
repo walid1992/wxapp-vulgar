@@ -26,7 +26,7 @@ Page({
   alipayChange(e) {
     this.setData({
       alipay: e.detail.value
-    });
+    })
   },
 
   //显示错误信息

@@ -12,31 +12,31 @@ Page({
     userListInfo: [{
       leftItem: '我的账户',
       margin: '20rpx',
-      showArrow: true,
+      showArrow: true
     }, {
       leftItem: '钱包余额',
-      showArrow: true,
+      showArrow: true
     }, {
       leftItem: '提现历史',
-      showArrow: true,
+      showArrow: true
     }, {
       leftItem: '受邀伙伴',
       margin: '20rpx',
-      showArrow: true,
+      showArrow: true
     }, {
       leftItem: '填写邀请码',
       showArrow: true,
-      rightItem: '未设置',
+      rightItem: '未设置'
     }, {
       leftItem: '我的专属邀请码',
-      rightItem: "",
+      rightItem: '',
       margin: '20rpx',
-      showArrow: true,
+      showArrow: true
     }, {
       leftItem: '当前版本',
       rightItem: 'V 1.0.0 (内测版)',
       margin: '20rpx',
-      showArrow: false,
+      showArrow: false
     }]
   },
 
@@ -66,5 +66,5 @@ Page({
       return
     }
     app.$router.navigateTo(url)
-  },
+  }
 })

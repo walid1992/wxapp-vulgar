@@ -13,7 +13,7 @@ Page({
     // tab切换
     currentTab: 0,
     // 显示加载更多 loading
-    hothidden: true,
+    hothidden: true
   },
 
   onLoad(options) {
@@ -55,7 +55,7 @@ Page({
       return
     }
     self.setData({
-      hothidden: false,
+      hothidden: false
     })
     self.getTaskList()
   },
@@ -79,7 +79,7 @@ Page({
       }
       self.setData({
         hothidden: hothidden,
-        list: self.data.list.concat(res.data),
+        list: self.data.list.concat(res.data)
       })
     })
   },
@@ -102,11 +102,11 @@ Page({
   swichNav(e) {
     let self = this
     if (this.data.currentTab === e.target.dataset.current) {
-      return false;
+      return false
     } else {
       self.setData({
         currentTab: e.target.dataset.current
       })
     }
-  },
+  }
 })

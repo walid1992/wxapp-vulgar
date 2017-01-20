@@ -11,7 +11,7 @@ Page({
     id: 0,
     // 显示加载更多 loading
     hothidden: true,
-    list: [],
+    list: []
   },
 
   onLoad(options) {
@@ -52,7 +52,7 @@ Page({
           }
           self.setData({
             hothidden: hothidden,
-            list: self.data.list.concat(data),
+            list: self.data.list.concat(data)
           })
         }
       })
@@ -65,7 +65,7 @@ Page({
     }
     // 加载更多 loading
     self.setData({
-      hothidden: false,
+      hothidden: false
     })
     self.getTaskList()
   },
@@ -82,5 +82,5 @@ Page({
     app.$router.navigateTo(app.$routerName.campaigncustom.url, {
       id: self.data.id
     })
-  },
+  }
 })

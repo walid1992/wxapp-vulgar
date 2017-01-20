@@ -20,5 +20,5 @@ export default {
   getauthcode (reqObj = {}) {
     reqObj.url = apiURL.getauthcode
     utils.requestGet(reqObj)
-  },
+  }
 }

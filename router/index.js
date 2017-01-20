@@ -60,5 +60,5 @@ export default {
   modifyAlipay: {
     name: '修改支付宝信息',
     url: '/pages/mineaccount/alipay'
-  },
+  }
 }

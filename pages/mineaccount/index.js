@@ -14,8 +14,8 @@ Page({
   },
 
   onLoad() {
-    let alipay = "绑定支付宝账号"
-    let iphone = "暂未绑定号码"
+    let alipay = '绑定支付宝账号'
+    let iphone = '暂未绑定号码'
     if (app.globalData.userInfo.alipay != null) {
       alipay = app.globalData.userInfo.alipay
     }
@@ -28,19 +28,19 @@ Page({
         icon: '../../images/iconfont-dingdan.png',
         leftItem: '姓名',
         rightItem: app.globalData.userInfo.name,
-        margin: '20rpx',
+        margin: '20rpx'
       }, {
         icon: '../../images/iconfont-card.png',
         leftItem: '手机号',
-        rightItem: iphone,
+        rightItem: iphone
       }, {
         icon: '../../images/iconfont-card.png',
         leftItem: '支付宝账号',
-        rightItem: alipay,
+        rightItem: alipay
       }, {
         icon: '../../images/iconfont-icontuan.png',
         leftItem: '绑定微信',
-        rightItem: '已绑定',
+        rightItem: '已绑定'
       }]
     })
   },
@@ -65,6 +65,6 @@ Page({
     this.setData({
       modalHidden: true
     })
-  },
+  }
 
 })

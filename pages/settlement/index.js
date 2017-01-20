@@ -9,7 +9,7 @@ const app = getApp()
 Page({
   data: {
     hothidden: true,
-    list: [],
+    list: []
   },
 
   onLoad() {
@@ -44,7 +44,7 @@ Page({
         }
         self.setData({
           hothidden: hothidden,
-          list: self.data.list.concat(data),
+          list: self.data.list.concat(data)
         })
       },
       fail(code, msg) {
@@ -60,7 +60,7 @@ Page({
     }
     // 加载更多 loading
     self.setData({
-      hothidden: false,
+      hothidden: false
     })
     self.getUserSettlements()
   },
@@ -69,7 +69,7 @@ Page({
     let self = this
     wx.showModal({
       title: '温馨提示',
-      content: '确认向支付宝账号' + app.globalData.userInfo.alipay + "提现吗?",
+      content: '确认向支付宝账号' + app.globalData.userInfo.alipay + '提现吗?',
       success(res) {
         if (res.confirm) {
           self.withdrawtip()

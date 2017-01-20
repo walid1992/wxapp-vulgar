@@ -10,7 +10,7 @@ Page({
   data: {
     // 显示加载更多 loading
     hothidden: true,
-    list: [],
+    list: []
   },
 
   onLoad() {
@@ -46,7 +46,7 @@ Page({
           }
           self.setData({
             hothidden: hothidden,
-            list: self.data.list.concat(data),
+            list: self.data.list.concat(data)
           })
         },
         fail(code, msg) {
@@ -62,7 +62,7 @@ Page({
     }
     // 加载更多 loading
     self.setData({
-      hothidden: false,
+      hothidden: false
     })
     self.getTaskList()
   },

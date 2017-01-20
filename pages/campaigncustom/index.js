@@ -37,7 +37,7 @@ Page({
     }
     app.showToast('生成URL~')
     self.setData({
-      qrCodeUrl: self.data.inputLink,
+      qrCodeUrl: self.data.inputLink
     })
   },
 
@@ -51,7 +51,7 @@ Page({
         success(data) {
           app.hideToast()
           self.setData({
-            campaignInfoVo: data,
+            campaignInfoVo: data
           })
         }
       })

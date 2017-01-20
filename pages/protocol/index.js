@@ -8,6 +8,6 @@ const app = getApp()
 
 Page({
   data: {
-    modalHidden: true,
-  },
+    modalHidden: true
+  }
 })

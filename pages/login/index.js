@@ -101,14 +101,14 @@ Page({
   validate() {
     let self = this
     if (!this.data.phone) {
-      app.showToast('请输入您的手机号码');
+      app.showToast('请输入您的手机号码')
       this.setData({
         loginLocked: false
       })
       return
     }
     if (!this.data.verifyCode) {
-      app.showToast('请输入您收到的验证码');
+      app.showToast('请输入您收到的验证码')
       this.setData({
         loginLocked: false
       })
@@ -133,7 +133,7 @@ Page({
           app.globalData.userInfo.phoneNum = data.phone
           if (self.data.redirectUrl) {
             app.$router.redirectTo(self.data.redirectUrl)
-            return;
+            return
           }
           app.$router.navigateBack()
         },

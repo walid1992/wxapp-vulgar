@@ -25,7 +25,7 @@ Page({
   },
 
   requestData() {
-    let self = this;
+    let self = this
     app.$api.task.get({
       data: {
         taskId: self.data.id
@@ -92,7 +92,7 @@ Page({
   },
 
   userreceivetask(){
-    let self = this;
+    let self = this
     app.$api.task.userreceivetask({
       data: {
         taskId: self.data.id
