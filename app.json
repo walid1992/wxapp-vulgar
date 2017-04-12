@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/task/index",
+    "pages/home/index",
     "pages/taskdetail/index",
     "pages/submittask/index",
     "pages/mine/index",
@@ -24,7 +24,7 @@
     "backgroundColor": "#fafafa",
     "list": [
       {
-        "pagePath": "pages/task/index",
+        "pagePath": "pages/home/index",
         "iconPath": "images/ic_task.png",
         "selectedIconPath": "images/ic_task_select.png",
         "text": "首页"
