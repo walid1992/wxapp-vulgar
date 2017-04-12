@@ -3,25 +3,18 @@
     "pages/task/index",
     "pages/taskdetail/index",
     "pages/submittask/index",
-    "pages/campaign/index",
-    "pages/campaignlist/index",
-    "pages/campaigndetail/index",
-    "pages/campaigncustom/index",
     "pages/mine/index",
     "pages/login/index",
     "pages/mineaccount/index",
     "pages/mineaccount/alipay",
     "pages/protocol/index",
-    "pages/minetask/index",
-    "pages/withdraw/index",
-    "pages/settlement/index",
-    "pages/usercsr/index"
+    "pages/minetask/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "backgroundColor": "#ffffff",
     "navigationBarBackgroundColor": "#7aa42d",
-    "navigationBarTitleText": "好推",
+    "navigationBarTitleText": "草民工匠社",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -34,13 +27,7 @@
         "pagePath": "pages/task/index",
         "iconPath": "images/ic_task.png",
         "selectedIconPath": "images/ic_task_select.png",
-        "text": "好任务"
-      },
-      {
-        "pagePath": "pages/campaign/index",
-        "iconPath": "images/ic_baby.png",
-        "selectedIconPath": "images/ic_baby_select.png",
-        "text": "好宝贝"
+        "text": "首页"
       },
       {
         "pagePath": "pages/mine/index",

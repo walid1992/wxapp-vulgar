@@ -16,34 +16,8 @@ App({
       success(loginRes) {
         wx.getUserInfo({
           success(userInfoRes) {
-            //TODO:转义+和&防止转义为空
-            let encodeEncrypt = userInfoRes.encryptData && userInfoRes.encryptData.replace(/\+/g, '%2B').replace(/\&/g, '%26')
-            let iv = userInfoRes.iv.replace(/\+/g, '%2B').replace(/\&/g, '%26')
-            let data = {
-              thirdCode: loginRes.code,
-              headLogo: userInfoRes.userInfo.avatarUrl,
-              scope: 'base',
-              wxEncryptData: encodeEncrypt,
-              iv: iv
-            }
-            api.user.loginbyopenid({
-              data: data,
-              success(data) {
-                self.globalData.ticketInfo = {
-                  ticket: data.ticket.ticket,
-                  refreshToken: data.ticket.refreshToken
-                }
-                self.globalData.userInfo = {
-                  avatarUrl: userInfoRes.userInfo.avatarUrl,
-                  name: data.userInfo.name,
-                  phoneNum: data.userInfo.phone,
-                  alipay: data.userInfo.alipay,
-                  inviteCode: data.userInfo.inviteCode
-                }
-                wx.setStorageSync('ticket', data.ticket.ticket)
-              }
-            })
-
+            console.log('userInfoRes', userInfoRes)
+            self.globalData.userInfo = userInfoRes.userInfo
           }
         })
       }

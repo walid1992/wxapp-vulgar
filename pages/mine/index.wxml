@@ -3,7 +3,7 @@
   <view class="user" bindtap="headTap">
     <image class="avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <div>
-      <text class="nickname">{{userInfo.name}}</text>
+      <text class="nickname">{{userInfo.nickName}}</text>
       <text class="phone">{{userInfo.phoneNum}}</text>
     </div>
   </view>

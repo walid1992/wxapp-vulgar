@@ -1,14 +1,14 @@
 {
-  "name": "wxapp-haotui",
+  "name": "wxapp-vulgar",
   "version": "1.0.0",
-  "description": "好推",
+  "description": "草民工匠社小程序~ ",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@git.oschina.net:walid1992/wxapp-haotui.git"
+    "url": "git@github.com:walid1992/wxapp-vulgar.git"
   },
   "keywords": [
     "shop"
